@@ -9,7 +9,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-[#fafafa]">
       <Navigation />
-      <main className="flex-1 pt-20 md:pt-24 sm:pt-[5rem] min-h-[calc(100vh-8rem)]">
+      <main className="flex-1 pt-16 md:pt-[4.5rem] min-h-[calc(100vh-8rem)]">
         {children}
       </main>
       <footer className="bg-gray-800 text-white py-8 mt-8 sm:py-6 sm:mt-6">

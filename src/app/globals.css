@@ -560,8 +560,7 @@ a.current:hover {
     flex: 1;
     flex: 1;
 
-    padding-top: 4rem; /* Account for sticky navigation */
-    padding-top: 4rem; /* Account for sticky navigation */
+    padding-top: 1rem; /* Account for sticky navigation */
 
     min-height: calc(100vh - 8rem); /* Minimum height minus nav and footer */
     min-height: calc(100vh - 8rem); /* Minimum height minus nav and footer */
@@ -761,8 +760,7 @@ a.current:hover {
 
     .main-content {
       .main-content {
-        padding-top: 4rem;
-        padding-top: 4rem;
+        padding-top: 1rem;
       }
     }
 
@@ -846,8 +844,7 @@ a.current:hover {
 
     .main-content {
       .main-content {
-        padding-top: 4.5rem;
-        padding-top: 4.5rem;
+        padding-top: 1rem;
       }
     }
   }
@@ -886,7 +883,6 @@ a.current:hover {
 
     .main-content {
       .main-content {
-        padding-top: 5rem;
         padding-top: 5rem;
       }
     }
