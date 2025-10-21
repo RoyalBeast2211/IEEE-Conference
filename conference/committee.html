@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Committee information for IEEE SeFet 2026"
+    />
+
+    <title>Committee - IEEE SeFet 2026</title>
+
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/navigation.css" />
+
+    <style>
+      /* Committee Page - Modern Professional Design */
+      .committee-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 1rem 2rem;
+        background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
+      }
+
+      .committee-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        padding: 3.5rem 2rem;
+        background: linear-gradient(135deg, #00629b 0%, #0f172a 100%);
+        border-radius: 20px;
+        color: white;
+        box-shadow: 0 10px 40px rgba(0, 98, 155, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .committee-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+      }
+
+      .committee-header::after {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: -5%;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+      }
+
+      .committee-header h1 {
+        color: #ffffff;
+        margin-bottom: 0.75rem;
+        font-size: 2.75rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+      
+        margin-top: 0;}
+
+      .committee-header p {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.15rem;
+        margin-top: 0.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Section Styling */
+      .committee-section {
+        margin-bottom: 3.5rem;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+      }
+
+      .committee-section:hover {
+        box-shadow: 0 8px 30px rgba(0, 98, 155, 0.12);
+      }
+
+      .committee-section h3 {
+        color: #00629b;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #00629b;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+      }
+
+      .committee-section h3::before {
+        content: "";
+        width: 6px;
+        height: 35px;
+        background: linear-gradient(180deg, #00629b, #0f172a);
+        border-radius: 3px;
+        box-shadow: 0 2px 8px rgba(0, 98, 155, 0.3);
+      }
+
+      .committee-section h3::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 120px;
+        height: 3px;
+        background: linear-gradient(90deg, #00629b, transparent);
+      }
+
+      /* Member Cards - Grid Layout */
+      .members-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .member-card {
+        background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 1.5rem 1.75rem;
+        transition: all 0.3s ease;
+        border-left: 4px solid #00629b;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .member-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 98, 155, 0.03) 0%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .member-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 98, 155, 0.15);
+        border-left-color: #0f172a;
+      }
+
+      .member-card:hover::before {
+        opacity: 1;
+      }
+
+      .member-name {
+        color: #0f172a;
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 0.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .member-affiliation {
+        color: #64748b;
+        font-size: 0.95rem;
+        display: block;
+        line-height: 1.5;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Single Member (for Patron, Chief Patron) */
+      .single-member {
+        background: linear-gradient(135deg, #00629b 0%, #0f172a 100%);
+        border: none;
+        border-radius: 16px;
+        padding: 2.5rem;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 10px 40px rgba(0, 98, 155, 0.25);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .single-member::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+      }
+
+      .single-member .member-name {
+        font-size: 1.5rem;
+        color: #ffffff;
+        margin-bottom: 0.75rem;
+        font-weight: 800;
+        position: relative;
+        z-index: 1;
+      }
+
+      .single-member .member-affiliation {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Subsection for Hospitality */
+      .subsection {
+        margin-top: 2rem;
+        padding: 1.75rem;
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        border-radius: 12px;
+        border-left: 4px solid #64748b;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      }
+
+      .subsection-title {
+        color: #334155;
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .subsection-title::before {
+        content: "▸";
+        color: #64748b;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .subsection .members-grid {
+        margin-top: 1rem;
+        gap: 1.25rem;
+      }
+
+      .subsection .member-card {
+        background: #ffffff;
+        border-color: #cbd5e1;
+        border-left-color: #64748b;
+      }
+
+      .subsection .member-card:hover {
+        border-left-color: #00629b;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .members-grid {
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .committee-container {
+          padding: 2rem 1.5rem;
+        }
+
+        .members-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .committee-container {
+          padding: 1rem 1rem 2rem;
+        }
+
+        .committee-header {
+          padding: 2.5rem 1.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .committee-header h1 {
+          font-size: 2rem;
+        
+        margin-top: 0;}
+
+        .committee-section {
+          padding: 2rem 1.5rem;
+        }
+
+        .committee-section h3 {
+          font-size: 1.5rem;
+        }
+
+        .members-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .committee-header {
+          padding: 2rem 1rem;
+        }
+
+        .committee-header h1 {
+          font-size: 1.75rem;
+        
+        margin-top: 0;}
+
+        .committee-section {
+          padding: 1.5rem 1rem;
+        }
+
+        .committee-section h3 {
+          font-size: 1.25rem;
+        }
+
+        .member-card {
+          padding: 1.25rem 1rem;
+        }
+
+        .single-member {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Component - Include this in all pages -->
+    <!-- This is the master navigation - edit once, update all pages -->
+    <!-- Navigation Component - Include this in all pages -->
+    <!-- This is the master navigation - edit once, update all pages -->
+    <!-- Navigation Component - Include this in all pages -->
+    <!-- This is the master navigation - edit once, update all pages -->
+    <!-- Navigation -->
+    <nav
+      class="ieee-professional-nav"
+      role="navigation"
+      aria-label="IEEE SeFet 2026 Main Navigation"
+    >
+      <div class="ieee-nav-container">
+        <!-- Desktop Navigation -->
+        <div class="ieee-nav-desktop">
+          <ul class="ieee-nav-menu" role="menubar">
+            <!-- Home -->
+            <li class="ieee-nav-item" role="none">
+              <a href="../index.html" class="ieee-nav-link" role="menuitem"
+                >Home</a
+              >
+            </li>
+
+            <!-- About Us -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="About Us"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                About Us
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../about/vnit.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">About VNIT </span>
+                    </div>
+                  </a>
+                  <a
+                    href="../about/eed.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">About EED</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../about/maharashtra.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >About Nagpur</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Authors -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="Authors"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Authors
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/authors/call-for-papers.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Call for Papers</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/authors/camera-ready.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Camera Ready Submission</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/authors/publication-templates.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Publication & Templates</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Committee -->
+            <li class="ieee-nav-item" role="none">
+              <a
+                href="../conference/committee.html"
+                class="ieee-nav-link"
+                role="menuitem"
+                >Committee</a
+              >
+            </li>
+
+            <!-- Speakers -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="Speakers"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Speakers
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/speakers/keynote.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Keynote Speakers</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/speakers/tutorial.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Tutorial Speakers</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Events -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="Events"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Events
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/events/program.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Program Schedule</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/wie.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">WIE Events</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/syp.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">SYP Events</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/academic-panel.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Academic Panel</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/industry.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Industry Events</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/city-tour.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">City Tour</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Registration -->
+            <li class="ieee-nav-item" role="none">
+              <a
+                href="../conference/registration.html"
+                class="ieee-nav-link"
+                role="menuitem"
+                >Registration</a
+              >
+            </li>
+
+            <!-- Awards -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="Awards"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Awards
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/awards/doctoral-thesis.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Doctoral Thesis Award</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/awards/student-travel.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Student Travel Awards</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/awards/best-paper.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Best Paper Award</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/awards/best-poster.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Best Poster Award</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- More -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="More"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                More
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/special-sessions.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Special Sessions</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/accommodation.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Accommodation</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/venue-contact.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Venue & Contact</span
+                      >
+                    </div>
+                  </a>
+
+                  <!-- Sponsorship submenu -->
+                  <span
+                    class="ieee-dropdown-item has-submenu"
+                    role="menuitem"
+                    data-submenu-trigger="More-Sponsorship"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">Sponsorship</span>
+                    </div>
+                    <span class="ieee-submenu-icon">•</span>
+                  </span>
+                  <div class="ieee-submenu" role="menu">
+                    <div class="ieee-submenu-content">
+                      <a
+                        href="../conference/sponsorship/sponsors.html"
+                        class="ieee-submenu-item"
+                        role="menuitem"
+                      >
+                        <div class="ieee-submenu-item-content">
+                          <span class="ieee-submenu-item-title"
+                            >Our Sponsors</span
+                          >
+                        </div>
+                      </a>
+                      <a
+                        href="../conference/sponsorship/details.html"
+                        class="ieee-submenu-item"
+                        role="menuitem"
+                      >
+                        <div class="ieee-submenu-item-content">
+                          <span class="ieee-submenu-item-title"
+                            >Sponsorship Details</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a
+                    href="../conference/gallery.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Photo Gallery</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/proceedings.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >SEFET Proceedings</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="ieee-mobile-toggle"
+          aria-expanded="false"
+          aria-controls="ieee-mobile-navigation"
+          aria-label="Toggle mobile navigation menu"
+        >
+          <span class="ieee-sr-only">Toggle navigation menu</span>
+          <div class="ieee-hamburger">
+            <span class="ieee-hamburger-line"></span>
+            <span class="ieee-hamburger-line"></span>
+            <span class="ieee-hamburger-line"></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="ieee-mobile-navigation"
+        class="ieee-mobile-nav"
+        role="navigation"
+        aria-label="Mobile navigation menu"
+      >
+        <div class="ieee-mobile-content">
+          <div class="ieee-mobile-header">
+            <div class="ieee-mobile-brand">
+              <span class="ieee-mobile-logo">IEEE SeFet 2026</span>
+              <span class="ieee-mobile-subtitle"
+                >Sustainable Energy and Future Electric Transportation</span
+              >
+            </div>
+            <button class="ieee-mobile-close" aria-label="Close mobile menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M18 6L6 18M6 6l12 12"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="ieee-mobile-menu">
+            <div class="ieee-mobile-item">
+              <a href="../index.html" class="ieee-mobile-link">Home</a>
+            </div>
+
+            <div class="ieee-mobile-item">
+              <div class="ieee-mobile-dropdown">
+                <button
+                  class="ieee-mobile-link ieee-mobile-toggle-btn"
+                  aria-expanded="false"
+                  role="button"
+                >
+                  <span>About Us</span>
+                  <svg
+                    class="ieee-mobile-dropdown-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 9l6 6 6-6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="ieee-mobile-submenu">
+                  <a href="../about/vnit.html" class="ieee-mobile-submenu-item"
+                    >About VNIT
+                  </a>
+                  <a href="../about/eed.html" class="ieee-mobile-submenu-item"
+                    >About EED</a
+                  >
+                  <a
+                    href="../about/maharashtra.html"
+                    class="ieee-mobile-submenu-item"
+                    >About Nagpur</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="ieee-mobile-item">
+              <div class="ieee-mobile-dropdown">
+                <button
+                  class="ieee-mobile-link ieee-mobile-toggle-btn"
+                  aria-expanded="false"
+                  role="button"
+                >
+                  <span>Conference</span>
+                  <svg
+                    class="ieee-mobile-dropdown-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M6 9l6 6 6-6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="ieee-mobile-submenu">
+                  <!-- Authors nested submenu -->
+                  <div class="ieee-mobile-nested-item">
+                    <button
+                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
+                      aria-expanded="false"
+                    >
+                      <span>Authors</span>
+                      <svg
+                        class="ieee-mobile-submenu-icon"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <div class="ieee-mobile-nested-menu">
+                      <a
+                        href="../conference/authors/call-for-papers.html"
+                        class="ieee-mobile-sublink"
+                        >Call for Papers</a
+                      >
+                      <a
+                        href="../conference/authors/camera-ready.html"
+                        class="ieee-mobile-sublink"
+                        >Camera Ready</a
+                      >
+                      <a
+                        href="../conference/authors/publication-templates.html"
+                        class="ieee-mobile-sublink"
+                        >Templates</a
+                      >
+                    </div>
+                  </div>
+
+                  <a
+                    href="../conference/committee.html"
+                    class="ieee-mobile-submenu-item"
+                    >Committee</a
+                  >
+
+                  <!-- Speakers nested submenu -->
+                  <div class="ieee-mobile-nested-item">
+                    <button
+                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
+                      aria-expanded="false"
+                    >
+                      <span>Speakers</span>
+                      <svg
+                        class="ieee-mobile-submenu-icon"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <div class="ieee-mobile-nested-menu">
+                      <a
+                        href="../conference/speakers/keynote.html"
+                        class="ieee-mobile-sublink"
+                        >Keynote Speakers</a
+                      >
+                      <a
+                        href="../conference/speakers/tutorial.html"
+                        class="ieee-mobile-sublink"
+                        >Tutorial Speakers</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Event Details nested submenu -->
+                  <div class="ieee-mobile-nested-item">
+                    <button
+                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
+                      aria-expanded="false"
+                    >
+                      <span>Event Details</span>
+                      <svg
+                        class="ieee-mobile-submenu-icon"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <div class="ieee-mobile-nested-menu">
+                      <a
+                        href="../conference/events/program.html"
+                        class="ieee-mobile-sublink"
+                        >Program Schedule</a
+                      >
+                      <a
+                        href="../conference/events/wie.html"
+                        class="ieee-mobile-sublink"
+                        >WIE Events</a
+                      >
+                      <a
+                        href="../conference/events/syp.html"
+                        class="ieee-mobile-sublink"
+                        >SYP Events</a
+                      >
+                      <a
+                        href="../conference/events/academic-panel.html"
+                        class="ieee-mobile-sublink"
+                        >Academic Panel</a
+                      >
+                      <a
+                        href="../conference/events/industry.html"
+                        class="ieee-mobile-sublink"
+                        >Industry Events</a
+                      >
+                      <a
+                        href="../conference/events/city-tour.html"
+                        class="ieee-mobile-sublink"
+                        >City Tour</a
+                      >
+                    </div>
+                  </div>
+
+                  <a
+                    href="../conference/special-sessions.html"
+                    class="ieee-mobile-submenu-item"
+                    >Special Sessions</a
+                  >
+                  <a
+                    href="../conference/registration.html"
+                    class="ieee-mobile-submenu-item"
+                    >Registration</a
+                  >
+
+                  <!-- Awards nested submenu -->
+                  <div class="ieee-mobile-nested-item">
+                    <button
+                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
+                      aria-expanded="false"
+                    >
+                      <span>Awards</span>
+                      <svg
+                        class="ieee-mobile-submenu-icon"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <div class="ieee-mobile-nested-menu">
+                      <a
+                        href="../conference/awards/doctoral-thesis.html"
+                        class="ieee-mobile-sublink"
+                        >Doctoral Thesis Award</a
+                      >
+                      <a
+                        href="../conference/awards/student-travel.html"
+                        class="ieee-mobile-sublink"
+                        >Student Travel Awards</a
+                      >
+                      <a
+                        href="../conference/awards/best-paper.html"
+                        class="ieee-mobile-sublink"
+                        >Best Paper Award</a
+                      >
+                      <a
+                        href="../conference/awards/best-poster.html"
+                        class="ieee-mobile-sublink"
+                        >Best Poster Award</a
+                      >
+                    </div>
+                  </div>
+
+                  <a
+                    href="../conference/accommodation.html"
+                    class="ieee-mobile-submenu-item"
+                    >Accommodation</a
+                  >
+                  <a
+                    href="../conference/venue-contact.html"
+                    class="ieee-mobile-submenu-item"
+                    >Venue & Contact</a
+                  >
+
+                  <!-- Sponsorship nested submenu -->
+                  <div class="ieee-mobile-nested-item">
+                    <button
+                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
+                      aria-expanded="false"
+                    >
+                      <span>Sponsorship</span>
+                      <svg
+                        class="ieee-mobile-submenu-icon"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M6 9l6 6 6-6"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <div class="ieee-mobile-nested-menu">
+                      <a
+                        href="../conference/sponsorship/sponsors.html"
+                        class="ieee-mobile-sublink"
+                        >Our Sponsors</a
+                      >
+                      <a
+                        href="../conference/sponsorship/details.html"
+                        class="ieee-mobile-sublink"
+                        >Sponsorship Details</a
+                      >
+                    </div>
+                  </div>
+
+                  <a
+                    href="../conference/gallery.html"
+                    class="ieee-mobile-submenu-item"
+                    >Photo Gallery</a
+                  >
+                  <a
+                    href="../conference/proceedings.html"
+                    class="ieee-mobile-submenu-item"
+                    >SEFET Proceeding</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="committee-container">
+        <!-- Page Header -->
+        <div class="committee-header">
+          <h1>Conference Committee</h1>
+        </div>
+
+        <!-- Chief Patron -->
+        <section class="committee-section">
+          <h3>Chief Patron</h3>
+          <div class="single-member">
+            <span class="member-name">Shri. Madabhushi Madan Gopal</span>
+            <span class="member-affiliation">BoG Chairman, VNIT Nagpur</span>
+          </div>
+        </section>
+
+        <!-- Patron -->
+        <section class="committee-section">
+          <h3>Patron</h3>
+          <div class="single-member">
+            <span class="member-name">Prof. P.L. Patel</span>
+            <span class="member-affiliation">Director, VNIT Nagpur</span>
+          </div>
+        </section>
+
+        <!-- Honorary Chairs -->
+        <section class="committee-section">
+          <h3>Honorary Chairs</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Prof. Ayman EL-Refaie</span>
+              <span class="member-affiliation">President, IEEE, IAS</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Johan Enslin</span>
+              <span class="member-affiliation">President, IEEE, PELS</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Juan José Rodríguez-Andina</span>
+              <span class="member-affiliation">President Elect, IEEE, IES</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Shay Bahramirad</span>
+              <span class="member-affiliation">President, IEEE, PES</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Akshay Rathore</span>
+              <span class="member-affiliation">NUS Singapore</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- General Chair -->
+        <section class="committee-section">
+          <h3>General Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Prof. Madhuri Chaudhuri</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Biplab Sikdar</span>
+              <span class="member-affiliation">NUS Singapore</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Organizing Chair -->
+        <section class="committee-section">
+          <h3>Organizing Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Arghya Mitra</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Siba Kumar Patro</span>
+              <span class="member-affiliation">IIT Roorkee</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conference Secretaries -->
+        <section class="committee-section">
+          <h3>Conference Secretaries</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Soumyabrata Das</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Sunanda Sinha</span>
+              <span class="member-affiliation">MNIT Jaipur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Finance Chair -->
+        <section class="committee-section">
+          <h3>Finance Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Ritesh Kumar Keshri</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Makrand Lokhande</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- TPC Chairs -->
+        <section class="committee-section">
+          <h3>TPC Chairs</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Ramsha Karampuri</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Ashwin Dhabale</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Chirodeep Bakli</span>
+              <span class="member-affiliation">IIT Kharagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Avineet Kumar</span>
+              <span class="member-affiliation">IIT Patna</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Binod K. Bussa</span>
+              <span class="member-affiliation">IIT Patna</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Anurag Sharma</span>
+              <span class="member-affiliation">Newcastle University</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Akhilesh Mathur</span>
+              <span class="member-affiliation">MNIT Jaipur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Amritesh Kumar</span>
+              <span class="member-affiliation">NIT Silchar</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Manoj Debnath</span>
+              <span class="member-affiliation">SoA, Bhubaneswar</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Srinivas Karanki</span>
+              <span class="member-affiliation">IIT BBS</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Publication Chair -->
+        <section class="committee-section">
+          <h3>Publication Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Manoj Debnath</span>
+              <span class="member-affiliation">SoA, Bhubaneswar</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Jawaharlal Bhukya</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Plenary Chair -->
+        <section class="committee-section">
+          <h3>Plenary Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Prof. M.S. Ballal</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Phaneendra Babu Bobba</span>
+              <span class="member-affiliation">GRIET Hydrabad</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Sivanesan Balakrishnan</span>
+              <span class="member-affiliation">SIT Singapore</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tutorial and Workshop Chairs -->
+        <section class="committee-section">
+          <h3>Tutorial and Workshop Chairs</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Prof. M. R. Ramteke</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Vinod Khadkikar</span>
+              <span class="member-affiliation">KU, UAE</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Industry Interaction and Sponsorship Chairs -->
+        <section class="committee-section">
+          <h3>Industry Interaction and Sponsorship Chairs</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Prof. Sunil Bhat</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Aneesh Prabhakar</span>
+              <span class="member-affiliation">MNIT Jaipur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Kapil Pareek</span>
+              <span class="member-affiliation">MNIT Jaipur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Kalpana Ramesh</span>
+              <span class="member-affiliation">NIT Surathkal</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Pradyumn Chaturvedi</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Student Activity & Award Chair -->
+        <section class="committee-section">
+          <h3>Student Activity & Award Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Kapil Chauhan</span>
+              <span class="member-affiliation">MNNIT Allahabad</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Mohd Alam</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- WIE Chair -->
+        <section class="committee-section">
+          <h3>WIE Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Asha Rani</span>
+              <span class="member-affiliation">NIT Silchar</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Deepti Saxena</span>
+              <span class="member-affiliation">MNIT Jaipur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. N. R. Patne</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hospitality Chairs -->
+        <section class="committee-section">
+          <h3>Hospitality Chairs</h3>
+
+          <div class="subsection">
+            <h4 class="subsection-title">Logistic and Travel Arrangement</h4>
+            <div class="members-grid">
+              <div class="member-card">
+                <span class="member-name">Dr. Ashwin Dhabale</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+              <div class="member-card">
+                <span class="member-name">Dr. Bhooshan Rajpathak</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h4 class="subsection-title">Fooding</h4>
+            <div class="members-grid">
+              <div class="member-card">
+                <span class="member-name">Dr. R.J. Satputaley</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+              <div class="member-card">
+                <span class="member-name">Dr. S.K. Raju</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h4 class="subsection-title">Accommodation (Guest)</h4>
+            <div class="members-grid">
+              <div class="member-card">
+                <span class="member-name">Prof. V.S. Kale</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+              <div class="member-card">
+                <span class="member-name">Dr. Joydeep Sengupta</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h4 class="subsection-title">Accommodation (Student)</h4>
+            <div class="members-grid">
+              <div class="member-card">
+                <span class="member-name">Dr. Gaurav Mishra</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+              <div class="member-card">
+                <span class="member-name">Dr. Jawaharlal Bhukya</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h4 class="subsection-title">Registration Committee</h4>
+            <div class="members-grid">
+              <div class="member-card">
+                <span class="member-name">Dr. Jayprakash Singh</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+              <div class="member-card">
+                <span class="member-name">Dr. Avisha Tah</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h4 class="subsection-title">Stage Committee</h4>
+            <div class="members-grid">
+              <div class="member-card">
+                <span class="member-name">Prof. Nita Patne</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+              <div class="member-card">
+                <span class="member-name">Dr. A. Mitra</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h4 class="subsection-title">Printing and Designing Committee</h4>
+            <div class="members-grid">
+              <div class="member-card">
+                <span class="member-name">Dr. Mohd Alam</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+              <div class="member-card">
+                <span class="member-name">Dr. K. Raju</span>
+                <span class="member-affiliation">VNIT Nagpur</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Publicity Chair -->
+        <section class="committee-section">
+          <h3>Publicity Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Prof. Dheeman Chatterjee</span>
+              <span class="member-affiliation">IIT Kharagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Subhojit Ghosh</span>
+              <span class="member-affiliation">NIT Raipur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Subho Paul</span>
+              <span class="member-affiliation">IIT BHU</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. P.S. Kulkarni</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Padmini Singh</span>
+              <span class="member-affiliation">IIT Jammu</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Biman Saharoy</span>
+              <span class="member-affiliation">NIT Durgapur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Jiwanjot Singh</span>
+              <span class="member-affiliation">NIT Hamirpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Sukriti Tiwari</span>
+              <span class="member-affiliation">NIT Calicut</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Dipanshu Naware</span>
+              <span class="member-affiliation">NIT Trichy</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Raghavendra Naik</span>
+              <span class="member-affiliation">NIT Jamshedpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Altaf Badar</span>
+              <span class="member-affiliation">NIT Warangal</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Souvik Ganguli</span>
+              <span class="member-affiliation">TIET Patiala</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Manish Kumar</span>
+              <span class="member-affiliation">HPU Shimla</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Prashant Malik</span>
+              <span class="member-affiliation">Swaniti Global</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Shelas Sathyan</span>
+              <span class="member-affiliation">NIT Trichy</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Ashwini Manchalwar</span>
+              <span class="member-affiliation">NIT Manipur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. D. Govind</span>
+              <span class="member-affiliation">NIT Delhi</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Supriya Jaiswal</span>
+              <span class="member-affiliation">NIT Hamirpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Siddharth Sabyachachi</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Rajashekar</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Amarendra Matsa</span>
+              <span class="member-affiliation">CU, Karnataka</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Kusum Lata Aggarwal</span>
+              <span class="member-affiliation">Karnavati University</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Siddharth Singh Chauhan</span>
+              <span class="member-affiliation">Nirma University</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Special Session Chair -->
+        <section class="committee-section">
+          <h3>Special Session Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Ravita Lamba</span>
+              <span class="member-affiliation">IIT Roorkee</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Narendrababu A.</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Steering Committee Chair -->
+        <section class="committee-section">
+          <h3>Steering Committee Chair</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Sunanda Sinha</span>
+              <span class="member-affiliation">MNIT Jaipur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Website Chairs -->
+        <section class="committee-section">
+          <h3>Website Chairs</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Dr. Poonam Sharma</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Gaurav Mishra</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Soumyabrata Das​</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- National Advisory Committee -->
+        <section class="committee-section">
+          <h3>National Advisory Committee</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Prof. Rangan Banerjee</span>
+              <span class="member-affiliation">IIT Delhi</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Bhim Singh</span>
+              <span class="member-affiliation">IIT Delhi</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. K. Gopakumar</span>
+              <span class="member-affiliation">IISc Bangalore</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Chandan Chakraborty</span>
+              <span class="member-affiliation">IIT Kharagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Kishore Chatterjee</span>
+              <span class="member-affiliation">IIT Bombay</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Krishna Vasudevan</span>
+              <span class="member-affiliation">IIT Madras</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. S.N. Singh</span>
+              <span class="member-affiliation">IIT Kanpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. B.K. Panigrahi</span>
+              <span class="member-affiliation">IIT Delhi</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. H.M. Suryawanshi</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. M.V. Aware</span>
+              <span class="member-affiliation">NIT Arunachal Pradesh</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. V.B. Borghate</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. B.S. Umre</span>
+              <span class="member-affiliation">VNIT Nagpur</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Tripta Thakur</span>
+              <span class="member-affiliation">NPTI, MANIT Bhopal</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- International Advisory Committee -->
+        <section class="committee-section">
+          <h3>International Advisory Committee</h3>
+          <div class="members-grid">
+            <div class="member-card">
+              <span class="member-name">Prof. Akshay Rathore</span>
+              <span class="member-affiliation">SIT Singapore</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Giuseppe Buja</span>
+              <span class="member-affiliation"
+                >University of Padova, Italy</span
+              >
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Andew M Knight</span>
+              <span class="member-affiliation"
+                >University of Calgary, Canada</span
+              >
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Alberto Borghetti</span>
+              <span class="member-affiliation"
+                >University of Bologna, Italy</span
+              >
+            </div>
+            <div class="member-card">
+              <span class="member-name">Dr. Subhashish Bhattacharya</span>
+              <span class="member-affiliation">NC State University, USA</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Kashem Muttaqui</span>
+              <span class="member-affiliation"
+                >University of Wollongong, Australia</span
+              >
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Kouki Matsuse</span>
+              <span class="member-affiliation">Meiji University, Japan</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Lalit Goel</span>
+              <span class="member-affiliation">NTU Singapore</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Tapas Mallick</span>
+              <span class="member-affiliation">University of Exeter, UK</span>
+            </div>
+            <div class="member-card">
+              <span class="member-name">Prof. Hemanshu R. Pota</span>
+              <span class="member-affiliation">UNSW Australia</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2026 VNIT Nagpur. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+  </body>
+</html>
