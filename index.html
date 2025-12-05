@@ -38,6 +38,21 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/navigation.css" />
+
+    <style>
+      .pdf-embed {
+        width: 100%;
+        height: 100vh;
+        border: none;
+      }
+
+      @media (max-width: 768px) {
+        .pdf-embed {
+          height: 60vh;
+          min-height: 400px;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
@@ -111,9 +126,7 @@
                     role="menuitem"
                   >
                     <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >About Nagpur</span
-                      >
+                      <span class="ieee-dropdown-item-title">About Nagpur</span>
                     </div>
                   </a>
                 </div>
@@ -189,28 +202,13 @@
 
             <!-- Special Sessions -->
 
-
             <li class="ieee-nav-item" role="none">
-
-
               <a
-
-
                 href="conference/special-sessions.html"
-
-
                 class="ieee-nav-link"
-
-
                 role="menuitem"
-
-
                 >Special Sessions</a
-
-
               >
-
-
             </li>
 
             <!-- Speakers -->
@@ -482,25 +480,13 @@
               <div class="ieee-dropdown-menu" role="menu">
                 <div class="ieee-dropdown-content">
                   <a
-
                     href="conference/committee.html"
-
                     class="ieee-dropdown-item"
-
                     role="menuitem"
-
                   >
-
                     <div class="ieee-dropdown-item-content">
-
-                      <span class="ieee-dropdown-item-title"
-
-                        >Committee</span
-
-                      >
-
+                      <span class="ieee-dropdown-item-title">Committee</span>
                     </div>
-
                   </a>
                   <a
                     href="conference/accommodation.html"
@@ -1071,6 +1057,58 @@
               THE IEEE SEFET program will feature Keynotes and Plenary Sessions,
               Technical Paper Presentations, Industry Sessions, and Awards.
             </p>
+          </section>
+
+          <!-- Conference Brochure Section -->
+          <section style="margin: 2rem 0">
+            <details
+              style="
+                background: #f9fafb;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                overflow: hidden;
+              "
+            >
+              <summary
+                style="
+                  padding: 1rem;
+                  cursor: pointer;
+                  font-weight: bold;
+                  color: var(--color-primary);
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <span style="font-size: 1.2rem">Conference Brochure</span>
+                <span style="font-size: 1.5rem">+</span>
+              </summary>
+              <div style="padding: 1rem; border-top: 1px solid #e5e7eb">
+                <embed
+                  src="assets/conference%20brochure.pdf"
+                  type="application/pdf"
+                  class="pdf-embed"
+                />
+                <p style="margin-top: 1rem; text-align: center">
+                  <a
+                    href="assets/conference%20brochure.pdf"
+                    download="IEEE_SeFet_2026_Brochure.pdf"
+                    class="download-btn"
+                    style="
+                      display: inline-block;
+                      padding: 0.75rem 1.5rem;
+                      background-color: var(--color-primary);
+                      color: white;
+                      text-decoration: none;
+                      border-radius: 6px;
+                      font-weight: 500;
+                      transition: background-color 0.2s;
+                    "
+                    >Download Brochure PDF</a
+                  >
+                </p>
+              </div>
+            </details>
           </section>
 
           <hr class="divider" />
