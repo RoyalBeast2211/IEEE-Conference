@@ -202,6 +202,122 @@
           height: 10px;
         }
       }
+
+      /* Countdown Timer Styles */
+      .countdown-section {
+        background: linear-gradient(135deg, rgba(129, 60, 84, 0.03) 0%, rgba(184, 134, 11, 0.03) 100%);
+        padding: 12px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .countdown-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .countdown-label {
+        font-family: 'Roboto Slab', serif;
+        font-size: 0.9rem;
+        color: var(--color-primary);
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+
+      .countdown-timer {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px 12px;
+        background: linear-gradient(145deg, #ffffff, #f5f5f5);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(129, 60, 84, 0.08);
+        min-width: 58px;
+        border: 1px solid rgba(129, 60, 84, 0.08);
+      }
+
+      .countdown-value {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.2;
+      }
+
+      .countdown-unit {
+        font-size: 0.65rem;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        margin-top: 2px;
+      }
+
+      .countdown-separator {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: var(--color-primary);
+        opacity: 0.4;
+        padding: 0 2px;
+      }
+
+      @media (max-width: 768px) {
+        .countdown-section {
+          padding: 10px 15px;
+        }
+
+        .countdown-container {
+          gap: 10px;
+        }
+
+        .countdown-label {
+          font-size: 0.75rem;
+          width: 100%;
+          text-align: center;
+        }
+
+        .countdown-item {
+          padding: 5px 8px;
+          min-width: 48px;
+        }
+
+        .countdown-value {
+          font-size: 1.1rem;
+        }
+
+        .countdown-unit {
+          font-size: 0.55rem;
+        }
+
+        .countdown-separator {
+          font-size: 1rem;
+        }
+      }
+
+      /* Remove gap between countdown and carousel */
+      .home-page .main-content,
+      .main-content {
+        padding-top: 0 !important;
+      }
+      .home-page {
+        gap: 0 !important;
+        padding-top: 0 !important;
+      }
     </style>
   </head>
   <body>
@@ -1166,6 +1282,34 @@
       </div>
     </div>
 
+    <!-- Countdown Timer Section -->
+    <div class="countdown-section">
+      <div class="countdown-container">
+        <div class="countdown-label">Event Starts In</div>
+        <div class="countdown-timer" id="countdownTimer">
+          <div class="countdown-item">
+            <span class="countdown-value" id="days">000</span>
+            <span class="countdown-unit">Days</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="hours">00</span>
+            <span class="countdown-unit">Hours</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="minutes">00</span>
+            <span class="countdown-unit">Minutes</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="seconds">00</span>
+            <span class="countdown-unit">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Main Content -->
     <main class="main-content">
       <div class="home-page">
@@ -1187,6 +1331,9 @@
               </div>
               <div class="carousel-slide">
                 <img src="assets/home_carasoul/4.png" alt="IEEE SeFet 2026 - Image 4" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/home_carasoul/5.png" alt="IEEE SeFet 2026 - Image 5" />
               </div>
             </div>
 
@@ -1797,6 +1944,48 @@
         // Start autoplay
         startAutoPlay();
       });
+    </script>
+
+    <!-- Countdown Timer Script -->
+    <script>
+      (function() {
+        // SeFet 2026 Event Date: July 8, 2026
+        const eventDate = new Date('July 8, 2026 00:00:00').getTime();
+        
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = eventDate - now;
+
+          if (distance < 0) {
+            // Event has started
+            daysEl.textContent = '000';
+            hoursEl.textContent = '00';
+            minutesEl.textContent = '00';
+            secondsEl.textContent = '00';
+            document.querySelector('.countdown-label').textContent = 'Event Has Started!';
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          daysEl.textContent = String(days).padStart(3, '0');
+          hoursEl.textContent = String(hours).padStart(2, '0');
+          minutesEl.textContent = String(minutes).padStart(2, '0');
+          secondsEl.textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Update immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      })();
     </script>
   </body>
 </html>
