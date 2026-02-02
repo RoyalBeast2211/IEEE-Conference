@@ -1,0 +1,1959 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
+    />
+    <meta
+      name="keywords"
+      content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur"
+    />
+    <meta name="author" content="VNIT Nagpur" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation"
+    />
+    <meta
+      property="og:description"
+      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
+    />
+    <meta property="og:type" content="website" />
+
+    <title>Special Session Tracks - IEEE SeFet 2026</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/navigation.css" />
+
+    <style>
+      /* Special Session Tracks - Card-Based Design */
+      .cfp-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .cfp-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #e5e7eb;
+      }
+
+      .cfp-header h1 {
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+      }
+
+      /* Card Styles */
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: all 0.3s ease;
+        border: 1px solid #e5e7eb;
+      }
+
+      .card:hover {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
+      }
+
+      .card h2 {
+        color: var(--color-primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: 0;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid #f3f4f6;
+      }
+
+      .card h3 {
+        color: #374151;
+        font-size: 1.25rem;
+        margin: 1.5rem 0 0.75rem 0;
+      }
+
+      /* Intro Text */
+      .card-intro {
+        color: #4b5563;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      /* Track Card */
+      .track-card {
+        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        border-left: 4px solid var(--color-primary);
+      }
+
+      .track-card h2 {
+        color: var(--color-primary);
+        font-size: 1.3rem;
+      }
+
+      .track-organizers {
+        background: #f9fafb;
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .track-organizers strong {
+        color: var(--color-primary);
+      }
+
+      .track-organizers p {
+        margin: 0.5rem 0;
+        color: #374151;
+        line-height: 1.6;
+      }
+
+      /* Back Button */
+      .back-button-container {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .back-button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, #813c54 0%, #9d4a63 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(129, 60, 84, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        box-shadow: 0 6px 16px rgba(129, 60, 84, 0.4);
+        transform: translateY(-2px);
+        color: white;
+      }
+
+      /* Track List Styles */
+      .track-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .track-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 0.75rem;
+        background: #ffffff;
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+      }
+
+      .track-item:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        border-color: var(--color-primary);
+      }
+
+      .track-item.clickable {
+        cursor: pointer;
+      }
+
+      .track-item.clickable:hover {
+        background: linear-gradient(135deg, #fdf2f5 0%, #ffffff 100%);
+      }
+
+      .track-item.no-pdf {
+        opacity: 0.7;
+        cursor: default;
+      }
+
+      .track-item.no-pdf:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: #e5e7eb;
+      }
+
+      .track-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 52px;
+        height: 52px;
+        background: linear-gradient(135deg, #813c54 0%, #9d4a63 100%);
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        margin-right: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .track-item.no-pdf .track-number {
+        background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+      }
+
+      .track-content {
+        flex: 1;
+      }
+
+      .track-title {
+        color: #1f2937;
+        font-weight: 600;
+        font-size: 1.05rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .track-item.clickable .track-title {
+        color: var(--color-primary);
+      }
+
+      .track-link {
+        text-decoration: none;
+        display: block;
+      }
+
+      .pdf-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.5rem;
+        padding: 0.25rem 0.6rem;
+        background: #fef3c7;
+        color: #92400e;
+        font-size: 0;
+        font-weight: 600;
+        border-radius: 4px;
+      }
+
+      .pdf-badge::after {
+        content: "PDF";
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .pdf-badge svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .no-pdf-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.5rem;
+        padding: 0.25rem 0.6rem;
+        background: #f3f4f6;
+        color: #6b7280;
+        font-size: 0.75rem;
+        font-weight: 500;
+        border-radius: 4px;
+      }
+
+      /* Info Box Inside Cards */
+      .info-box {
+        background: #f9fafb;
+        border-left: 4px solid var(--color-primary);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 6px;
+      }
+
+      .info-box p {
+        margin: 0.75rem 0;
+        color: #374151;
+        line-height: 1.7;
+      }
+
+      .info-box strong {
+        color: var(--color-primary);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .cfp-container {
+          padding: 1.5rem 1rem;
+        }
+
+        .cfp-header h1 {
+          font-size: 1.75rem;
+          margin-top: 0;
+        }
+
+        .card {
+          padding: 1.5rem;
+          border-radius: 10px;
+        }
+
+        .card h2 {
+          font-size: 1.35rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cfp-header h1 {
+          font-size: 1.5rem;
+          margin-top: 0;
+        }
+
+        .card {
+          padding: 1.25rem;
+          border-radius: 8px;
+        }
+
+        .card h2 {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="ieee-professional-nav"
+      role="navigation"
+      aria-label="IEEE SeFet 2026 Main Navigation"
+    >
+      <div class="ieee-nav-container">
+        <!-- Desktop Navigation -->
+        <div class="ieee-nav-desktop">
+          <ul class="ieee-nav-menu" role="menubar">
+            <!-- Home -->
+            <li class="ieee-nav-item" role="none">
+              <a href="../index.html" class="ieee-nav-link" role="menuitem"
+                >Home</a
+              >
+            </li>
+
+            <!-- About Us -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="About Us"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                About Us
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../about/vnit.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">About VNIT</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../about/eed.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">About EED</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../about/maharashtra.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">About Nagpur</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Authors -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="Authors"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Authors
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/authors/call-for-papers.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Call for Papers</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/authors/camera-ready.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Camera Ready Submission</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/authors/publication-templates.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Publication & Templates</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Special Sessions -->
+            <li class="ieee-nav-item" role="none">
+              <a
+                href="../conference/special-sessions.html"
+                class="ieee-nav-link"
+                role="menuitem"
+                >Special Sessions</a
+              >
+            </li>
+
+            <!-- Speakers -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="Speakers"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Speakers
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/speakers/keynote.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Keynote Speakers</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/speakers/tutorial.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Tutorial Speakers</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Events -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="Events"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Events
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/events/program.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Program Schedule</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/wie.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">WIE Events</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/syp.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">SYP Events</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/academic-panel.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Academic Panel</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/industry.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Industry Events</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/events/city-tour.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">City Tour</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Registration -->
+            <li class="ieee-nav-item" role="none">
+              <a
+                href="../conference/registration.html"
+                class="ieee-nav-link"
+                role="menuitem"
+                >Registration</a
+              >
+            </li>
+
+            <!-- Awards -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="Awards"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Awards
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/awards/doctoral-thesis.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Doctoral Thesis Award</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/awards/student-travel.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Student Travel Awards</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/awards/best-paper.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Best Paper Award</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/awards/best-poster.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Best Poster Award</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <!-- More -->
+            <li class="ieee-nav-item has-dropdown" role="none">
+              <span
+                class="ieee-nav-link"
+                role="menuitem"
+                tabindex="0"
+                data-dropdown-trigger="More"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                More
+                <svg
+                  class="ieee-dropdown-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <div class="ieee-dropdown-menu" role="menu">
+                <div class="ieee-dropdown-content">
+                  <a
+                    href="../conference/committee.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">Committee</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/accommodation.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Accommodation</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/venue-contact.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Venue & Contact</span
+                      >
+                    </div>
+                  </a>
+
+                  <!-- Sponsorship submenu -->
+                  <span
+                    class="ieee-dropdown-item has-submenu"
+                    role="menuitem"
+                    data-submenu-trigger="More-Sponsorship"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">Sponsorship</span>
+                    </div>
+                    <span class="ieee-submenu-icon">•</span>
+                  </span>
+                  <div class="ieee-submenu" role="menu">
+                    <div class="ieee-submenu-content">
+                      <a
+                        href="../conference/sponsorship/sponsors.html"
+                        class="ieee-submenu-item"
+                        role="menuitem"
+                      >
+                        <div class="ieee-submenu-item-content">
+                          <span class="ieee-submenu-item-title"
+                            >Our Sponsors</span
+                          >
+                        </div>
+                      </a>
+                      <a
+                        href="../conference/sponsorship/details.html"
+                        class="ieee-submenu-item"
+                        role="menuitem"
+                      >
+                        <div class="ieee-submenu-item-content">
+                          <span class="ieee-submenu-item-title"
+                            >Sponsorship Details</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <a
+                    href="../conference/gallery.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >Photo Gallery</span
+                      >
+                    </div>
+                  </a>
+                  <a
+                    href="../conference/proceedings.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title"
+                        >SEFET Proceedings</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="ieee-mobile-toggle"
+          aria-expanded="false"
+          aria-controls="ieee-mobile-navigation"
+          aria-label="Toggle mobile navigation menu"
+        >
+          <span class="ieee-sr-only">Toggle navigation menu</span>
+          <div class="ieee-hamburger">
+            <span class="ieee-hamburger-line"></span>
+            <span class="ieee-hamburger-line"></span>
+            <span class="ieee-hamburger-line"></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="ieee-mobile-navigation"
+        class="ieee-mobile-nav"
+        role="navigation"
+        aria-label="Mobile navigation menu"
+      >
+        <div class="ieee-mobile-content">
+          <div class="ieee-mobile-header">
+            <div class="ieee-mobile-brand">
+              <span class="ieee-mobile-logo">IEEE SeFet 2026</span>
+              <span class="ieee-mobile-subtitle"
+                >Sustainable Energy and Future Electric Transportation</span
+              >
+            </div>
+            <button class="ieee-mobile-close" aria-label="Close mobile menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M18 6L6 18M6 6l12 12"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <ul class="ieee-mobile-menu" role="menu">
+            <!-- Home -->
+            <li class="ieee-mobile-item" role="none">
+              <a href="../index.html" class="ieee-mobile-link" role="menuitem"
+                >Home</a
+              >
+            </li>
+
+            <!-- About Us -->
+            <li class="ieee-mobile-item has-dropdown" role="none">
+              <button
+                class="ieee-mobile-link ieee-mobile-toggle-btn"
+                aria-expanded="false"
+                role="button"
+              >
+                About Us
+                <svg
+                  class="ieee-mobile-chevron"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul class="ieee-mobile-submenu" role="menu">
+                <li>
+                  <a href="../about/vnit.html" role="menuitem">About VNIT</a>
+                </li>
+                <li>
+                  <a href="../about/eed.html" role="menuitem">About EED</a>
+                </li>
+                <li>
+                  <a href="../about/maharashtra.html" role="menuitem"
+                    >About Nagpur</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Authors -->
+            <li class="ieee-mobile-item has-dropdown" role="none">
+              <button
+                class="ieee-mobile-link ieee-mobile-toggle-btn"
+                aria-expanded="false"
+                role="button"
+              >
+                Authors
+                <svg
+                  class="ieee-mobile-chevron"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul class="ieee-mobile-submenu" role="menu">
+                <li>
+                  <a
+                    href="../conference/authors/call-for-papers.html"
+                    role="menuitem"
+                    >Call for Papers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../conference/authors/camera-ready.html"
+                    role="menuitem"
+                    >Camera Ready Submission</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../conference/authors/publication-templates.html"
+                    role="menuitem"
+                    >Publication & Templates</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Special Sessions -->
+            <li class="ieee-mobile-item" role="none">
+              <a
+                href="../conference/special-sessions.html"
+                class="ieee-mobile-link"
+                role="menuitem"
+                >Special Sessions</a
+              >
+            </li>
+
+            <!-- Speakers -->
+            <li class="ieee-mobile-item has-dropdown" role="none">
+              <button
+                class="ieee-mobile-link ieee-mobile-toggle-btn"
+                aria-expanded="false"
+                role="button"
+              >
+                Speakers
+                <svg
+                  class="ieee-mobile-chevron"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul class="ieee-mobile-submenu" role="menu">
+                <li>
+                  <a href="../conference/speakers/keynote.html" role="menuitem"
+                    >Keynote Speakers</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/speakers/tutorial.html" role="menuitem"
+                    >Tutorial Speakers</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Events -->
+            <li class="ieee-mobile-item has-dropdown" role="none">
+              <button
+                class="ieee-mobile-link ieee-mobile-toggle-btn"
+                aria-expanded="false"
+                role="button"
+              >
+                Events
+                <svg
+                  class="ieee-mobile-chevron"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul class="ieee-mobile-submenu" role="menu">
+                <li>
+                  <a href="../conference/events/program.html" role="menuitem"
+                    >Program Schedule</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/events/wie.html" role="menuitem"
+                    >WIE Events</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/events/syp.html" role="menuitem"
+                    >SYP Events</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../conference/events/academic-panel.html"
+                    role="menuitem"
+                    >Academic Panel</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/events/industry.html" role="menuitem"
+                    >Industry Events</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/events/city-tour.html" role="menuitem"
+                    >City Tour</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Registration -->
+            <li class="ieee-mobile-item" role="none">
+              <a
+                href="../conference/registration.html"
+                class="ieee-mobile-link"
+                role="menuitem"
+                >Registration</a
+              >
+            </li>
+
+            <!-- Awards -->
+            <li class="ieee-mobile-item has-dropdown" role="none">
+              <button
+                class="ieee-mobile-link ieee-mobile-toggle-btn"
+                aria-expanded="false"
+                role="button"
+              >
+                Awards
+                <svg
+                  class="ieee-mobile-chevron"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul class="ieee-mobile-submenu" role="menu">
+                <li>
+                  <a
+                    href="../conference/awards/doctoral-thesis.html"
+                    role="menuitem"
+                    >Doctoral Thesis Award</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../conference/awards/student-travel.html"
+                    role="menuitem"
+                    >Student Travel Awards</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/awards/best-paper.html" role="menuitem"
+                    >Best Paper Award</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../conference/awards/best-poster.html"
+                    role="menuitem"
+                    >Best Poster Award</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- More -->
+            <li class="ieee-mobile-item has-dropdown" role="none">
+              <button
+                class="ieee-mobile-link ieee-mobile-toggle-btn"
+                aria-expanded="false"
+                role="button"
+              >
+                More
+                <svg
+                  class="ieee-mobile-chevron"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul class="ieee-mobile-submenu" role="menu">
+                <li>
+                  <a href="../conference/committee.html" role="menuitem"
+                    >Committee</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/accommodation.html" role="menuitem"
+                    >Accommodation</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/venue-contact.html" role="menuitem"
+                    >Venue & Contact</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../conference/sponsorship/sponsors.html"
+                    role="menuitem"
+                    >Our Sponsors</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../conference/sponsorship/details.html"
+                    role="menuitem"
+                    >Sponsorship Details</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/gallery.html" role="menuitem"
+                    >Photo Gallery</a
+                  >
+                </li>
+                <li>
+                  <a href="../conference/proceedings.html" role="menuitem"
+                    >SEFET Proceedings</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="cfp-container">
+        <!-- Page Header -->
+        <div class="cfp-header">
+          <h1>Special Session Tracks</h1>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-button-container">
+          <a href="special-sessions.html" class="back-button">
+            ← Back to Special Sessions
+          </a>
+        </div>
+
+        <!-- Introduction Card -->
+        <div class="card">
+          <h2>Accepted Special Session Tracks</h2>
+          <p class="card-intro">
+            The following special session tracks have been accepted for IEEE
+            SeFet 2026. Click to view PDF.
+          </p>
+        </div>
+
+        <!-- Track List -->
+        <div class="card">
+          <ul class="track-list">
+            <!-- 1 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS1_SEFET%2026.pdf', '_blank')
+              "
+            >
+              <div class="track-number">1</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Adaptive Protection and Control of PV-Integrated Microgrids
+                  Under Intermittent Generation
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 2 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS2_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">2</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Advancements in Power Converters for Hydrogen-Based Hybrid
+                  Microgrid Systems
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 3 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS3_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">3</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Resilient Self-Healing Grids & Distributed Restoration
+                  Technologies
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 4 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS4_SEFET%2026.pdf', '_blank')
+              "
+            >
+              <div class="track-number">4</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Artificial-Intelligence-enabled Planning, Analysis and Control
+                  of Electric mobility Resources (Land, Sea & Air) (AI-PACER)
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 5 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS05_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">5</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Cyber-Physical Systems and Smart Urban Infrastructures for
+                  Sustainable Future Cities
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 6 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS06_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">6</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Digital Twins and AI-Based Control for Industrial Microgrids
+                  and Energy Management Systems
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 7 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS07_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">7</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Intelligent Wind and Hybrid Renewable Energy Systems:
+                  Reinventing the Global Energy Future
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 8 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS8_SEFET%2026.pdf', '_blank')
+              "
+            >
+              <div class="track-number">8</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Soft Computing, Evolutionary Algorithms, and Metaheuristic
+                  Optimization methods for Modern Energy Applications
+                  (SCEMO-MEA)
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 9 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS09_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">9</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Advanced Challenges and Solutions for Resilient Modern Power
+                  Systems
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 10 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS10_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">10</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Eco Rating and Lifecycle Intelligence for Electrotechnical
+                  Products
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 11 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS11_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">11</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Future-Proofing Transport: Autonomous & Connected Electric
+                  Vehicles
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 12 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS12_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">12</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Intelligent AI Techniques for Electric Vehicles and Secure,
+                  Fault-Tolerant High-Power Charging Converters
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 13 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS13_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">13</div>
+              <div class="track-content">
+                <p class="track-title">
+                  AI-Driven Optimization of Green Microgrids and E-Mobility for
+                  Real-Time Energy Management and Sustainability (AI-GMEMS)
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 14 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open(
+                  '../assets/ss_sefet26/SS14_SEFET%2026.pdf',
+                  '_blank',
+                )
+              "
+            >
+              <div class="track-number">14</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Virtual Replicas for Real-Time Monitoring, Control, and
+                  Optimization of Sustainable Energy Technologies
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 15 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open(
+                  '../assets/ss_sefet26/SS15_SEFET%2026.pdf',
+                  '_blank',
+                )
+              "
+            >
+              <div class="track-number">15</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Next-Generation Multilevel Inverters for Green Energy and
+                  e-Mobility
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 16 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS16_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">16</div>
+              <div class="track-content">
+                <p class="track-title">
+                  AI-Enabled Power Electronics for Sustainable Energy and
+                  Transportation (APSET)
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 17 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS17_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">17</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Advanced Energy Storage and Electric Vehicle Integration
+                  Strategies for Reliable and Efficient Renewable Grids
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 18 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS18_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">18</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Thermal Management of Batteries for Automotive and Energy
+                  Storage Systems
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 19 - No PDF available -->
+            <li class="track-item no-pdf">
+              <div class="track-number">19</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Advances in Distribution Automation Systems for Sustainable
+                  Energy and Future Electric Transportation
+                </p>
+                <span class="no-pdf-badge">Coming Soon</span>
+              </div>
+            </li>
+
+            <!-- 20 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open('../assets/ss_sefet26/SS20_SEFET26.pdf', '_blank')
+              "
+            >
+              <div class="track-number">20</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Generative Artificial Intelligence and Intelligent Computing
+                  Techniques for Smart Energy Systems
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+
+            <!-- 21 -->
+            <li
+              class="track-item clickable"
+              onclick="
+                window.open(
+                  '../assets/ss_sefet26/SS21_SEFET%2026.pdf',
+                  '_blank',
+                )
+              "
+            >
+              <div class="track-number">21</div>
+              <div class="track-content">
+                <p class="track-title">
+                  Futuristic Motor Design and Evolving Power Electronics
+                  Technologies for Electric Mobility and Grid-Interactive Energy
+                  Systems
+                </p>
+                <span class="pdf-badge">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                  </svg>
+                  View PDF
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- More Information Card -->
+        <div class="card">
+          <h2>Submit to a Special Session Track</h2>
+          <div class="info-box">
+            <p>
+              When submitting your paper, please select the appropriate special
+              session track during the submission process. For questions about
+              specific tracks, please contact the track organizers directly.
+            </p>
+            <p>
+              <strong>General Inquiries:</strong><br />
+              Email:
+              <a
+                href="mailto:ieeesefet2026@vnit.ac.in"
+                style="color: var(--color-primary)"
+                >ieeesefet2026@vnit.ac.in</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2026 VNIT Nagpur. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/navigation.js"></script>
+  </body>
+</html>
