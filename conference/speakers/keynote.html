@@ -1,28 +1,328 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
-    <meta name="keywords" content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur">
-    <meta name="author" content="VNIT Nagpur">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
+    />
+    <meta
+      name="keywords"
+      content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur"
+    />
+    <meta name="author" content="VNIT Nagpur" />
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation">
-    <meta property="og:description" content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
-    <meta property="og:type" content="website">
-    
+    <meta
+      property="og:title"
+      content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation"
+    />
+    <meta
+      property="og:description"
+      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
+    />
+    <meta property="og:type" content="website" />
+
     <title>Keynote Speakers - IEEE SeFet 2026</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../../assets/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../../assets/favicon.png">
-    
+    <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../../assets/favicon.png"
+    />
+
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/navigation.css">
-</head>
-<body>    <!-- Navigation -->
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/navigation.css" />
+
+    <style>
+      /* Keynote Speakers - Visually Stunning Design */
+      .speakers-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1rem 1rem 3rem;
+      }
+
+      /* Hero Header */
+      .speakers-hero {
+        background: linear-gradient(
+          135deg,
+          #1e3a5f 0%,
+          #2d5a87 50%,
+          #3d7ab5 100%
+        );
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 25px 80px rgba(30, 58, 95, 0.35);
+      }
+
+      .speakers-hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.08) 0%,
+          transparent 60%
+        );
+        animation: shimmer 20s infinite linear;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .speakers-hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .speakers-hero-icon {
+        width: 90px;
+        height: 90px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.75rem;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .speakers-hero h1 {
+        color: #ffffff;
+        margin: 0 0 0.75rem 0;
+        font-size: 2.5rem;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+      }
+
+      .speakers-hero .subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.15rem;
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Speaker Card */
+      .speaker-card {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2.5rem;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        transition: all 0.4s ease;
+      }
+
+      .speaker-card:hover {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+      }
+
+      .speaker-header {
+        background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .speaker-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        transform: translate(30%, -30%);
+      }
+
+      .speaker-image-container {
+        position: relative;
+        z-index: 1;
+        flex-shrink: 0;
+      }
+
+      .speaker-image {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .speaker-number {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      }
+
+      .speaker-info {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+      }
+
+      .speaker-name {
+        color: #ffffff;
+        font-size: 1.6rem;
+        margin: 0 0 0.5rem 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .speaker-title {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.05rem;
+        margin: 0 0 0.75rem 0;
+        line-height: 1.5;
+      }
+
+      .speaker-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .speaker-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        padding: 0.35rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .speaker-badge.fellow {
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.3) 0%,
+          rgba(217, 119, 6, 0.3) 100%
+        );
+        border-color: rgba(245, 158, 11, 0.5);
+      }
+
+      .speaker-body {
+        padding: 2rem;
+      }
+
+      .bio-section h3 {
+        color: var(--color-primary);
+        font-size: 1.15rem;
+        margin: 0 0 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .bio-text {
+        color: #4b5563;
+        font-size: 1rem;
+        line-height: 1.85;
+        text-align: justify;
+        margin: 0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .speakers-hero {
+          padding: 2rem 1.5rem;
+        }
+
+        .speakers-hero h1 {
+          font-size: 1.85rem;
+        }
+
+        .speaker-header {
+          flex-direction: column;
+          text-align: center;
+          padding: 1.75rem;
+        }
+
+        .speaker-image {
+          width: 140px;
+          height: 140px;
+        }
+
+        .speaker-name {
+          font-size: 1.4rem;
+        }
+
+        .speaker-badges {
+          justify-content: center;
+        }
+
+        .speaker-body {
+          padding: 1.5rem;
+        }
+
+        .bio-text {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .speaker-image {
+          width: 120px;
+          height: 120px;
+        }
+
+        .speaker-name {
+          font-size: 1.25rem;
+        }
+
+        .speaker-title {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
     <nav
       class="ieee-professional-nav"
       role="navigation"
@@ -93,9 +393,7 @@
                     role="menuitem"
                   >
                     <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >About Nagpur</span
-                      >
+                      <span class="ieee-dropdown-item-title">About Nagpur</span>
                     </div>
                   </a>
                 </div>
@@ -171,28 +469,13 @@
 
             <!-- Special Sessions -->
 
-
             <li class="ieee-nav-item" role="none">
-
-
               <a
-
-
                 href="../../conference/special-sessions.html"
-
-
                 class="ieee-nav-link"
-
-
                 role="menuitem"
-
-
                 >Special Sessions</a
-
-
               >
-
-
             </li>
 
             <!-- Speakers -->
@@ -464,25 +747,13 @@
               <div class="ieee-dropdown-menu" role="menu">
                 <div class="ieee-dropdown-content">
                   <a
-
                     href="../../conference/committee.html"
-
                     class="ieee-dropdown-item"
-
                     role="menuitem"
-
                   >
-
                     <div class="ieee-dropdown-item-content">
-
-                      <span class="ieee-dropdown-item-title"
-
-                        >Committee</span
-
-                      >
-
+                      <span class="ieee-dropdown-item-title">Committee</span>
                     </div>
-
                   </a>
                   <a
                     href="../../conference/accommodation.html"
@@ -506,7 +777,7 @@
                       >
                     </div>
                   </a>
-                  
+
                   <!-- Sponsorship submenu -->
                   <span
                     class="ieee-dropdown-item has-submenu"
@@ -646,10 +917,14 @@
                   </svg>
                 </button>
                 <div class="ieee-mobile-submenu">
-                  <a href="../../about/vnit.html" class="ieee-mobile-submenu-item"
+                  <a
+                    href="../../about/vnit.html"
+                    class="ieee-mobile-submenu-item"
                     >About VNIT</a
                   >
-                  <a href="../../about/eed.html" class="ieee-mobile-submenu-item"
+                  <a
+                    href="../../about/eed.html"
+                    class="ieee-mobile-submenu-item"
                     >About EED</a
                   >
                   <a
@@ -946,22 +1221,287 @@
       </div>
     </nav>
 
-
-
     <!-- Main Content -->
-<main class="main-content">
+    <main class="main-content">
+      <div class="speakers-container">
+        <!-- Hero Section -->
+        <div class="speakers-hero">
+          <div class="speakers-hero-content">
+            <div class="speakers-hero-icon">🎤</div>
+            <h1>Keynote Speakers</h1>
+            <p class="subtitle">
+              Distinguished experts from academia and industry sharing their
+              insights on the future of sustainable energy, power electronics,
+              and electric mobility at IEEE SEFET 2026.
+            </p>
+          </div>
+        </div>
 
-<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; text-align: center;">
+        <!-- Speaker 1: Prof. Avoki Michel Omekanda -->
+        <div class="speaker-card">
+          <div class="speaker-header">
+            <div class="speaker-image-container">
+              <img
+                src="../../assets/keynote_speakers/Prof. Avoki Michel Omekanda.jpg"
+                alt="Prof. Avoki Michel Omekanda"
+                class="speaker-image"
+              />
+            </div>
+            <div class="speaker-info">
+              <h2 class="speaker-name">Prof. Avoki Michel Omekanda</h2>
+              <p class="speaker-title">
+                Staff Research Engineer, Propulsion Systems Research Lab<br />General
+                Motors Global R&D Center, Warren, MI, USA
+              </p>
+              <div class="speaker-badges">
+                <span class="speaker-badge fellow">⭐ Fellow IEEE</span>
+                <span class="speaker-badge">🏛️ President-Elect, IEEE IAS</span>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-body">
+            <div class="bio-section">
+              <h3>📖 Biography</h3>
+              <p class="bio-text">
+                Dr. Omekanda received the M.Sc. degree in electrical and
+                mechanical engineering from the Free University of Brussels
+                (Universite Libre de Bruxelles), Belgium in 1992 and 1995,
+                respectively. In 1997, He received the Ph.D. degree in
+                Electromechanical Engineering from the University of Liège,
+                Belgium. He has about thirty years of experience in the design
+                of electrical machines (Switched Reluctance Motors, Permanent
+                Magnet Synchronous Motors, and Induction Motors) spanning
+                academia and industry. From 1992 to 1999, he held Research
+                Associate positions at the Free University of Brussels and the
+                University of Liège, Belgium, before joining Delphi Automotive
+                Systems, Saginaw, MI, USA, from 1999 to 2001 as a Senior
+                Research Engineer. Since 2001, he has been with the General
+                Motors Research & Development Center, Warren, MI, where he is
+                currently a Staff Research Engineer at the Propulsion Systems
+                Research Lab. Dr. Omekanda has authored and coauthored more than
+                60 technical papers and holds twelve issued U.S. patents. He is
+                President-Elect of the IEEE Industry Applications Society (IAS).
+                He served as President of the IEEE IAS Industrial Drives
+                Committee (2021-2022) and Vice-President of the IEEE IAS
+                Renewable & Sustainable Energy Conversion Systems Department
+                (2022-2024). He is an IAS Distinguished Lecturer since 2015. Dr.
+                Omekanda is a Fellow of the IEEE.
+              </p>
+            </div>
+          </div>
+        </div>
 
-<h1>To be Updated Soon</h1>
+        <!-- Speaker 2: Prof. Babu Chalamala -->
+        <div class="speaker-card">
+          <div class="speaker-header">
+            <div class="speaker-image-container">
+              <img
+                src="../../assets/keynote_speakers/Prof. Babu Chalamala.jpg"
+                alt="Prof. Babu Chalamala"
+                class="speaker-image"
+              />
+            </div>
+            <div class="speaker-info">
+              <h2 class="speaker-name">Prof. Babu Chalamala</h2>
+              <p class="speaker-title">
+                Department of Electrical and Computer Engineering<br />The
+                University of Texas at Dallas, Richardson, TX, USA
+              </p>
+              <div class="speaker-badges">
+                <span class="speaker-badge fellow">⭐ Fellow IEEE</span>
+                <span class="speaker-badge">🏛️ VP Conferences, IEEE PES</span>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-body">
+            <div class="bio-section">
+              <h3>📖 Biography</h3>
+              <p class="bio-text">
+                Dr. Babu Chalamala is a professor of Electrical and Computer
+                Engineering Department at the University of Texas at Dallas,
+                Richardson, TX, USA. Prior to joining UTD, he was the manager of
+                the Grid Energy Storage Department and the Energy Storage
+                Technology and Systems Group at Sandia National Laboratories,
+                Albuquerque, NM, USA. He has over three decades of R&D
+                experience across industry, national lab, and academia. He is
+                recognized for his research in energy storage, electronic
+                materials and devices, and nanotechnology, that has led to more
+                than 200 publications and 14 issued US patents. His current
+                research interests are in battery, flow battery, supercapacitor,
+                and hybrid technology. He is actively involved in grid-scale
+                stationary storage and EV integration where he led major
+                engagements with utilities and the automotive industry. Dr.
+                Chalamala received his PhD in Physics from the University of
+                North Texas. He is a Fellow of IEEE, the Society for Information
+                Display (SID), and American Physical Society (APS). His IEEE
+                volunteer activities include serving as Vice President of
+                Conferences of the IEEE Power and Energy Society and the Chair
+                of the IEEE-USA Energy Policy Committee. Earlier, he served as
+                the chair of the Long-Range Planning Committee, and a member of
+                the Governance Committee of IEEE-PES. He also served as the
+                chair of the IEEE Nanotechnology Council.
+              </p>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <!-- Speaker 3: Prof. Marta Molinas -->
+        <div class="speaker-card">
+          <div class="speaker-header">
+            <div class="speaker-image-container">
+              <img
+                src="../../assets/keynote_speakers/Prof. Marta Molinas.jpg"
+                alt="Prof. Marta Molinas"
+                class="speaker-image"
+              />
+            </div>
+            <div class="speaker-info">
+              <h2 class="speaker-name">Prof. Marta Molinas</h2>
+              <p class="speaker-title">
+                Department of Engineering Cybernetics<br />Norwegian University
+                of Science and Technology (NTNU), Norway
+              </p>
+              <div class="speaker-badges">
+                <span class="speaker-badge fellow">⭐ Fellow IEEE</span>
+                <span class="speaker-badge">🔬 Power Electronics Expert</span>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-body">
+            <div class="bio-section">
+              <h3>📖 Biography</h3>
+              <p class="bio-text">
+                Marta Molinas (Fellow, IEEE) received the Diploma degree in
+                electromechanical engineering from the National University of
+                Asuncion, Asuncion, Paraguay, in 1992, the M.Sc. degree from the
+                University of the Ryukyus, Nishihara, Japan, in 1997, and the
+                D.Eng. degree from the Tokyo Institute of Technology, Tokyo,
+                Japan, in 2000. She was a Guest Researcher with the University
+                of Padova, Padova, Italy, in 1998. From 2004 to 2007, she was a
+                Postdoctoral Researcher with the Norwegian University of Science
+                and Technology (NTNU), Trondheim, Norway, where she has been a
+                Professor in 2008 within the Department of Engineering
+                Cybernetics. From 2008 to 2009, she was a JSPS Research Fellow
+                with the Energy Technology Research Institute, National
+                Institute of Advanced Industrial Science and Technology,
+                Tsukuba, Japan. Her current research interests include stability
+                of power electronics systems, harmonics and oscillations in
+                power electronics dominated power systems, and science of
+                complex systems. Dr. Molinas is currently an Editor-at-Large of
+                the IEEE Industrial Electronics Magazine and was the
+                Editor-in-Chief of the IEEE TRANSACTIONS ON ENERGY CONVERSION.
+                She has been an AdCom Member-at-Large of the IEEE Power
+                Electronics Society from 2019 to 2022.
+              </p>
+            </div>
+          </div>
+        </div>
 
- 
+        <!-- Speaker 4: Prof. Mahesh Krishnamurthy -->
+        <div class="speaker-card">
+          <div class="speaker-header">
+            <div class="speaker-image-container">
+              <img
+                src="../../assets/keynote_speakers/Prof. Mahesh Krishnamurthy.jpg"
+                alt="Prof. Mahesh Krishnamurthy"
+                class="speaker-image"
+              />
+            </div>
+            <div class="speaker-info">
+              <h2 class="speaker-name">Prof. Mahesh Krishnamurthy</h2>
+              <p class="speaker-title">
+                Caruth Institute Chair Professor, Department of Electrical
+                Engineering<br />Southern Methodist University (SMU), Dallas,
+                TX, USA
+              </p>
+              <div class="speaker-badges">
+                <span class="speaker-badge">🔬 ASPEN Lab Director</span>
+                <span class="speaker-badge">📚 175+ Publications</span>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-body">
+            <div class="bio-section">
+              <h3>📖 Biography</h3>
+              <p class="bio-text">
+                Dr. Mahesh Krishnamurthy is the Caruth Institute Chair Professor
+                in the Department of Electrical Engineering at Southern
+                Methodist University (SMU), Dallas. He is also the founding
+                director of the Advanced Sustainable Power and Energy Networks
+                (ASPEN) Lab at SMU. His research interests include the design
+                and control of electric machines and power electronic
+                converters. He actively works with industry to develop
+                innovative solutions to real world problems. His research is
+                primarily focused on the electrification of transportation,
+                sustainable energy systems, and grid-based energy
+                infrastructure. He has authored over 175 publications, five book
+                chapters, and has won over 40 prizes and awards. He has also
+                licensed three patents, one of which was for an electric machine
+                that won the 2013 R&D 100 Award. He has been awarded several
+                best paper awards and three of the faculty awards at IIT. He has
+                been a PI on several projects from government agencies and
+                industry which total over $15 million in research funding. Dr.
+                Krishnamurthy served as the chair of the IEEE Transportation
+                Electrification Community (TEC) for 2020-21. He is currently
+                serving as the vice chair of the IEEE TEC steering committee.
+              </p>
+            </div>
+          </div>
+        </div>
 
-
+        <!-- Speaker 5: Mr. Vivek Pandey -->
+        <div class="speaker-card">
+          <div class="speaker-header">
+            <div class="speaker-image-container">
+              <img
+                src="../../assets/keynote_speakers/Mr. Vivek Pandey.jpg"
+                alt="Mr. Vivek Pandey"
+                class="speaker-image"
+              />
+            </div>
+            <div class="speaker-info">
+              <h2 class="speaker-name">Mr. Vivek Pandey</h2>
+              <p class="speaker-title">
+                Chief General Manager, Grid-India<br />Ministry of Power,
+                Government of India
+              </p>
+              <div class="speaker-badges">
+                <span class="speaker-badge">⚡ Grid Management Expert</span>
+                <span class="speaker-badge">🏢 Industry Leader</span>
+              </div>
+            </div>
+          </div>
+          <div class="speaker-body">
+            <div class="bio-section">
+              <h3>📖 Biography</h3>
+              <p class="bio-text">
+                Mr. Vivek Pandey is the Chief General Manager of Grid-India,
+                where he leads critical grid integration and system operation
+                functions. He is responsible for managing complex technical
+                challenges related to integrating renewable energy resources
+                into the Indian power grid. He has over two decades of
+                experience in the power sector and has played a pivotal role in
+                advancing grid reliability and sustainable energy transitions in
+                India. Under his leadership, Grid-India has been at the
+                forefront of implementing innovative grid management solutions
+                to support India's ambitious renewable energy targets. Mr.
+                Pandey is recognized for his expertise in power system
+                operations, transmission planning, and grid stability analysis.
+                He is a strong advocate for smart grid technologies and grid
+                modernization initiatives that support energy security and
+                sustainability. He has been instrumental in various
+                national-level projects and has collaborated with international
+                organizations for grid management best practices. His
+                contributions have been vital in strengthening the resilience
+                and flexibility of India's electricity infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- Scripts -->
     <script src="../../js/navigation.js"></script>
-</body>
+  </body>
 </html>

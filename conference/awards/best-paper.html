@@ -1,28 +1,361 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
-    <meta name="keywords" content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur">
-    <meta name="author" content="VNIT Nagpur">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
+    />
+    <meta
+      name="keywords"
+      content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur"
+    />
+    <meta name="author" content="VNIT Nagpur" />
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation">
-    <meta property="og:description" content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
-    <meta property="og:type" content="website">
-    
+    <meta
+      property="og:title"
+      content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation"
+    />
+    <meta
+      property="og:description"
+      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
+    />
+    <meta property="og:type" content="website" />
+
     <title>Best Paper Award - IEEE SeFet 2026</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../../assets/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../../assets/favicon.png">
-    
+    <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../../assets/favicon.png"
+    />
+
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/navigation.css">
-</head>
-<body>    <!-- Navigation -->
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/navigation.css" />
+
+    <style>
+      /* Best Paper Award - Visually Stunning Design */
+      .award-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 1rem 1rem 3rem;
+      }
+
+      /* Hero Header with Gradient */
+      .award-hero {
+        background: linear-gradient(
+          135deg,
+          #f59e0b 0%,
+          #d97706 50%,
+          #b45309 100%
+        );
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(245, 158, 11, 0.3);
+      }
+
+      .award-hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.15) 0%,
+          transparent 60%
+        );
+        animation: shimmer 15s infinite linear;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .award-hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .award-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.5rem;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .award-hero h1 {
+        color: #ffffff;
+        margin: 0 0 0.75rem 0;
+        font-size: 2.25rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .award-hero .subtitle {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Auto Badge Banner */
+      .auto-banner {
+        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        border: 2px solid #10b981;
+        border-radius: 16px;
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+      }
+
+      .auto-banner .icon {
+        font-size: 2rem;
+      }
+
+      .auto-banner .text {
+        text-align: left;
+      }
+
+      .auto-banner .main {
+        color: #065f46;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .auto-banner .sub {
+        color: #047857;
+        font-size: 0.95rem;
+      }
+
+      /* Cards */
+      .card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        transform: translateY(-3px);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f3f4f6;
+      }
+
+      .card-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .card h2 {
+        color: var(--color-primary);
+        font-size: 1.4rem;
+        margin: 0;
+        text-shadow: none;
+      }
+
+      .card p {
+        max-width: none;
+        color: #4b5563;
+        margin: 0 0 1rem 0;
+        font-size: 1.05rem;
+        line-height: 1.75;
+      }
+
+      /* Criteria Grid */
+      .criteria-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .criteria-item {
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        border: 1px solid #fde68a;
+        border-radius: 12px;
+        padding: 1.25rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .criteria-item .icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .criteria-item h3 {
+        color: #92400e;
+        font-size: 1rem;
+        margin: 0 0 0.25rem 0;
+      }
+
+      .criteria-item p {
+        color: #78350f;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      /* Warning Callout */
+      .warning-callout {
+        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+        border-left: 4px solid #dc2626;
+        border-radius: 0 12px 12px 0;
+        padding: 1.25rem 1.5rem;
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .warning-callout .icon {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .warning-callout p {
+        margin: 0;
+        color: #991b1b;
+      }
+
+      /* Highlight Box */
+      .highlight-box {
+        background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+        border: 2px solid #facc15;
+        border-radius: 16px;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+
+      .highlight-box .trophy {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .highlight-box p {
+        margin: 0;
+        color: #854d0e;
+        font-size: 1.15rem;
+      }
+
+      /* Eligibility List */
+      .eligibility-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0 0;
+      }
+
+      .eligibility-list li {
+        position: relative;
+        padding: 0.75rem 0 0.75rem 2.5rem;
+        color: #374151;
+        line-height: 1.6;
+        border-bottom: 1px solid #f3f4f6;
+      }
+
+      .eligibility-list li:last-child {
+        border-bottom: none;
+      }
+
+      .eligibility-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0.75rem;
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
+
+      @media (max-width: 768px) {
+        .award-hero {
+          padding: 2rem 1.5rem;
+        }
+
+        .award-hero h1 {
+          font-size: 1.75rem;
+        }
+
+        .auto-banner {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .auto-banner .text {
+          text-align: center;
+        }
+
+        .card {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
     <nav
       class="ieee-professional-nav"
       role="navigation"
@@ -93,9 +426,7 @@
                     role="menuitem"
                   >
                     <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >About Nagpur</span
-                      >
+                      <span class="ieee-dropdown-item-title">About Nagpur</span>
                     </div>
                   </a>
                 </div>
@@ -171,28 +502,13 @@
 
             <!-- Special Sessions -->
 
-
             <li class="ieee-nav-item" role="none">
-
-
               <a
-
-
                 href="../../conference/special-sessions.html"
-
-
                 class="ieee-nav-link"
-
-
                 role="menuitem"
-
-
                 >Special Sessions</a
-
-
               >
-
-
             </li>
 
             <!-- Speakers -->
@@ -464,25 +780,13 @@
               <div class="ieee-dropdown-menu" role="menu">
                 <div class="ieee-dropdown-content">
                   <a
-
                     href="../../conference/committee.html"
-
                     class="ieee-dropdown-item"
-
                     role="menuitem"
-
                   >
-
                     <div class="ieee-dropdown-item-content">
-
-                      <span class="ieee-dropdown-item-title"
-
-                        >Committee</span
-
-                      >
-
+                      <span class="ieee-dropdown-item-title">Committee</span>
                     </div>
-
                   </a>
                   <a
                     href="../../conference/accommodation.html"
@@ -506,7 +810,7 @@
                       >
                     </div>
                   </a>
-                  
+
                   <!-- Sponsorship submenu -->
                   <span
                     class="ieee-dropdown-item has-submenu"
@@ -646,10 +950,14 @@
                   </svg>
                 </button>
                 <div class="ieee-mobile-submenu">
-                  <a href="../../about/vnit.html" class="ieee-mobile-submenu-item"
+                  <a
+                    href="../../about/vnit.html"
+                    class="ieee-mobile-submenu-item"
                     >About VNIT</a
                   >
-                  <a href="../../about/eed.html" class="ieee-mobile-submenu-item"
+                  <a
+                    href="../../about/eed.html"
+                    class="ieee-mobile-submenu-item"
                     >About EED</a
                   >
                   <a
@@ -946,18 +1254,120 @@
       </div>
     </nav>
 
+    <main class="main-content">
+      <div class="award-container">
+        <!-- Hero Section -->
+        <div class="award-hero">
+          <div class="award-hero-content">
+            <div class="award-icon">📄</div>
+            <h1>Best Paper Award</h1>
+            <p class="subtitle">
+              Recognizing outstanding research contributions and exceptional
+              presentations at IEEE SEFET 2026.
+            </p>
+          </div>
+        </div>
 
+        <!-- Auto Nomination Banner -->
+        <div class="auto-banner">
+          <div class="icon">✨</div>
+          <div class="text">
+            <div class="main">Automatic Nomination</div>
+            <div class="sub">
+              All accepted papers are automatically nominated – no separate
+              application required!
+            </div>
+          </div>
+        </div>
 
-<main class="main-content">
+        <!-- About the Award Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">🏆</div>
+            <h2>About the Award</h2>
+          </div>
+          <p>
+            All accepted papers are <strong>automatically nominated</strong> for
+            the Best Paper Award. Selection will be based on the
+            <strong>quality of the presentation</strong> and the
+            <strong>responses during the technical sessions</strong>.
+          </p>
 
-<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; text-align: center;">
+          <div class="highlight-box">
+            <div class="trophy">🏆</div>
+            <p>
+              The Best Paper will be announced during the
+              <strong>Valedictory Session</strong>
+            </p>
+          </div>
+        </div>
 
-<h1>To be Updated Soon</h1>
+        <!-- Eligibility Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <h2>Eligibility</h2>
+          </div>
+          <ul class="eligibility-list">
+            <li>Paper must be accepted for IEEE SEFET 2026.</li>
+            <li>
+              At least one author must present the paper in person at the
+              conference.
+            </li>
+            <li>
+              No separate application is required – all accepted papers are
+              automatically considered.
+            </li>
+          </ul>
 
-</div>
+          <div class="warning-callout">
+            <div class="icon">⚠️</div>
+            <p>
+              <strong>Important:</strong> Presentation of the paper at SEFET
+              2026 is <strong>mandatory</strong> to be eligible for nomination
+              for this award.
+            </p>
+          </div>
+        </div>
 
+        <!-- Selection Criteria Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <h2>Selection Criteria</h2>
+          </div>
+          <p>Papers will be evaluated based on the following criteria:</p>
+
+          <div class="criteria-grid">
+            <div class="criteria-item">
+              <div class="icon">💡</div>
+              <div>
+                <h3>Technical Quality</h3>
+                <p>Novelty, significance, and soundness of the research.</p>
+              </div>
+            </div>
+            <div class="criteria-item">
+              <div class="icon">🎤</div>
+              <div>
+                <h3>Presentation Quality</h3>
+                <p>Clarity, organization, and delivery of the presentation.</p>
+              </div>
+            </div>
+            <div class="criteria-item">
+              <div class="icon">💬</div>
+              <div>
+                <h3>Q&amp;A Session</h3>
+                <p>
+                  Depth and quality of responses to questions from the audience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- Scripts -->
     <script src="../../js/navigation.js"></script>
-</body>
+  </body>
 </html>

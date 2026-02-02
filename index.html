@@ -52,6 +52,156 @@
           min-height: 400px;
         }
       }
+
+      /* Carousel Styles */
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .carousel-wrapper {
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f0f0f0;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      /* Fix for wide banner image */
+      .carousel-slide:first-child img {
+        object-fit: contain;
+        max-height: 500px;
+        width: auto;
+        max-width: 100%;
+      }
+
+      /* Carousel Navigation Arrows */
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .carousel-btn:hover {
+        background: #ffffff;
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .carousel-btn svg {
+        width: 24px;
+        height: 24px;
+        color: var(--color-primary, #813c54);
+      }
+
+      .carousel-btn-prev {
+        left: 20px;
+      }
+
+      .carousel-btn-next {
+        right: 20px;
+      }
+
+      /* Carousel Indicators */
+      .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+      }
+
+      .carousel-indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-indicator.active {
+        background: #ffffff;
+        transform: scale(1.2);
+      }
+
+      .carousel-indicator:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Progress Bar */
+      .carousel-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--color-primary, #813c54), var(--color-secondary, #b8860b));
+        width: 0%;
+        z-index: 10;
+        transition: width 0.1s linear;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-btn {
+          width: 40px;
+          height: 40px;
+        }
+
+        .carousel-btn svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .carousel-btn-prev {
+          left: 10px;
+        }
+
+        .carousel-btn-next {
+          right: 10px;
+        }
+
+        .carousel-indicators {
+          bottom: 15px;
+          gap: 8px;
+        }
+
+        .carousel-indicator {
+          width: 10px;
+          height: 10px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1019,13 +1169,54 @@
     <!-- Main Content -->
     <main class="main-content">
       <div class="home-page">
-        <!-- Banner Section -->
+        <!-- Banner Carousel Section -->
         <div class="content-section" style="padding-top: 0">
-          <div class="banner">
-            <img
-              src="assets/banner.jpg"
-              alt="IEEE SeFet 2026 Conference Banner"
-            />
+          <div class="carousel-container" id="heroCarousel">
+            <div class="carousel-wrapper">
+              <div class="carousel-slide">
+                <img src="assets/banner.jpg" alt="IEEE SeFet 2026 Conference Banner" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/home_carasoul/1.png" alt="IEEE SeFet 2026 - Image 1" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/home_carasoul/2.png" alt="IEEE SeFet 2026 - Image 2" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/home_carasoul/3.png" alt="IEEE SeFet 2026 - Image 3" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/home_carasoul/4.png" alt="IEEE SeFet 2026 - Image 4" />
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/home_carasoul/5.png" alt="IEEE SeFet 2026 - Image 5" />
+              </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+              <span class="carousel-indicator active" data-slide="0"></span>
+              <span class="carousel-indicator" data-slide="1"></span>
+              <span class="carousel-indicator" data-slide="2"></span>
+              <span class="carousel-indicator" data-slide="3"></span>
+              <span class="carousel-indicator" data-slide="4"></span>
+              <span class="carousel-indicator" data-slide="5"></span>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="carousel-progress"></div>
           </div>
         </div>
 
@@ -1433,5 +1624,182 @@
 
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
+    
+    <!-- Carousel Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('heroCarousel');
+        if (!carousel) return;
+
+        const wrapper = carousel.querySelector('.carousel-wrapper');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const prevBtn = carousel.querySelector('.carousel-btn-prev');
+        const nextBtn = carousel.querySelector('.carousel-btn-next');
+        const indicators = carousel.querySelectorAll('.carousel-indicator');
+        const progressBar = carousel.querySelector('.carousel-progress');
+
+        const totalSlides = slides.length;
+        const autoPlayInterval = 5000; // 5 seconds
+        let autoPlayTimer;
+        let isTransitioning = false;
+
+        // Clone first and last slides for infinite effect
+        const firstClone = slides[0].cloneNode(true);
+        const lastClone = slides[totalSlides - 1].cloneNode(true);
+        firstClone.classList.add('clone');
+        lastClone.classList.add('clone');
+        wrapper.appendChild(firstClone);
+        wrapper.insertBefore(lastClone, slides[0]);
+
+        // Start at position 1 (first real slide, after the cloned last)
+        let currentIndex = 1;
+        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        function updateCarousel(animate = true) {
+          if (!animate) {
+            wrapper.style.transition = 'none';
+          } else {
+            wrapper.style.transition = 'transform 0.6s ease-in-out';
+          }
+          wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+          
+          // Update indicators (map to real slide index)
+          let realIndex = currentIndex - 1;
+          if (realIndex < 0) realIndex = totalSlides - 1;
+          if (realIndex >= totalSlides) realIndex = 0;
+          
+          indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === realIndex);
+          });
+
+          // Reset and start progress bar
+          resetProgress();
+        }
+
+        function nextSlide() {
+          if (isTransitioning) return;
+          isTransitioning = true;
+          currentIndex++;
+          updateCarousel(true);
+        }
+
+        function prevSlide() {
+          if (isTransitioning) return;
+          isTransitioning = true;
+          currentIndex--;
+          updateCarousel(true);
+        }
+
+        function goToSlide(index) {
+          if (isTransitioning) return;
+          isTransitioning = true;
+          currentIndex = index + 1; // +1 because of prepended clone
+          updateCarousel(true);
+        }
+
+        // Handle infinite loop jump
+        wrapper.addEventListener('transitionend', () => {
+          isTransitioning = false;
+          
+          // If we're at the cloned first slide (after last real slide)
+          if (currentIndex === totalSlides + 1) {
+            currentIndex = 1;
+            updateCarousel(false);
+          }
+          
+          // If we're at the cloned last slide (before first real slide)
+          if (currentIndex === 0) {
+            currentIndex = totalSlides;
+            updateCarousel(false);
+          }
+        });
+
+        function resetProgress() {
+          progressBar.style.transition = 'none';
+          progressBar.style.width = '0%';
+          
+          setTimeout(() => {
+            progressBar.style.transition = `width ${autoPlayInterval}ms linear`;
+            progressBar.style.width = '100%';
+          }, 50);
+        }
+
+        function startAutoPlay() {
+          stopAutoPlay();
+          autoPlayTimer = setInterval(nextSlide, autoPlayInterval);
+          resetProgress();
+        }
+
+        function stopAutoPlay() {
+          if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+          }
+        }
+
+        // Event Listeners
+        prevBtn.addEventListener('click', () => {
+          prevSlide();
+          startAutoPlay();
+        });
+
+        nextBtn.addEventListener('click', () => {
+          nextSlide();
+          startAutoPlay();
+        });
+
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => {
+            goToSlide(index);
+            startAutoPlay();
+          });
+        });
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+          stopAutoPlay();
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+          startAutoPlay();
+        }, { passive: true });
+
+        function handleSwipe() {
+          const swipeThreshold = 50;
+          const diff = touchStartX - touchEndX;
+          
+          if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+              nextSlide();
+            } else {
+              prevSlide();
+            }
+          }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+            prevSlide();
+            startAutoPlay();
+          } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            startAutoPlay();
+          }
+        });
+
+        // Start autoplay
+        startAutoPlay();
+      });
+    </script>
   </body>
 </html>

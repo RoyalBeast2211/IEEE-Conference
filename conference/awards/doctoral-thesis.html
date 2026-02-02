@@ -1,28 +1,424 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
-    <meta name="keywords" content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur">
-    <meta name="author" content="VNIT Nagpur">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
+    />
+    <meta
+      name="keywords"
+      content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur"
+    />
+    <meta name="author" content="VNIT Nagpur" />
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation">
-    <meta property="og:description" content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
-    <meta property="og:type" content="website">
-    
+    <meta
+      property="og:title"
+      content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation"
+    />
+    <meta
+      property="og:description"
+      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
+    />
+    <meta property="og:type" content="website" />
+
     <title>Outstanding Doctoral Thesis Award - IEEE SeFet 2026</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../../assets/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../../assets/favicon.png">
-    
+    <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../../assets/favicon.png"
+    />
+
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/navigation.css">
-</head>
-<body>    <!-- Navigation -->
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/navigation.css" />
+
+    <style>
+      /* Doctoral Thesis Award - Visually Stunning Design */
+      .award-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 1rem 1rem 3rem;
+      }
+
+      /* Hero Header with Gradient */
+      .award-hero {
+        background: linear-gradient(
+          135deg,
+          #813c54 0%,
+          #a85271 50%,
+          #c4687a 100%
+        );
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(129, 60, 84, 0.3);
+      }
+
+      .award-hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 60%
+        );
+        animation: shimmer 15s infinite linear;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .award-hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .award-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.5rem;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .award-hero h1 {
+        color: #ffffff;
+        margin: 0 0 0.75rem 0;
+        font-size: 2.25rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .award-hero .subtitle {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Deadline Banner */
+      .deadline-banner {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border: 2px solid #f59e0b;
+        border-radius: 16px;
+        padding: 1.5rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+      }
+
+      .deadline-banner .icon {
+        font-size: 2rem;
+      }
+
+      .deadline-banner .text {
+        text-align: left;
+      }
+
+      .deadline-banner .label {
+        color: #92400e;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .deadline-banner .date {
+        color: #78350f;
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+
+      /* Cards */
+      .card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        transform: translateY(-3px);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f3f4f6;
+      }
+
+      .card-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #813c54 0%, #a85271 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .card h2 {
+        color: var(--color-primary);
+        font-size: 1.4rem;
+        margin: 0;
+        text-shadow: none;
+      }
+
+      .card p {
+        max-width: none;
+        color: #4b5563;
+        margin: 0 0 1rem 0;
+        font-size: 1.05rem;
+        line-height: 1.75;
+      }
+
+      .card ul {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .card li {
+        position: relative;
+        padding: 0.75rem 0 0.75rem 2rem;
+        color: #374151;
+        line-height: 1.6;
+        border-bottom: 1px solid #f3f4f6;
+      }
+
+      .card li:last-child {
+        border-bottom: none;
+      }
+
+      .card li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0.75rem;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
+
+      /* Policy Callout */
+      .policy-callout {
+        background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+        border-left: 4px solid #dc2626;
+        border-radius: 0 12px 12px 0;
+        padding: 1.25rem 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .policy-callout p {
+        margin: 0;
+        color: #991b1b;
+        font-size: 0.95rem;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        border: 2px solid #10b981;
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-section h3 {
+        color: #065f46;
+        margin: 0 0 0.5rem 0;
+        font-size: 1.3rem;
+      }
+
+      .cta-section p {
+        color: #047857;
+        margin: 0 0 1.5rem 0;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: linear-gradient(135deg, #813c54 0%, #a85271 100%);
+        color: #ffffff;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(129, 60, 84, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(129, 60, 84, 0.4);
+        color: #ffffff;
+      }
+
+      .cta-button .arrow {
+        transition: transform 0.3s ease;
+      }
+
+      .cta-button:hover .arrow {
+        transform: translateX(5px);
+      }
+
+      /* Phase Grid */
+      .phase-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .phase-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .phase-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #813c54, #a85271);
+      }
+
+      .phase-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, #813c54 0%, #a85271 100%);
+        color: white;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .phase-card h3 {
+        color: #1e293b;
+        margin: 0 0 0.75rem 0;
+        font-size: 1.1rem;
+      }
+
+      .phase-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #64748b;
+      }
+
+      /* Info Box */
+      .info-box {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        border: 1px solid #93c5fd;
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .info-box p {
+        margin: 0.5rem 0;
+        color: #1e40af;
+        font-size: 0.95rem;
+      }
+
+      .info-box p:first-child {
+        margin-top: 0;
+      }
+
+      .info-box p:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 768px) {
+        .award-hero {
+          padding: 2rem 1.5rem;
+        }
+
+        .award-hero h1 {
+          font-size: 1.75rem;
+        }
+
+        .deadline-banner {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .deadline-banner .text {
+          text-align: center;
+        }
+
+        .card {
+          padding: 1.5rem;
+        }
+
+        .cta-button {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
     <nav
       class="ieee-professional-nav"
       role="navigation"
@@ -93,9 +489,7 @@
                     role="menuitem"
                   >
                     <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >About Nagpur</span
-                      >
+                      <span class="ieee-dropdown-item-title">About Nagpur</span>
                     </div>
                   </a>
                 </div>
@@ -171,28 +565,13 @@
 
             <!-- Special Sessions -->
 
-
             <li class="ieee-nav-item" role="none">
-
-
               <a
-
-
                 href="../../conference/special-sessions.html"
-
-
                 class="ieee-nav-link"
-
-
                 role="menuitem"
-
-
                 >Special Sessions</a
-
-
               >
-
-
             </li>
 
             <!-- Speakers -->
@@ -464,25 +843,13 @@
               <div class="ieee-dropdown-menu" role="menu">
                 <div class="ieee-dropdown-content">
                   <a
-
                     href="../../conference/committee.html"
-
                     class="ieee-dropdown-item"
-
                     role="menuitem"
-
                   >
-
                     <div class="ieee-dropdown-item-content">
-
-                      <span class="ieee-dropdown-item-title"
-
-                        >Committee</span
-
-                      >
-
+                      <span class="ieee-dropdown-item-title">Committee</span>
                     </div>
-
                   </a>
                   <a
                     href="../../conference/accommodation.html"
@@ -506,7 +873,7 @@
                       >
                     </div>
                   </a>
-                  
+
                   <!-- Sponsorship submenu -->
                   <span
                     class="ieee-dropdown-item has-submenu"
@@ -646,10 +1013,14 @@
                   </svg>
                 </button>
                 <div class="ieee-mobile-submenu">
-                  <a href="../../about/vnit.html" class="ieee-mobile-submenu-item"
+                  <a
+                    href="../../about/vnit.html"
+                    class="ieee-mobile-submenu-item"
                     >About VNIT</a
                   >
-                  <a href="../../about/eed.html" class="ieee-mobile-submenu-item"
+                  <a
+                    href="../../about/eed.html"
+                    class="ieee-mobile-submenu-item"
                     >About EED</a
                   >
                   <a
@@ -946,18 +1317,146 @@
       </div>
     </nav>
 
+    <main class="main-content">
+      <div class="award-container">
+        <!-- Hero Section -->
+        <div class="award-hero">
+          <div class="award-hero-content">
+            <div class="award-icon">🎓</div>
+            <h1>Outstanding Doctoral Thesis Award</h1>
+            <p class="subtitle">
+              The organizing committee of IEEE SEFET-2026 is soliciting
+              nominations for the IEEE SEFET 2026 Outstanding Doctoral
+              Dissertation Award. The award is intended to recognize the best
+              emerging academic work at the doctoral level that falls under the
+              scope and enhances the mission of sustainable energy and future
+              electric transportation.
+            </p>
+          </div>
+        </div>
 
+        <!-- Deadline Banner -->
+        <div class="deadline-banner">
+          <div class="icon">⏰</div>
+          <div class="text">
+            <div class="label">Nomination Deadline</div>
+            <div class="date">30th April 2026</div>
+          </div>
+        </div>
 
-<main class="main-content">
+        <!-- CTA Section -->
+        <div class="cta-section">
+          <h3>📝 Submit Your Nomination</h3>
+          <p>
+            Nominations must be submitted via Google Form only. No email
+            submissions accepted.
+          </p>
+          <a
+            href="https://forms.gle/p7bhtaDFPhU6hHtC8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button"
+          >
+            Apply via Google Form <span class="arrow">→</span>
+          </a>
+        </div>
 
-<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; text-align: center;">
+        <!-- Eligibility Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">✅</div>
+            <h2>Eligibility Criteria</h2>
+          </div>
+          <ul>
+            <li>
+              The candidate must have completed PhD from a recognized Indian
+              institute/university.
+            </li>
+            <li>
+              The candidate's dissertation must have been successfully defended
+              between <strong>1st January 2024</strong> to
+              <strong>30th April 2026</strong>.
+            </li>
+            <li>
+              Candidate must be able to attend and register for IEEE SEFET-2026.
+            </li>
+            <li>The dissertation must be submitted in English.</li>
+            <li>
+              Candidates who received the Outstanding Doctoral Thesis Award at
+              SEFET 2025 are not eligible to apply.
+            </li>
+          </ul>
 
-<h1>To be Updated Soon</h1>
+          <div class="policy-callout">
+            <p>
+              <strong>IEEE Policy 4.4.H:</strong> Individuals serving on any
+              board or committee involved at any stage of the recipient
+              selection or approval process for an award shall be ineligible to
+              receive, or act as a nominator or reference for that award. This
+              conflict-of-interest limitation shall apply to all awards given by
+              the IEEE or any of its organizational units. The decision of
+              Organizing Committee SEFET-2026 will be final in any
+              circumstances.
+            </p>
+          </div>
+        </div>
 
-</div>
+        <!-- Selection Criteria Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <h2>Selection Criteria</h2>
+          </div>
+          <p>
+            Dissertations and application materials will be evaluated based on
+            their contributions, the potential impact of the research on both
+            theory and practice, and the quality and relevance of publications
+            produced during the Ph.D. studies.
+          </p>
 
+          <div class="phase-grid">
+            <div class="phase-card">
+              <div class="phase-number">I</div>
+              <h3>Initial Review</h3>
+              <p>
+                All submitted nomination forms (submitted through Google Form)
+                will be reviewed by the selection committee. A merit list will
+                be prepared based on the evaluation.
+              </p>
+            </div>
+            <div class="phase-card">
+              <div class="phase-number">II</div>
+              <h3>Final Presentation</h3>
+              <p>
+                The top three candidates from the merit list will be invited to
+                present their research to a panel during IEEE SEFET-2026 in
+                Nagpur. Candidates must register for and attend IEEE SEFET-2026
+                in person.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Fee Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">💰</div>
+            <h2>Registration Fee</h2>
+          </div>
+          <div class="info-box">
+            <p>✓ <strong>No fee</strong> for nomination submission.</p>
+            <p>
+              ✓ Top 3 candidates called for presentation must register under
+              <strong>Indian Author</strong> or
+              <strong>Indian Student Attendee</strong> category.
+            </p>
+            <p>✓ No TA/DA will be provided.</p>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- Scripts -->
     <script src="../../js/navigation.js"></script>
-</body>
+  </body>
 </html>
