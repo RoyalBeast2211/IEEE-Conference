@@ -1317,23 +1317,34 @@
         <div class="content-section" style="padding-top: 0">
           <div class="carousel-container" id="heroCarousel">
             <div class="carousel-wrapper">
-              <div class="carousel-slide">
+              <!-- Main banner always first -->
+              <div class="carousel-slide" data-fixed="true">
                 <img src="assets/banner.jpg" alt="IEEE SeFet 2026 Conference Banner" />
               </div>
-              <div class="carousel-slide">
+              <!-- Remaining slides will be randomized -->
+              <div class="carousel-slide" data-random="true">
                 <img src="assets/home_carasoul/1.png" alt="IEEE SeFet 2026 - Image 1" />
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide" data-random="true">
                 <img src="assets/home_carasoul/2.png" alt="IEEE SeFet 2026 - Image 2" />
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide" data-random="true">
                 <img src="assets/home_carasoul/3.png" alt="IEEE SeFet 2026 - Image 3" />
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide" data-random="true">
                 <img src="assets/home_carasoul/4.png" alt="IEEE SeFet 2026 - Image 4" />
               </div>
-              <div class="carousel-slide">
+              <div class="carousel-slide" data-random="true">
                 <img src="assets/home_carasoul/5.png" alt="IEEE SeFet 2026 - Image 5" />
+              </div>
+              <div class="carousel-slide" data-random="true">
+                <img src="assets/home_carasoul/6.png" alt="IEEE SeFet 2026 - Image 6" />
+              </div>
+              <div class="carousel-slide" data-random="true">
+                <img src="assets/home_carasoul/7.png" alt="IEEE SeFet 2026 - Image 7" />
+              </div>
+              <div class="carousel-slide" data-random="true">
+                <img src="assets/home_carasoul/8.png" alt="IEEE SeFet 2026 - Image 8" />
               </div>
             </div>
 
@@ -1357,6 +1368,9 @@
               <span class="carousel-indicator" data-slide="3"></span>
               <span class="carousel-indicator" data-slide="4"></span>
               <span class="carousel-indicator" data-slide="5"></span>
+              <span class="carousel-indicator" data-slide="6"></span>
+              <span class="carousel-indicator" data-slide="7"></span>
+              <span class="carousel-indicator" data-slide="8"></span>
             </div>
 
             <!-- Progress Bar -->
@@ -1776,6 +1790,27 @@
         if (!carousel) return;
 
         const wrapper = carousel.querySelector('.carousel-wrapper');
+        
+        // Shuffle random slides while keeping fixed slide first
+        function shuffleRandomSlides() {
+          const fixedSlide = wrapper.querySelector('[data-fixed="true"]');
+          const randomSlides = Array.from(wrapper.querySelectorAll('[data-random="true"]'));
+          
+          // Fisher-Yates shuffle algorithm
+          for (let i = randomSlides.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [randomSlides[i], randomSlides[j]] = [randomSlides[j], randomSlides[i]];
+          }
+          
+          // Clear wrapper and re-append in order: fixed first, then shuffled
+          wrapper.innerHTML = '';
+          wrapper.appendChild(fixedSlide);
+          randomSlides.forEach(slide => wrapper.appendChild(slide));
+        }
+        
+        // Shuffle on page load
+        shuffleRandomSlides();
+        
         const slides = carousel.querySelectorAll('.carousel-slide');
         const prevBtn = carousel.querySelector('.carousel-btn-prev');
         const nextBtn = carousel.querySelector('.carousel-btn-next');
