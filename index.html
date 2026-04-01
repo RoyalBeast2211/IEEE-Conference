@@ -1,1433 +1,1056 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-    />
-    <meta
-      name="description"
-      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
-    />
-    <meta
-      name="keywords"
-      content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur"
-    />
-    <meta name="author" content="VNIT Nagpur" />
 
-    <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation"
-    />
-    <meta
-      property="og:description"
-      content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)"
-    />
-    <meta property="og:type" content="website" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="description"
+    content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)" />
+  <meta name="keywords" content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur" />
+  <meta name="author" content="VNIT Nagpur" />
 
-    <title>
-      IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation
-    </title>
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation" />
+  <meta property="og:description"
+    content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)" />
+  <meta property="og:type" content="website" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+  <title>
+    IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation
+  </title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/navigation.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 
-    <style>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+
+  <style>
+    .pdf-embed {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
       .pdf-embed {
-        width: 100%;
-        height: 100vh;
-        border: none;
+        height: 60vh;
+        min-height: 400px;
       }
+    }
 
-      @media (max-width: 768px) {
-        .pdf-embed {
-          height: 60vh;
-          min-height: 400px;
-        }
-      }
+    /* Carousel Styles */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
 
-      /* Carousel Styles */
-      .carousel-container {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-      }
+    .carousel-wrapper {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
 
-      .carousel-wrapper {
-        display: flex;
-        transition: transform 0.6s ease-in-out;
-      }
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+    }
 
-      .carousel-slide {
-        min-width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f0f0f0;
-      }
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
 
-      .carousel-slide img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-        object-position: center;
-      }
+    /* Fix for wide banner image */
+    .carousel-slide:first-child img {
+      object-fit: contain;
+      max-height: 500px;
+      width: auto;
+      max-width: 100%;
+    }
 
-      /* Fix for wide banner image */
-      .carousel-slide:first-child img {
-        object-fit: contain;
-        max-height: 500px;
-        width: auto;
-        max-width: 100%;
-      }
+    /* Carousel Navigation Arrows */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
 
-      /* Carousel Navigation Arrows */
+    .carousel-btn:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .carousel-btn svg {
+      width: 24px;
+      height: 24px;
+      color: var(--color-primary, #813c54);
+    }
+
+    .carousel-btn-prev {
+      left: 20px;
+    }
+
+    .carousel-btn-next {
+      right: 20px;
+    }
+
+    /* Carousel Indicators */
+    .carousel-indicators {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .carousel-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-indicator.active {
+      background: #ffffff;
+      transform: scale(1.2);
+    }
+
+    .carousel-indicator:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Progress Bar */
+    .carousel-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-primary, #813c54), var(--color-secondary, #b8860b));
+      width: 0%;
+      z-index: 10;
+      transition: width 0.1s linear;
+    }
+
+    @media (max-width: 768px) {
       .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-      }
-
-      .carousel-btn:hover {
-        background: #ffffff;
-        transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        width: 40px;
+        height: 40px;
       }
 
       .carousel-btn svg {
-        width: 24px;
-        height: 24px;
-        color: var(--color-primary, #813c54);
+        width: 20px;
+        height: 20px;
       }
 
       .carousel-btn-prev {
-        left: 20px;
+        left: 10px;
       }
 
       .carousel-btn-next {
-        right: 20px;
+        right: 10px;
       }
 
-      /* Carousel Indicators */
       .carousel-indicators {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 10;
+        bottom: 15px;
+        gap: 8px;
       }
 
       .carousel-indicator {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.5);
-        border: 2px solid rgba(255, 255, 255, 0.8);
-        cursor: pointer;
-        transition: all 0.3s ease;
+        width: 10px;
+        height: 10px;
       }
+    }
 
-      .carousel-indicator.active {
-        background: #ffffff;
-        transform: scale(1.2);
-      }
+    /* Countdown Timer Styles */
+    .countdown-section {
+      background: linear-gradient(135deg, rgba(129, 60, 84, 0.03) 0%, rgba(184, 134, 11, 0.03) 100%);
+      padding: 12px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      .carousel-indicator:hover {
-        background: rgba(255, 255, 255, 0.8);
-      }
+    .countdown-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-      /* Progress Bar */
-      .carousel-progress {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 4px;
-        background: linear-gradient(90deg, var(--color-primary, #813c54), var(--color-secondary, #b8860b));
-        width: 0%;
-        z-index: 10;
-        transition: width 0.1s linear;
-      }
+    .countdown-label {
+      font-family: 'Roboto Slab', serif;
+      font-size: 0.9rem;
+      color: var(--color-primary);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
 
-      @media (max-width: 768px) {
-        .carousel-btn {
-          width: 40px;
-          height: 40px;
-        }
+    .countdown-timer {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
 
-        .carousel-btn svg {
-          width: 20px;
-          height: 20px;
-        }
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 12px;
+      background: linear-gradient(145deg, #ffffff, #f5f5f5);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(129, 60, 84, 0.08);
+      min-width: 58px;
+      border: 1px solid rgba(129, 60, 84, 0.08);
+    }
 
-        .carousel-btn-prev {
-          left: 10px;
-        }
+    .countdown-value {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
 
-        .carousel-btn-next {
-          right: 10px;
-        }
+    .countdown-unit {
+      font-size: 0.65rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      margin-top: 2px;
+    }
 
-        .carousel-indicators {
-          bottom: 15px;
-          gap: 8px;
-        }
+    .countdown-separator {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--color-primary);
+      opacity: 0.4;
+      padding: 0 2px;
+    }
 
-        .carousel-indicator {
-          width: 10px;
-          height: 10px;
-        }
-      }
-
-      /* Countdown Timer Styles */
+    @media (max-width: 768px) {
       .countdown-section {
-        background: linear-gradient(135deg, rgba(129, 60, 84, 0.03) 0%, rgba(184, 134, 11, 0.03) 100%);
-        padding: 12px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        padding: 10px 15px;
       }
 
       .countdown-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 10px;
       }
 
       .countdown-label {
-        font-family: 'Roboto Slab', serif;
-        font-size: 0.9rem;
-        color: var(--color-primary);
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        opacity: 0.85;
-      }
-
-      .countdown-timer {
-        display: flex;
-        align-items: center;
-        gap: 4px;
+        font-size: 0.75rem;
+        width: 100%;
+        text-align: center;
       }
 
       .countdown-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 6px 12px;
-        background: linear-gradient(145deg, #ffffff, #f5f5f5);
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(129, 60, 84, 0.08);
-        min-width: 58px;
-        border: 1px solid rgba(129, 60, 84, 0.08);
+        padding: 5px 8px;
+        min-width: 48px;
       }
 
       .countdown-value {
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1.2;
+        font-size: 1.1rem;
       }
 
       .countdown-unit {
-        font-size: 0.65rem;
-        color: #888;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        font-weight: 500;
-        margin-top: 2px;
+        font-size: 0.55rem;
       }
 
       .countdown-separator {
-        font-size: 1.2rem;
-        font-weight: 300;
-        color: var(--color-primary);
-        opacity: 0.4;
-        padding: 0 2px;
+        font-size: 1rem;
       }
+    }
 
-      @media (max-width: 768px) {
-        .countdown-section {
-          padding: 10px 15px;
-        }
+    /* Remove gap between countdown and carousel */
+    .home-page .main-content,
+    .main-content {
+      padding-top: 0 !important;
+    }
 
-        .countdown-container {
-          gap: 10px;
-        }
+    .home-page {
+      gap: 0 !important;
+      padding-top: 0 !important;
+    }
+  </style>
+</head>
 
-        .countdown-label {
-          font-size: 0.75rem;
-          width: 100%;
-          text-align: center;
-        }
+<body>
+  <!-- Navigation -->
+  <nav class="ieee-professional-nav" role="navigation" aria-label="IEEE SeFet 2026 Main Navigation">
+    <div class="ieee-nav-container">
+      <!-- Desktop Navigation -->
+      <div class="ieee-nav-desktop">
+        <ul class="ieee-nav-menu" role="menubar">
+          <!-- Home -->
+          <li class="ieee-nav-item" role="none">
+            <a href="index.html" class="ieee-nav-link" role="menuitem">Home</a>
+          </li>
 
-        .countdown-item {
-          padding: 5px 8px;
-          min-width: 48px;
-        }
-
-        .countdown-value {
-          font-size: 1.1rem;
-        }
-
-        .countdown-unit {
-          font-size: 0.55rem;
-        }
-
-        .countdown-separator {
-          font-size: 1rem;
-        }
-      }
-
-      /* Remove gap between countdown and carousel */
-      .home-page .main-content,
-      .main-content {
-        padding-top: 0 !important;
-      }
-      .home-page {
-        gap: 0 !important;
-        padding-top: 0 !important;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav
-      class="ieee-professional-nav"
-      role="navigation"
-      aria-label="IEEE SeFet 2026 Main Navigation"
-    >
-      <div class="ieee-nav-container">
-        <!-- Desktop Navigation -->
-        <div class="ieee-nav-desktop">
-          <ul class="ieee-nav-menu" role="menubar">
-            <!-- Home -->
-            <li class="ieee-nav-item" role="none">
-              <a href="index.html" class="ieee-nav-link" role="menuitem"
-                >Home</a
-              >
-            </li>
-
-            <!-- About Us -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="About Us"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                About Us
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="about/vnit.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">About VNIT</span>
-                    </div>
-                  </a>
-                  <a
-                    href="about/eed.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">About EED</span>
-                    </div>
-                  </a>
-                  <a
-                    href="about/maharashtra.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">About Nagpur</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Authors -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="Authors"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Authors
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="conference/authors/call-for-papers.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Call for Papers</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/authors/camera-ready.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Camera Ready Submission</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/authors/publication-templates.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Publication & Templates</span
-                      >
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Special Sessions -->
-
-            <li class="ieee-nav-item" role="none">
-              <a
-                href="conference/special-sessions.html"
-                class="ieee-nav-link"
-                role="menuitem"
-                >Special Sessions</a
-              >
-            </li>
-
-            <!-- Speakers -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="Speakers"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Speakers
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="conference/speakers/keynote.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Keynote Speakers</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/speakers/tutorial.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Tutorial Speakers</span
-                      >
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Events -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="Events"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Events
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="conference/events/program.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Program Schedule</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/events/wie.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">WIE Events</span>
-                    </div>
-                  </a>
-                  <a
-                    href="conference/events/syp.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">SYP Events</span>
-                    </div>
-                  </a>
-                  <a
-                    href="conference/events/academic-panel.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Academic Panel</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/events/industry.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Industry Events</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/events/city-tour.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">City Tour</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Registration -->
-            <li class="ieee-nav-item" role="none">
-              <a
-                href="conference/registration.html"
-                class="ieee-nav-link"
-                role="menuitem"
-                >Registration</a
-              >
-            </li>
-
-            <!-- Awards -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="Awards"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Awards
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="conference/awards/doctoral-thesis.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Doctoral Thesis Award</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/awards/student-travel.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Student Travel Awards</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/awards/best-paper.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Best Paper Award</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/awards/best-poster.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Best Poster Award</span
-                      >
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- More -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="More"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                More
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="conference/committee.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">Committee</span>
-                    </div>
-                  </a>
-                  <a
-                    href="conference/accommodation.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Accommodation</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/venue-contact.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Venue & Contact</span
-                      >
-                    </div>
-                  </a>
-
-                  <!-- Sponsorship submenu -->
-                  <span
-                    class="ieee-dropdown-item has-submenu"
-                    role="menuitem"
-                    data-submenu-trigger="More-Sponsorship"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">Sponsorship</span>
-                    </div>
-                    <span class="ieee-submenu-icon">•</span>
-                  </span>
-                  <div class="ieee-submenu" role="menu">
-                    <div class="ieee-submenu-content">
-                      <a
-                        href="conference/sponsorship/sponsors.html"
-                        class="ieee-submenu-item"
-                        role="menuitem"
-                      >
-                        <div class="ieee-submenu-item-content">
-                          <span class="ieee-submenu-item-title"
-                            >Our Sponsors</span
-                          >
-                        </div>
-                      </a>
-                      <a
-                        href="conference/sponsorship/details.html"
-                        class="ieee-submenu-item"
-                        role="menuitem"
-                      >
-                        <div class="ieee-submenu-item-content">
-                          <span class="ieee-submenu-item-title"
-                            >Sponsorship Details</span
-                          >
-                        </div>
-                      </a>
-                    </div>
+          <!-- About Us -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="About Us"
+              aria-haspopup="true" aria-expanded="false">
+              About Us
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="about/vnit.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">About VNIT</span>
                   </div>
-
-                  <a
-                    href="conference/gallery.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Photo Gallery</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="conference/proceedings.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >SEFET Proceedings</span
-                      >
-                    </div>
-                  </a>
-                </div>
+                </a>
+                <a href="about/eed.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">About EED</span>
+                  </div>
+                </a>
+                <a href="about/maharashtra.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">About Nagpur</span>
+                  </div>
+                </a>
               </div>
+            </div>
+          </li>
+
+          <!-- Authors -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="Authors"
+              aria-haspopup="true" aria-expanded="false">
+              Authors
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="conference/authors/call-for-papers.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Call for Papers</span>
+                  </div>
+                </a>
+                <a href="conference/authors/camera-ready.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Camera Ready Submission</span>
+                  </div>
+                </a>
+                <a href="conference/authors/publication-templates.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Publication & Templates</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Special Sessions -->
+
+          <li class="ieee-nav-item" role="none">
+            <a href="conference/special-sessions.html" class="ieee-nav-link" role="menuitem">Special Sessions</a>
+          </li>
+
+          <!-- Speakers -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="Speakers"
+              aria-haspopup="true" aria-expanded="false">
+              Speakers
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="conference/speakers/keynote.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Keynote Speakers</span>
+                  </div>
+                </a>
+                <a href="conference/speakers/tutorial.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Tutorial Speakers</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Events -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="Events" aria-haspopup="true"
+              aria-expanded="false">
+              Events
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="conference/events/program.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Program Schedule</span>
+                  </div>
+                </a>
+                <a href="conference/events/wie.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">WIE Events</span>
+                  </div>
+                </a>
+                <a href="conference/events/syp.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">SYP Events</span>
+                  </div>
+                </a>
+                <a href="conference/events/academic-panel.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Academic Panel</span>
+                  </div>
+                </a>
+                <a href="conference/events/industry.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Industry Events</span>
+                  </div>
+                </a>
+                <a href="conference/events/city-tour.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">City Tour</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Registration -->
+          <li class="ieee-nav-item" role="none">
+            <a href="conference/registration.html" class="ieee-nav-link" role="menuitem">Registration</a>
+          </li>
+
+          <!-- Awards -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="Awards" aria-haspopup="true"
+              aria-expanded="false">
+              Awards
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="conference/awards/doctoral-thesis.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Doctoral Thesis Award</span>
+                  </div>
+                </a>
+                <a href="conference/awards/student-travel.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Student Travel Awards</span>
+                  </div>
+                </a>
+                <a href="conference/awards/best-paper.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Best Paper Award</span>
+                  </div>
+                </a>
+                <a href="conference/awards/best-poster.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Best Poster Award</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- More -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="More" aria-haspopup="true"
+              aria-expanded="false">
+              More
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="conference/committee.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Committee</span>
+                  </div>
+                </a>
+                <a href="conference/accommodation.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Accommodation</span>
+                  </div>
+                </a>
+                <a href="conference/venue-contact.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Venue & Contact</span>
+                  </div>
+                </a>
+
+                <!-- Sponsorship submenu -->
+                <span class="ieee-dropdown-item has-submenu" role="menuitem" data-submenu-trigger="More-Sponsorship">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Sponsorship</span>
+                  </div>
+                  <span class="ieee-submenu-icon">•</span>
+                </span>
+                <div class="ieee-submenu" role="menu">
+                  <div class="ieee-submenu-content">
+                    <a href="conference/sponsorship/sponsors.html" class="ieee-submenu-item" role="menuitem">
+                      <div class="ieee-submenu-item-content">
+                        <span class="ieee-submenu-item-title">Our Sponsors</span>
+                      </div>
+                    </a>
+                    <a href="conference/sponsorship/details.html" class="ieee-submenu-item" role="menuitem">
+                      <div class="ieee-submenu-item-content">
+                        <span class="ieee-submenu-item-title">Sponsorship Details</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <a href="conference/gallery.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Photo Gallery</span>
+                  </div>
+                </a>
+                <a href="conference/proceedings.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">SEFET Proceedings</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="ieee-mobile-toggle" aria-expanded="false" aria-controls="ieee-mobile-navigation"
+        aria-label="Toggle mobile navigation menu">
+        <span class="ieee-sr-only">Toggle navigation menu</span>
+        <div class="ieee-hamburger">
+          <span class="ieee-hamburger-line"></span>
+          <span class="ieee-hamburger-line"></span>
+          <span class="ieee-hamburger-line"></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="ieee-mobile-navigation" class="ieee-mobile-nav" role="navigation" aria-label="Mobile navigation menu">
+      <div class="ieee-mobile-content">
+        <div class="ieee-mobile-header">
+          <div class="ieee-mobile-brand">
+            <span class="ieee-mobile-logo">IEEE SeFet 2026</span>
+            <span class="ieee-mobile-subtitle">Sustainable Energy and Future Electric Transportation</span>
+          </div>
+          <button class="ieee-mobile-close" aria-label="Close mobile menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="ieee-mobile-menu">
+          <div class="ieee-mobile-item">
+            <a href="index.html" class="ieee-mobile-link">Home</a>
+          </div>
+
+          <div class="ieee-mobile-item">
+            <div class="ieee-mobile-dropdown">
+              <button class="ieee-mobile-link ieee-mobile-toggle-btn" aria-expanded="false" role="button">
+                <span>About Us</span>
+                <svg class="ieee-mobile-dropdown-icon" width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="ieee-mobile-submenu">
+                <a href="about/vnit.html" class="ieee-mobile-submenu-item">About VNIT</a>
+                <a href="about/eed.html" class="ieee-mobile-submenu-item">About EED</a>
+                <a href="about/maharashtra.html" class="ieee-mobile-submenu-item">About Nagpur</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="ieee-mobile-item">
+            <div class="ieee-mobile-dropdown">
+              <button class="ieee-mobile-link ieee-mobile-toggle-btn" aria-expanded="false" role="button">
+                <span>Conference</span>
+                <svg class="ieee-mobile-dropdown-icon" width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="ieee-mobile-submenu">
+                <!-- Authors nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Authors</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="conference/authors/call-for-papers.html" class="ieee-mobile-sublink">Call for Papers</a>
+                    <a href="conference/authors/camera-ready.html" class="ieee-mobile-sublink">Camera Ready</a>
+                    <a href="conference/authors/publication-templates.html" class="ieee-mobile-sublink">Templates</a>
+                  </div>
+                </div>
+
+                <a href="conference/committee.html" class="ieee-mobile-submenu-item">Committee</a>
+
+                <!-- Speakers nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Speakers</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="conference/speakers/keynote.html" class="ieee-mobile-sublink">Keynote Speakers</a>
+                    <a href="conference/speakers/tutorial.html" class="ieee-mobile-sublink">Tutorial Speakers</a>
+                  </div>
+                </div>
+
+                <!-- Event Details nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Event Details</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="conference/events/program.html" class="ieee-mobile-sublink">Program Schedule</a>
+                    <a href="conference/events/wie.html" class="ieee-mobile-sublink">WIE Events</a>
+                    <a href="conference/events/syp.html" class="ieee-mobile-sublink">SYP Events</a>
+                    <a href="conference/events/academic-panel.html" class="ieee-mobile-sublink">Academic Panel</a>
+                    <a href="conference/events/industry.html" class="ieee-mobile-sublink">Industry Events</a>
+                    <a href="conference/events/city-tour.html" class="ieee-mobile-sublink">City Tour</a>
+                  </div>
+                </div>
+
+                <a href="conference/special-sessions.html" class="ieee-mobile-submenu-item">Special Sessions</a>
+                <a href="conference/registration.html" class="ieee-mobile-submenu-item">Registration</a>
+
+                <!-- Awards nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Awards</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="conference/awards/doctoral-thesis.html" class="ieee-mobile-sublink">Doctoral Thesis
+                      Award</a>
+                    <a href="conference/awards/student-travel.html" class="ieee-mobile-sublink">Student Travel
+                      Awards</a>
+                    <a href="conference/awards/best-paper.html" class="ieee-mobile-sublink">Best Paper Award</a>
+                    <a href="conference/awards/best-poster.html" class="ieee-mobile-sublink">Best Poster Award</a>
+                  </div>
+                </div>
+
+                <a href="conference/accommodation.html" class="ieee-mobile-submenu-item">Accommodation</a>
+                <a href="conference/venue-contact.html" class="ieee-mobile-submenu-item">Venue & Contact</a>
+
+                <!-- Sponsorship nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Sponsorship</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="conference/sponsorship/sponsors.html" class="ieee-mobile-sublink">Our Sponsors</a>
+                    <a href="conference/sponsorship/details.html" class="ieee-mobile-sublink">Sponsorship Details</a>
+                  </div>
+                </div>
+
+                <a href="conference/gallery.html" class="ieee-mobile-submenu-item">Photo Gallery</a>
+                <a href="conference/proceedings.html" class="ieee-mobile-submenu-item">SEFET Proceeding</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Partners Section -->
+  <div class="partners-section">
+    <div class="partners-grid">
+      <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+        <div class="partner-logo">
+          <img src="assets/partners/ieee.png" alt="IEEE" />
+        </div>
+      </a>
+      <a href="https://www.ieee-pels.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+        <div class="partner-logo">
+          <img src="assets/partners/red.png" alt="PELS" />
+        </div>
+      </a>
+      <a href="http://vnit.ac.in/" target="_blank" rel="noopener noreferrer" class="partner-link">
+        <div class="partner-logo">
+          <img src="assets/partners/vnit.png" alt="VNIT" />
+        </div>
+      </a>
+      <a href="https://www.ieee-ias.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+        <div class="partner-logo">
+          <img src="assets/partners/ias.png" alt="IAS" />
+        </div>
+      </a>
+      <a href="https://www.ieee-ies.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+        <div class="partner-logo">
+          <img src="assets/partners/electrons.png" alt="Electrons" />
+        </div>
+      </a>
+      <a href="https://www.ieee-pes.org/" target="_blank" rel="noopener noreferrer" class="partner-link">
+        <div class="partner-logo">
+          <img src="assets/partners/pes.png" alt="PES" />
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Countdown Timer Section -->
+  <div class="countdown-section">
+    <div class="countdown-container">
+      <div class="countdown-label">Event Starts In</div>
+      <div class="countdown-timer" id="countdownTimer">
+        <div class="countdown-item">
+          <span class="countdown-value" id="days">000</span>
+          <span class="countdown-unit">Days</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="hours">00</span>
+          <span class="countdown-unit">Hours</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="minutes">00</span>
+          <span class="countdown-unit">Minutes</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="seconds">00</span>
+          <span class="countdown-unit">Seconds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="home-page">
+      <!-- Banner Carousel Section -->
+      <div class="content-section" style="padding-top: 0">
+        <div class="carousel-container" id="heroCarousel">
+          <div class="carousel-wrapper">
+            <!-- Main banner always first -->
+            <div class="carousel-slide" data-fixed="true">
+              <img src="assets/banner.jpg" alt="IEEE SeFet 2026 Conference Banner" />
+            </div>
+            <!-- Remaining slides will be randomized -->
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/1.png" alt="IEEE SeFet 2026 - Image 1" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/2.png" alt="IEEE SeFet 2026 - Image 2" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/3.png" alt="IEEE SeFet 2026 - Image 3" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/4.png" alt="IEEE SeFet 2026 - Image 4" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/5.png" alt="IEEE SeFet 2026 - Image 5" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/6.png" alt="IEEE SeFet 2026 - Image 6" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/7.png" alt="IEEE SeFet 2026 - Image 7" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/8.png" alt="IEEE SeFet 2026 - Image 8" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/9.png" alt="IEEE SeFet 2026 - Image 9" />
+            </div>
+            <div class="carousel-slide" data-random="true">
+              <img src="assets/home_carasoul/10.png" alt="IEEE SeFet 2026 - Image 10" />
+            </div>
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <span class="carousel-indicator active" data-slide="0"></span>
+            <span class="carousel-indicator" data-slide="1"></span>
+            <span class="carousel-indicator" data-slide="2"></span>
+            <span class="carousel-indicator" data-slide="3"></span>
+            <span class="carousel-indicator" data-slide="4"></span>
+            <span class="carousel-indicator" data-slide="5"></span>
+            <span class="carousel-indicator" data-slide="6"></span>
+            <span class="carousel-indicator" data-slide="7"></span>
+            <span class="carousel-indicator" data-slide="8"></span>
+            <span class="carousel-indicator" data-slide="9"></span>
+            <span class="carousel-indicator" data-slide="10"></span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="carousel-progress"></div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="content-section">
+        <!-- Welcome Section -->
+        <section>
+          <h1 class="text-center">Welcome to IEEE SEFET 2026</h1>
+
+          <p>
+            IEEE 6th International Conference on Sustainable Energy and Future
+            Electric Transportation (SEFET) aims to provide a platform for
+            Engineers, Researchers, Scientists & Academicians to present their
+            work, to share experiences and ideas in the areas of Renewable
+            Energy, Electric Transportation, Power Electronics, Electric
+            Drives, Control Techniques, Smart Grids, Communication Protocols,
+            Intelligent Charging Infrastructure and Standards, Energy Markets,
+            Artificial Intelligence and Machine Learning.
+          </p>
+
+          <p>
+            In view of the changing scenario under sustainable energy &
+            electric transportation, this conference aims to put together the
+            experts from these areas to disseminate their knowledge and
+            experience for working in years to come.
+          </p>
+
+          <p>
+            THE IEEE SEFET program will feature Keynotes and Plenary Sessions,
+            Technical Paper Presentations, Industry Sessions, and Awards.
+          </p>
+        </section>
+
+        <!-- Conference Brochure Section -->
+        <section style="margin: 2rem 0">
+          <details style="
+                background: #f9fafb;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                overflow: hidden;
+              ">
+            <summary style="
+                  padding: 1rem;
+                  cursor: pointer;
+                  font-weight: bold;
+                  color: var(--color-primary);
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                ">
+              <span style="font-size: 1.2rem">Conference Brochure</span>
+              <span style="font-size: 1.5rem">+</span>
+            </summary>
+            <div style="padding: 1rem; border-top: 1px solid #e5e7eb">
+              <embed src="assets/conference%20brochure.pdf" type="application/pdf" class="pdf-embed" />
+              <p style="margin-top: 1rem; text-align: center">
+                <a href="assets/conference%20brochure.pdf" download="IEEE_SeFet_2026_Brochure.pdf" class="download-btn"
+                  style="
+                      display: inline-block;
+                      padding: 0.75rem 1.5rem;
+                      background-color: var(--color-primary);
+                      color: white;
+                      text-decoration: none;
+                      border-radius: 6px;
+                      font-weight: 500;
+                      transition: background-color 0.2s;
+                    ">Download Brochure PDF</a>
+              </p>
+            </div>
+          </details>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- Important Dates Section -->
+        <section>
+          <h2>Important Dates</h2>
+
+          <ul class="important-dates-list">
+            <li>
+              <span class="date-label">Paper submission opens</span>
+              <span class="date-value">01st Oct 2025</span>
+            </li>
+            <li>
+              <span class="date-label">Deadline for full paper submission</span>
+              <span class="date-value">28th Feb 2026</span>
+            </li>
+            <li>
+              <span class="date-label">Notification of acceptance</span>
+              <span class="date-value" style="text-decoration: line-through">1st Apr 2026</span>
+              <span class="date-value">10th Apr 2026</span>
+            </li>
+            <li>
+              <span class="date-label">Registration opens</span>
+              <span class="date-value" style="text-decoration: line-through">1st Apr 2026</span>
+              <span class="date-value">10th Apr 2026</span>
+            </li>
+            <li>
+              <span class="date-label">Deadline for Early Bird Registration</span>
+              <span class="date-value">25th Apr 2026</span>
+            </li>
+            <li>
+              <span class="date-label">Deadline for Standard Registration</span>
+              <span class="date-value">05th Jun 2026</span>
+            </li>
+            <li>
+              <span class="date-label">Deadline for camera ready paper submission</span>
+              <span class="date-value">05th Jun 2026</span>
             </li>
           </ul>
-        </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button
-          class="ieee-mobile-toggle"
-          aria-expanded="false"
-          aria-controls="ieee-mobile-navigation"
-          aria-label="Toggle mobile navigation menu"
-        >
-          <span class="ieee-sr-only">Toggle navigation menu</span>
-          <div class="ieee-hamburger">
-            <span class="ieee-hamburger-line"></span>
-            <span class="ieee-hamburger-line"></span>
-            <span class="ieee-hamburger-line"></span>
-          </div>
-        </button>
-      </div>
-
-      <!-- Mobile Navigation -->
-      <div
-        id="ieee-mobile-navigation"
-        class="ieee-mobile-nav"
-        role="navigation"
-        aria-label="Mobile navigation menu"
-      >
-        <div class="ieee-mobile-content">
-          <div class="ieee-mobile-header">
-            <div class="ieee-mobile-brand">
-              <span class="ieee-mobile-logo">IEEE SeFet 2026</span>
-              <span class="ieee-mobile-subtitle"
-                >Sustainable Energy and Future Electric Transportation</span
-              >
-            </div>
-            <button class="ieee-mobile-close" aria-label="Close mobile menu">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M18 6L6 18M6 6l12 12"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <div class="ieee-mobile-menu">
-            <div class="ieee-mobile-item">
-              <a href="index.html" class="ieee-mobile-link">Home</a>
-            </div>
-
-            <div class="ieee-mobile-item">
-              <div class="ieee-mobile-dropdown">
-                <button
-                  class="ieee-mobile-link ieee-mobile-toggle-btn"
-                  aria-expanded="false"
-                  role="button"
-                >
-                  <span>About Us</span>
-                  <svg
-                    class="ieee-mobile-dropdown-icon"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <div class="ieee-mobile-submenu">
-                  <a href="about/vnit.html" class="ieee-mobile-submenu-item"
-                    >About VNIT</a
-                  >
-                  <a href="about/eed.html" class="ieee-mobile-submenu-item"
-                    >About EED</a
-                  >
-                  <a
-                    href="about/maharashtra.html"
-                    class="ieee-mobile-submenu-item"
-                    >About Nagpur</a
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="ieee-mobile-item">
-              <div class="ieee-mobile-dropdown">
-                <button
-                  class="ieee-mobile-link ieee-mobile-toggle-btn"
-                  aria-expanded="false"
-                  role="button"
-                >
-                  <span>Conference</span>
-                  <svg
-                    class="ieee-mobile-dropdown-icon"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <div class="ieee-mobile-submenu">
-                  <!-- Authors nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Authors</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="conference/authors/call-for-papers.html"
-                        class="ieee-mobile-sublink"
-                        >Call for Papers</a
-                      >
-                      <a
-                        href="conference/authors/camera-ready.html"
-                        class="ieee-mobile-sublink"
-                        >Camera Ready</a
-                      >
-                      <a
-                        href="conference/authors/publication-templates.html"
-                        class="ieee-mobile-sublink"
-                        >Templates</a
-                      >
-                    </div>
-                  </div>
-
-                  <a
-                    href="conference/committee.html"
-                    class="ieee-mobile-submenu-item"
-                    >Committee</a
-                  >
-
-                  <!-- Speakers nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Speakers</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="conference/speakers/keynote.html"
-                        class="ieee-mobile-sublink"
-                        >Keynote Speakers</a
-                      >
-                      <a
-                        href="conference/speakers/tutorial.html"
-                        class="ieee-mobile-sublink"
-                        >Tutorial Speakers</a
-                      >
-                    </div>
-                  </div>
-
-                  <!-- Event Details nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Event Details</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="conference/events/program.html"
-                        class="ieee-mobile-sublink"
-                        >Program Schedule</a
-                      >
-                      <a
-                        href="conference/events/wie.html"
-                        class="ieee-mobile-sublink"
-                        >WIE Events</a
-                      >
-                      <a
-                        href="conference/events/syp.html"
-                        class="ieee-mobile-sublink"
-                        >SYP Events</a
-                      >
-                      <a
-                        href="conference/events/academic-panel.html"
-                        class="ieee-mobile-sublink"
-                        >Academic Panel</a
-                      >
-                      <a
-                        href="conference/events/industry.html"
-                        class="ieee-mobile-sublink"
-                        >Industry Events</a
-                      >
-                      <a
-                        href="conference/events/city-tour.html"
-                        class="ieee-mobile-sublink"
-                        >City Tour</a
-                      >
-                    </div>
-                  </div>
-
-                  <a
-                    href="conference/special-sessions.html"
-                    class="ieee-mobile-submenu-item"
-                    >Special Sessions</a
-                  >
-                  <a
-                    href="conference/registration.html"
-                    class="ieee-mobile-submenu-item"
-                    >Registration</a
-                  >
-
-                  <!-- Awards nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Awards</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="conference/awards/doctoral-thesis.html"
-                        class="ieee-mobile-sublink"
-                        >Doctoral Thesis Award</a
-                      >
-                      <a
-                        href="conference/awards/student-travel.html"
-                        class="ieee-mobile-sublink"
-                        >Student Travel Awards</a
-                      >
-                      <a
-                        href="conference/awards/best-paper.html"
-                        class="ieee-mobile-sublink"
-                        >Best Paper Award</a
-                      >
-                      <a
-                        href="conference/awards/best-poster.html"
-                        class="ieee-mobile-sublink"
-                        >Best Poster Award</a
-                      >
-                    </div>
-                  </div>
-
-                  <a
-                    href="conference/accommodation.html"
-                    class="ieee-mobile-submenu-item"
-                    >Accommodation</a
-                  >
-                  <a
-                    href="conference/venue-contact.html"
-                    class="ieee-mobile-submenu-item"
-                    >Venue & Contact</a
-                  >
-
-                  <!-- Sponsorship nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Sponsorship</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="conference/sponsorship/sponsors.html"
-                        class="ieee-mobile-sublink"
-                        >Our Sponsors</a
-                      >
-                      <a
-                        href="conference/sponsorship/details.html"
-                        class="ieee-mobile-sublink"
-                        >Sponsorship Details</a
-                      >
-                    </div>
-                  </div>
-
-                  <a
-                    href="conference/gallery.html"
-                    class="ieee-mobile-submenu-item"
-                    >Photo Gallery</a
-                  >
-                  <a
-                    href="conference/proceedings.html"
-                    class="ieee-mobile-submenu-item"
-                    >SEFET Proceeding</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Partners Section -->
-    <div class="partners-section">
-      <div class="partners-grid">
-        <a
-          href="https://www.ieee.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="partner-link"
-        >
-          <div class="partner-logo">
-            <img src="assets/partners/ieee.png" alt="IEEE" />
-          </div>
-        </a>
-        <a
-          href="https://www.ieee-pels.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="partner-link"
-        >
-          <div class="partner-logo">
-            <img src="assets/partners/red.png" alt="PELS" />
-          </div>
-        </a>
-        <a
-          href="http://vnit.ac.in/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="partner-link"
-        >
-          <div class="partner-logo">
-            <img src="assets/partners/vnit.png" alt="VNIT" />
-          </div>
-        </a>
-        <a
-          href="https://www.ieee-ias.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="partner-link"
-        >
-          <div class="partner-logo">
-            <img src="assets/partners/ias.png" alt="IAS" />
-          </div>
-        </a>
-        <a
-          href="https://www.ieee-ies.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="partner-link"
-        >
-          <div class="partner-logo">
-            <img src="assets/partners/electrons.png" alt="Electrons" />
-          </div>
-        </a>
-        <a
-          href="https://www.ieee-pes.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="partner-link"
-        >
-          <div class="partner-logo">
-            <img src="assets/partners/pes.png" alt="PES" />
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!-- Countdown Timer Section -->
-    <div class="countdown-section">
-      <div class="countdown-container">
-        <div class="countdown-label">Event Starts In</div>
-        <div class="countdown-timer" id="countdownTimer">
-          <div class="countdown-item">
-            <span class="countdown-value" id="days">000</span>
-            <span class="countdown-unit">Days</span>
-          </div>
-          <div class="countdown-separator">:</div>
-          <div class="countdown-item">
-            <span class="countdown-value" id="hours">00</span>
-            <span class="countdown-unit">Hours</span>
-          </div>
-          <div class="countdown-separator">:</div>
-          <div class="countdown-item">
-            <span class="countdown-value" id="minutes">00</span>
-            <span class="countdown-unit">Minutes</span>
-          </div>
-          <div class="countdown-separator">:</div>
-          <div class="countdown-item">
-            <span class="countdown-value" id="seconds">00</span>
-            <span class="countdown-unit">Seconds</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <div class="home-page">
-        <!-- Banner Carousel Section -->
-        <div class="content-section" style="padding-top: 0">
-          <div class="carousel-container" id="heroCarousel">
-            <div class="carousel-wrapper">
-              <!-- Main banner always first -->
-              <div class="carousel-slide" data-fixed="true">
-                <img src="assets/banner.jpg" alt="IEEE SeFet 2026 Conference Banner" />
-              </div>
-              <!-- Remaining slides will be randomized -->
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/1.png" alt="IEEE SeFet 2026 - Image 1" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/2.png" alt="IEEE SeFet 2026 - Image 2" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/3.png" alt="IEEE SeFet 2026 - Image 3" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/4.png" alt="IEEE SeFet 2026 - Image 4" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/5.png" alt="IEEE SeFet 2026 - Image 5" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/6.png" alt="IEEE SeFet 2026 - Image 6" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/7.png" alt="IEEE SeFet 2026 - Image 7" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/8.png" alt="IEEE SeFet 2026 - Image 8" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/9.png" alt="IEEE SeFet 2026 - Image 9" />
-              </div>
-              <div class="carousel-slide" data-random="true">
-                <img src="assets/home_carasoul/10.png" alt="IEEE SeFet 2026 - Image 10" />
-              </div>
-            </div>
-
-            <!-- Navigation Arrows -->
-            <button class="carousel-btn carousel-btn-prev" aria-label="Previous slide">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 18l-6-6 6-6"/>
-              </svg>
-            </button>
-            <button class="carousel-btn carousel-btn-next" aria-label="Next slide">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 18l6-6-6-6"/>
-              </svg>
-            </button>
-
-            <!-- Indicators -->
-            <div class="carousel-indicators">
-              <span class="carousel-indicator active" data-slide="0"></span>
-              <span class="carousel-indicator" data-slide="1"></span>
-              <span class="carousel-indicator" data-slide="2"></span>
-              <span class="carousel-indicator" data-slide="3"></span>
-              <span class="carousel-indicator" data-slide="4"></span>
-              <span class="carousel-indicator" data-slide="5"></span>
-              <span class="carousel-indicator" data-slide="6"></span>
-              <span class="carousel-indicator" data-slide="7"></span>
-              <span class="carousel-indicator" data-slide="8"></span>
-              <span class="carousel-indicator" data-slide="9"></span>
-              <span class="carousel-indicator" data-slide="10"></span>
-            </div>
-
-            <!-- Progress Bar -->
-            <div class="carousel-progress"></div>
-          </div>
-        </div>
-
-        <!-- Main Content -->
-        <div class="content-section">
-          <!-- Welcome Section -->
-          <section>
-            <h1 class="text-center">Welcome to IEEE SEFET 2026</h1>
-
+          <div class="dates-note">
             <p>
-              IEEE 6th International Conference on Sustainable Energy and Future
-              Electric Transportation (SEFET) aims to provide a platform for
-              Engineers, Researchers, Scientists & Academicians to present their
-              work, to share experiences and ideas in the areas of Renewable
-              Energy, Electric Transportation, Power Electronics, Electric
-              Drives, Control Techniques, Smart Grids, Communication Protocols,
-              Intelligent Charging Infrastructure and Standards, Energy Markets,
-              Artificial Intelligence and Machine Learning.
+              All the accepted and presented papers will be published in the
+              form of e-proceedings and submitted to IEEE Xplore Digital
+              Library (indexed in SCOPUS, Google Scholar, and other major
+              indexing).
             </p>
-
             <p>
-              In view of the changing scenario under sustainable energy &
-              electric transportation, this conference aims to put together the
-              experts from these areas to disseminate their knowledge and
-              experience for working in years to come.
+              All presented papers will be considered for further review and
+              publication in IEEE Transactions on Industry Applications and
+              IEEE Industry Applications Magazine.
             </p>
+          </div>
+        </section>
 
-            <p>
-              THE IEEE SEFET program will feature Keynotes and Plenary Sessions,
-              Technical Paper Presentations, Industry Sessions, and Awards.
-            </p>
-          </section>
+        <hr class="divider" />
 
-          <!-- Conference Brochure Section -->
-          <section style="margin: 2rem 0">
-            <details
-              style="
+        <!-- Regular Tracks Section -->
+        <section>
+          <h2>Regular Tracks</h2>
+
+          <ul class="tracks-list">
+            <li>
+              <span>1. Renewable Energy Systems, Integration, and Sustainable
+                Technologies</span>
+            </li>
+            <li>
+              <span>2. Power Electronics, Electrical Machines and Drives, Energy
+                Conversion for Sustainable Transportation</span>
+            </li>
+            <li>
+              <span>3. Charging Systems, Infrastructure, Planning and Grid
+                Interaction for E-Mobility</span>
+            </li>
+            <li>
+              <span>4. Energy Storage Technologies, Battery Management, and
+                Hydrogen Storage</span>
+            </li>
+            <li>
+              <span>5. Power System Planning, Stability, Reliability, and
+                Smart/Microgrid Operations</span>
+            </li>
+            <li>
+              <span>6. Control Systems, Instrumentation, and Automation in
+                Energy/Power Applications and Industrial Applications</span>
+            </li>
+            <li>
+              <span>7. Artificial Intelligence, Machine Learning, Data Analytics,
+                IoT, and Cybersecurity in Power/Energy Systems</span>
+            </li>
+            <li>
+              <span>8. Energy Markets, Regulatory Aspects, Policies, and
+                Decarbonization Strategies</span>
+            </li>
+          </ul>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- Special Session Tracks Section -->
+        <section>
+          <h2>Special Session Tracks</h2>
+
+          <details style="
                 background: #f9fafb;
                 border: 1px solid #e5e7eb;
                 border-radius: 8px;
                 overflow: hidden;
-              "
-            >
-              <summary
-                style="
+              ">
+            <summary style="
                   padding: 1rem;
                   cursor: pointer;
                   font-weight: bold;
@@ -1435,23 +1058,107 @@
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
-                "
-              >
-                <span style="font-size: 1.2rem">Conference Brochure</span>
-                <span style="font-size: 1.5rem">+</span>
-              </summary>
-              <div style="padding: 1rem; border-top: 1px solid #e5e7eb">
-                <embed
-                  src="assets/conference%20brochure.pdf"
-                  type="application/pdf"
-                  class="pdf-embed"
-                />
-                <p style="margin-top: 1rem; text-align: center">
-                  <a
-                    href="assets/conference%20brochure.pdf"
-                    download="IEEE_SeFet_2026_Brochure.pdf"
-                    class="download-btn"
-                    style="
+                ">
+              <span style="font-size: 1.1rem">View All Special Session Tracks</span>
+              <span style="font-size: 1.5rem">+</span>
+            </summary>
+            <div style="padding: 1rem; border-top: 1px solid #e5e7eb">
+              <ul class="tracks-list">
+                <li>
+                  <span>1. Adaptive Protection and Control of PV-Integrated
+                    Microgrids Under Intermittent Generation</span>
+                </li>
+                <li>
+                  <span>2. Advancements in Power Converters for Hydrogen-Based
+                    Hybrid Microgrid Systems</span>
+                </li>
+                <li>
+                  <span+>3. Resilient Self-Healing Grids & Distributed Restoration
+                    Technologies</span>
+                </li>
+                <li>
+                  <span>4. Artificial-Intelligence-enabled Planning, Analysis and
+                    Control of Electric mobility Resources (Land, Sea & Air)
+                    (AI-PACER)</span>
+                </li>
+                <li>
+                  <span>5. Cyber-Physical Systems and Smart Urban Infrastructures
+                    for Sustainable Future Cities</span>
+                </li>
+                <li>
+                  <span>6. Digital Twins and AI-Based Control for Industrial
+                    Microgrids and Energy Management Systems</span>
+                </li>
+                <li>
+                  <span>7. Intelligent Wind and Hybrid Renewable Energy Systems:
+                    Reinventing the Global Energy Future</span>
+                </li>
+                <li>
+                  <span>8. Soft Computing, Evolutionary Algorithms, and
+                    Metaheuristic Optimization methods for Modern Energy
+                    Applications (SCEMO-MEA)</span>
+                </li>
+                <li>
+                  <span>9. Advanced Challenges and Solutions for Resilient Modern
+                    Power Systems</span>
+                </li>
+                <li>
+                  <span>10. Eco Rating and Lifecycle Intelligence for
+                    Electrotechnical Products</span>
+                </li>
+                <li>
+                  <span>11. Future-Proofing Transport: Autonomous & Connected
+                    Electric Vehicles</span>
+                </li>
+                <li>
+                  <span>12. Intelligent AI Techniques for Electric Vehicles and
+                    Secure, Fault-Tolerant High-Power Charging
+                    Converters</span>
+                </li>
+                <li>
+                  <span>13. AI-Driven Optimization of Green Microgrids and
+                    E-Mobility for Real-Time Energy Management and
+                    Sustainability (AI-GMEMS)</span>
+                </li>
+                <li>
+                  <span>14. Virtual Replicas for Real-Time Monitoring, Control,
+                    and Optimization of Sustainable Energy Technologies</span>
+                </li>
+                <li>
+                  <span>15. Next-Generation Multilevel Inverters for Green Energy
+                    and e-Mobility</span>
+                </li>
+                <li>
+                  <span>16. AI-Enabled Power Electronics for Sustainable Energy
+                    and Transportation (APSET)</span>
+                </li>
+                <li>
+                  <span>17. Advanced Energy Storage and Electric Vehicle
+                    Integration Strategies for Reliable and Efficient
+                    Renewable Grids</span>
+                </li>
+                <li>
+                  <span>18. Thermal Management of Batteries for Automotive and
+                    Energy Storage Systems</span>
+                </li>
+                <li>
+                  <span>19. Advances in Distribution Automation Systems for
+                    Sustainable Energy and Future Electric
+                    Transportation</span>
+                </li>
+                <li>
+                  <span>20. Generative Artificial Intelligence and Intelligent
+                    Computing Techniques for Smart Energy Systems</span>
+                </li>
+                <li>
+                  <span>21. Futuristic Motor Design and Evolving Power
+                    Electronics Technologies for Electric Mobility and
+                    Grid-Interactive Energy Systems</span>
+                </li>
+              </ul>
+
+              <p style="text-align: center; margin-top: 1.5rem">
+                <a href="conference/special-session-tracks.html" style="
                       display: inline-block;
                       padding: 0.75rem 1.5rem;
                       background-color: var(--color-primary);
@@ -1460,575 +1167,266 @@
                       border-radius: 6px;
                       font-weight: 500;
                       transition: background-color 0.2s;
-                    "
-                    >Download Brochure PDF</a
-                  >
-                </p>
-              </div>
-            </details>
-          </section>
-
-          <hr class="divider" />
-
-          <!-- Important Dates Section -->
-          <section>
-            <h2>Important Dates</h2>
-
-            <ul class="important-dates-list">
-              <li>
-                <span class="date-label">Paper submission opens</span>
-                <span class="date-value">01st Oct 2025</span>
-              </li>
-              <li>
-                <span class="date-label"
-                  >Deadline for full paper submission</span
-                >
-                <span class="date-value" style="text-decoration: line-through"
-                  >14th Feb 2026</span
-                >
-                <span class="date-value" >28th Feb 2026 (Hard Deadline)</span>
-              </li>
-              <li>
-                <span class="date-label">Notification of acceptance</span>
-                <span class="date-value">1st Apr 2026</span>
-              </li>
-              <li>
-                <span class="date-label">Registration opens</span>
-                <span class="date-value">1st Apr 2026</span>
-              </li>
-              <li>
-                <span class="date-label"
-                  >Deadline for Early Bird Registration</span
-                >
-                <span class="date-value">15th Apr 2026</span>
-              </li>
-              <li>
-                <span class="date-label"
-                  >Deadline for Standard Registration</span
-                >
-                <span class="date-value">05th Jun 2026</span>
-              </li>
-              <li>
-                <span class="date-label"
-                  >Deadline for camera ready paper submission</span
-                >
-                <span class="date-value">05th Jun 2026</span>
-              </li>
-            </ul>
-
-            <div class="dates-note">
-              <p>
-                All the accepted and presented papers will be published in the
-                form of e-proceedings and submitted to IEEE Xplore Digital
-                Library (indexed in SCOPUS, Google Scholar, and other major
-                indexing).
-              </p>
-              <p>
-                All presented papers will be considered for further review and
-                publication in IEEE Transactions on Industry Applications and
-                IEEE Industry Applications Magazine.
+                    ">View Special Session Details →</a>
               </p>
             </div>
-          </section>
+          </details>
+        </section>
 
-          <hr class="divider" />
-
-          <!-- Regular Tracks Section -->
-          <section>
-            <h2>Regular Tracks</h2>
-
-            <ul class="tracks-list">
-              <li>
-                <span
-                  >1. Renewable Energy Systems, Integration, and Sustainable
-                  Technologies</span
-                >
-              </li>
-              <li>
-                <span
-                  >2. Power Electronics, Electrical Machines and Drives, Energy
-                  Conversion for Sustainable Transportation</span
-                >
-              </li>
-              <li>
-                <span
-                  >3. Charging Systems, Infrastructure, Planning and Grid
-                  Interaction for E-Mobility</span
-                >
-              </li>
-              <li>
-                <span
-                  >4. Energy Storage Technologies, Battery Management, and
-                  Hydrogen Storage</span
-                >
-              </li>
-              <li>
-                <span
-                  >5. Power System Planning, Stability, Reliability, and
-                  Smart/Microgrid Operations</span
-                >
-              </li>
-              <li>
-                <span
-                  >6. Control Systems, Instrumentation, and Automation in
-                  Energy/Power Applications and Industrial Applications</span
-                >
-              </li>
-              <li>
-                <span
-                  >7. Artificial Intelligence, Machine Learning, Data Analytics,
-                  IoT, and Cybersecurity in Power/Energy Systems</span
-                >
-              </li>
-              <li>
-                <span
-                  >8. Energy Markets, Regulatory Aspects, Policies, and
-                  Decarbonization Strategies</span
-                >
-              </li>
-            </ul>
-          </section>
-
-          <hr class="divider" />
-
-          <!-- Special Session Tracks Section -->
-          <section>
-            <h2>Special Session Tracks</h2>
-
-            <details
-              style="
-                background: #f9fafb;
-                border: 1px solid #e5e7eb;
-                border-radius: 8px;
-                overflow: hidden;
-              "
-            >
-              <summary
-                style="
-                  padding: 1rem;
-                  cursor: pointer;
-                  font-weight: bold;
-                  color: var(--color-primary);
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                "
-              >
-                <span style="font-size: 1.1rem"
-                  >View All Special Session Tracks</span
-                >
-                <span style="font-size: 1.5rem">+</span>
-              </summary>
-              <div style="padding: 1rem; border-top: 1px solid #e5e7eb">
-                <ul class="tracks-list">
-                  <li>
-                    <span
-                      >1. Adaptive Protection and Control of PV-Integrated
-                      Microgrids Under Intermittent Generation</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >2. Advancements in Power Converters for Hydrogen-Based
-                      Hybrid Microgrid Systems</span
-                    >
-                  </li>
-                  <li>
-                    <span+
-                      >3. Resilient Self-Healing Grids & Distributed Restoration
-                      Technologies</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >4. Artificial-Intelligence-enabled Planning, Analysis and
-                      Control of Electric mobility Resources (Land, Sea & Air)
-                      (AI-PACER)</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >5. Cyber-Physical Systems and Smart Urban Infrastructures
-                      for Sustainable Future Cities</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >6. Digital Twins and AI-Based Control for Industrial
-                      Microgrids and Energy Management Systems</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >7. Intelligent Wind and Hybrid Renewable Energy Systems:
-                      Reinventing the Global Energy Future</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >8. Soft Computing, Evolutionary Algorithms, and
-                      Metaheuristic Optimization methods for Modern Energy
-                      Applications (SCEMO-MEA)</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >9. Advanced Challenges and Solutions for Resilient Modern
-                      Power Systems</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >10. Eco Rating and Lifecycle Intelligence for
-                      Electrotechnical Products</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >11. Future-Proofing Transport: Autonomous & Connected
-                      Electric Vehicles</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >12. Intelligent AI Techniques for Electric Vehicles and
-                      Secure, Fault-Tolerant High-Power Charging
-                      Converters</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >13. AI-Driven Optimization of Green Microgrids and
-                      E-Mobility for Real-Time Energy Management and
-                      Sustainability (AI-GMEMS)</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >14. Virtual Replicas for Real-Time Monitoring, Control,
-                      and Optimization of Sustainable Energy Technologies</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >15. Next-Generation Multilevel Inverters for Green Energy
-                      and e-Mobility</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >16. AI-Enabled Power Electronics for Sustainable Energy
-                      and Transportation (APSET)</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >17. Advanced Energy Storage and Electric Vehicle
-                      Integration Strategies for Reliable and Efficient
-                      Renewable Grids</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >18. Thermal Management of Batteries for Automotive and
-                      Energy Storage Systems</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >19. Advances in Distribution Automation Systems for
-                      Sustainable Energy and Future Electric
-                      Transportation</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >20. Generative Artificial Intelligence and Intelligent
-                      Computing Techniques for Smart Energy Systems</span
-                    >
-                  </li>
-                  <li>
-                    <span
-                      >21. Futuristic Motor Design and Evolving Power
-                      Electronics Technologies for Electric Mobility and
-                      Grid-Interactive Energy Systems</span
-                    >
-                  </li>
-                </ul>
-
-                <p style="text-align: center; margin-top: 1.5rem">
-                  <a
-                    href="conference/special-session-tracks.html"
-                    style="
-                      display: inline-block;
-                      padding: 0.75rem 1.5rem;
-                      background-color: var(--color-primary);
-                      color: white;
-                      text-decoration: none;
-                      border-radius: 6px;
-                      font-weight: 500;
-                      transition: background-color 0.2s;
-                    "
-                    >View Special Session Details →</a
-                  >
-                </p>
-              </div>
-            </details>
-          </section>
-
-          <hr class="divider" />
-        </div>
+        <hr class="divider" />
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-content">
-        <p>&copy; 2026 VNIT Nagpur. All rights reserved.</p>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 VNIT Nagpur. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- Scripts -->
-    <script src="js/navigation.js"></script>
-    
-    <!-- Carousel Script -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const carousel = document.getElementById('heroCarousel');
-        if (!carousel) return;
+  <!-- Scripts -->
+  <script src="js/navigation.js"></script>
 
-        const wrapper = carousel.querySelector('.carousel-wrapper');
-        
-        // Shuffle random slides while keeping fixed slide first
-        function shuffleRandomSlides() {
-          const fixedSlide = wrapper.querySelector('[data-fixed="true"]');
-          const randomSlides = Array.from(wrapper.querySelectorAll('[data-random="true"]'));
-          
-          // Fisher-Yates shuffle algorithm
-          for (let i = randomSlides.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [randomSlides[i], randomSlides[j]] = [randomSlides[j], randomSlides[i]];
-          }
-          
-          // Clear wrapper and re-append in order: fixed first, then shuffled
-          wrapper.innerHTML = '';
-          wrapper.appendChild(fixedSlide);
-          randomSlides.forEach(slide => wrapper.appendChild(slide));
+  <!-- Carousel Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousel = document.getElementById('heroCarousel');
+      if (!carousel) return;
+
+      const wrapper = carousel.querySelector('.carousel-wrapper');
+
+      // Shuffle random slides while keeping fixed slide first
+      function shuffleRandomSlides() {
+        const fixedSlide = wrapper.querySelector('[data-fixed="true"]');
+        const randomSlides = Array.from(wrapper.querySelectorAll('[data-random="true"]'));
+
+        // Fisher-Yates shuffle algorithm
+        for (let i = randomSlides.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [randomSlides[i], randomSlides[j]] = [randomSlides[j], randomSlides[i]];
         }
-        
-        // Shuffle on page load
-        shuffleRandomSlides();
-        
-        const slides = carousel.querySelectorAll('.carousel-slide');
-        const prevBtn = carousel.querySelector('.carousel-btn-prev');
-        const nextBtn = carousel.querySelector('.carousel-btn-next');
-        const indicators = carousel.querySelectorAll('.carousel-indicator');
-        const progressBar = carousel.querySelector('.carousel-progress');
 
-        const totalSlides = slides.length;
-        const autoPlayInterval = 5000; // 5 seconds
-        let autoPlayTimer;
-        let isTransitioning = false;
+        // Clear wrapper and re-append in order: fixed first, then shuffled
+        wrapper.innerHTML = '';
+        wrapper.appendChild(fixedSlide);
+        randomSlides.forEach(slide => wrapper.appendChild(slide));
+      }
 
-        // Clone first and last slides for infinite effect
-        const firstClone = slides[0].cloneNode(true);
-        const lastClone = slides[totalSlides - 1].cloneNode(true);
-        firstClone.classList.add('clone');
-        lastClone.classList.add('clone');
-        wrapper.appendChild(firstClone);
-        wrapper.insertBefore(lastClone, slides[0]);
+      // Shuffle on page load
+      shuffleRandomSlides();
 
-        // Start at position 1 (first real slide, after the cloned last)
-        let currentIndex = 1;
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const prevBtn = carousel.querySelector('.carousel-btn-prev');
+      const nextBtn = carousel.querySelector('.carousel-btn-next');
+      const indicators = carousel.querySelectorAll('.carousel-indicator');
+      const progressBar = carousel.querySelector('.carousel-progress');
+
+      const totalSlides = slides.length;
+      const autoPlayInterval = 5000; // 5 seconds
+      let autoPlayTimer;
+      let isTransitioning = false;
+
+      // Clone first and last slides for infinite effect
+      const firstClone = slides[0].cloneNode(true);
+      const lastClone = slides[totalSlides - 1].cloneNode(true);
+      firstClone.classList.add('clone');
+      lastClone.classList.add('clone');
+      wrapper.appendChild(firstClone);
+      wrapper.insertBefore(lastClone, slides[0]);
+
+      // Start at position 1 (first real slide, after the cloned last)
+      let currentIndex = 1;
+      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      function updateCarousel(animate = true) {
+        if (!animate) {
+          wrapper.style.transition = 'none';
+        } else {
+          wrapper.style.transition = 'transform 0.6s ease-in-out';
+        }
         wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        function updateCarousel(animate = true) {
-          if (!animate) {
-            wrapper.style.transition = 'none';
-          } else {
-            wrapper.style.transition = 'transform 0.6s ease-in-out';
-          }
-          wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-          
-          // Update indicators (map to real slide index)
-          let realIndex = currentIndex - 1;
-          if (realIndex < 0) realIndex = totalSlides - 1;
-          if (realIndex >= totalSlides) realIndex = 0;
-          
-          indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === realIndex);
-          });
-
-          // Reset and start progress bar
-          resetProgress();
-        }
-
-        function nextSlide() {
-          if (isTransitioning) return;
-          isTransitioning = true;
-          currentIndex++;
-          updateCarousel(true);
-        }
-
-        function prevSlide() {
-          if (isTransitioning) return;
-          isTransitioning = true;
-          currentIndex--;
-          updateCarousel(true);
-        }
-
-        function goToSlide(index) {
-          if (isTransitioning) return;
-          isTransitioning = true;
-          currentIndex = index + 1; // +1 because of prepended clone
-          updateCarousel(true);
-        }
-
-        // Handle infinite loop jump
-        wrapper.addEventListener('transitionend', () => {
-          isTransitioning = false;
-          
-          // If we're at the cloned first slide (after last real slide)
-          if (currentIndex === totalSlides + 1) {
-            currentIndex = 1;
-            updateCarousel(false);
-          }
-          
-          // If we're at the cloned last slide (before first real slide)
-          if (currentIndex === 0) {
-            currentIndex = totalSlides;
-            updateCarousel(false);
-          }
-        });
-
-        function resetProgress() {
-          progressBar.style.transition = 'none';
-          progressBar.style.width = '0%';
-          
-          setTimeout(() => {
-            progressBar.style.transition = `width ${autoPlayInterval}ms linear`;
-            progressBar.style.width = '100%';
-          }, 50);
-        }
-
-        function startAutoPlay() {
-          stopAutoPlay();
-          autoPlayTimer = setInterval(nextSlide, autoPlayInterval);
-          resetProgress();
-        }
-
-        function stopAutoPlay() {
-          if (autoPlayTimer) {
-            clearInterval(autoPlayTimer);
-          }
-        }
-
-        // Event Listeners
-        prevBtn.addEventListener('click', () => {
-          prevSlide();
-          startAutoPlay();
-        });
-
-        nextBtn.addEventListener('click', () => {
-          nextSlide();
-          startAutoPlay();
-        });
+        // Update indicators (map to real slide index)
+        let realIndex = currentIndex - 1;
+        if (realIndex < 0) realIndex = totalSlides - 1;
+        if (realIndex >= totalSlides) realIndex = 0;
 
         indicators.forEach((indicator, index) => {
-          indicator.addEventListener('click', () => {
-            goToSlide(index);
-            startAutoPlay();
-          });
+          indicator.classList.toggle('active', index === realIndex);
         });
 
-        // Pause on hover
-        carousel.addEventListener('mouseenter', stopAutoPlay);
-        carousel.addEventListener('mouseleave', startAutoPlay);
+        // Reset and start progress bar
+        resetProgress();
+      }
 
-        // Touch/Swipe support
-        let touchStartX = 0;
-        let touchEndX = 0;
+      function nextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex++;
+        updateCarousel(true);
+      }
 
-        carousel.addEventListener('touchstart', (e) => {
-          touchStartX = e.changedTouches[0].screenX;
-          stopAutoPlay();
-        }, { passive: true });
+      function prevSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex--;
+        updateCarousel(true);
+      }
 
-        carousel.addEventListener('touchend', (e) => {
-          touchEndX = e.changedTouches[0].screenX;
-          handleSwipe();
-          startAutoPlay();
-        }, { passive: true });
+      function goToSlide(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex = index + 1; // +1 because of prepended clone
+        updateCarousel(true);
+      }
 
-        function handleSwipe() {
-          const swipeThreshold = 50;
-          const diff = touchStartX - touchEndX;
-          
-          if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-              nextSlide();
-            } else {
-              prevSlide();
-            }
-          }
+      // Handle infinite loop jump
+      wrapper.addEventListener('transitionend', () => {
+        isTransitioning = false;
+
+        // If we're at the cloned first slide (after last real slide)
+        if (currentIndex === totalSlides + 1) {
+          currentIndex = 1;
+          updateCarousel(false);
         }
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') {
-            prevSlide();
-            startAutoPlay();
-          } else if (e.key === 'ArrowRight') {
-            nextSlide();
-            startAutoPlay();
-          }
-        });
+        // If we're at the cloned last slide (before first real slide)
+        if (currentIndex === 0) {
+          currentIndex = totalSlides;
+          updateCarousel(false);
+        }
+      });
 
-        // Start autoplay
+      function resetProgress() {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+
+        setTimeout(() => {
+          progressBar.style.transition = `width ${autoPlayInterval}ms linear`;
+          progressBar.style.width = '100%';
+        }, 50);
+      }
+
+      function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayTimer = setInterval(nextSlide, autoPlayInterval);
+        resetProgress();
+      }
+
+      function stopAutoPlay() {
+        if (autoPlayTimer) {
+          clearInterval(autoPlayTimer);
+        }
+      }
+
+      // Event Listeners
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
         startAutoPlay();
       });
-    </script>
 
-    <!-- Countdown Timer Script -->
-    <script>
-      (function() {
-        // SeFet 2026 Event Date: July 8, 2026
-        const eventDate = new Date('July 8, 2026 00:00:00').getTime();
-        
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAutoPlay();
+      });
 
-        function updateCountdown() {
-          const now = new Date().getTime();
-          const distance = eventDate - now;
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          goToSlide(index);
+          startAutoPlay();
+        });
+      });
 
-          if (distance < 0) {
-            // Event has started
-            daysEl.textContent = '000';
-            hoursEl.textContent = '00';
-            minutesEl.textContent = '00';
-            secondsEl.textContent = '00';
-            document.querySelector('.countdown-label').textContent = 'Event Has Started!';
-            return;
+      // Pause on hover
+      carousel.addEventListener('mouseenter', stopAutoPlay);
+      carousel.addEventListener('mouseleave', startAutoPlay);
+
+      // Touch/Swipe support
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoPlay();
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoPlay();
+      }, { passive: true });
+
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
           }
+        }
+      }
 
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          prevSlide();
+          startAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+          startAutoPlay();
+        }
+      });
 
-          daysEl.textContent = String(days).padStart(3, '0');
-          hoursEl.textContent = String(hours).padStart(2, '0');
-          minutesEl.textContent = String(minutes).padStart(2, '0');
-          secondsEl.textContent = String(seconds).padStart(2, '0');
+      // Start autoplay
+      startAutoPlay();
+    });
+  </script>
+
+  <!-- Countdown Timer Script -->
+  <script>
+    (function () {
+      // SeFet 2026 Event Date: July 8, 2026
+      const eventDate = new Date('July 8, 2026 00:00:00').getTime();
+
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        if (distance < 0) {
+          // Event has started
+          daysEl.textContent = '000';
+          hoursEl.textContent = '00';
+          minutesEl.textContent = '00';
+          secondsEl.textContent = '00';
+          document.querySelector('.countdown-label').textContent = 'Event Has Started!';
+          return;
         }
 
-        // Update immediately and then every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-      })();
-    </script>
-  </body>
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(days).padStart(3, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      // Update immediately and then every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
+</body>
+
 </html>
