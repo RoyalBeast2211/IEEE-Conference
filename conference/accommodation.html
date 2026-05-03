@@ -21,6 +21,71 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/navigation.css">
+
+    <style>
+      .cfp-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1rem 2rem;
+      }
+
+      .cfp-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #e5e7eb;
+      }
+
+      .cfp-header h1 {
+        margin-bottom: 0.5rem;
+        color: var(--color-primary);
+        margin-top: 0;
+      }
+
+      .info-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 3rem 2rem;
+        margin: 2rem auto;
+        max-width: 800px;
+        transition: all 0.3s ease;
+        border: 2px solid #e5e7eb;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .info-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(135deg, #813c54 0%, #9d4a63 100%);
+      }
+
+      .info-card:hover {
+        box-shadow: 0 8px 24px rgba(129, 60, 84, 0.2);
+        transform: translateY(-4px);
+        border-color: var(--color-primary);
+      }
+
+      .info-text {
+        font-size: 1.25rem;
+        color: #374151;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .info-highlight {
+        font-size: 1.25rem;
+        color: var(--color-primary);
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+    </style>
 </head>
 <body>    <!-- Navigation -->
     <nav
@@ -947,13 +1012,20 @@
     </nav>
 
 
-<main class="main-content">
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="cfp-container">
+        <!-- Page Header -->
+        <div class="cfp-header">
+          <h1>Accommodation</h1>
+        </div>
 
-<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; text-align: center;">
-
-<h1>To be Updated Soon</h1>
-
-</div>
+        <div class="info-card">
+          <p class="info-text">Campus accommodation will be available at nominal charges.</p>
+          <p class="info-highlight">Details will be updated soon.</p>
+        </div>
+      </div>
+    </main>
 
 
     <!-- Scripts -->

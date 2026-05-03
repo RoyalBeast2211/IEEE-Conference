@@ -44,7 +44,7 @@
     <style>
       /* Sponsorship Details - Professional IEEE Style */
       .cfp-container {
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 1rem 1rem 2rem;
       }
@@ -253,13 +253,13 @@
 
       /* Sponsorship Comparison Table Styles */
       .sponsorship-table-wrapper {
-        margin: 2.5rem 0 3rem 0;
+        margin: 2.5rem -1rem 3rem -1rem;
         background: #ffffff;
         border-radius: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         overflow-x: auto;
         border: 2px solid #e5e7eb;
-        width: 100%;
+        width: calc(100% + 2rem);
         padding: 0;
         display: block;
       }
@@ -281,9 +281,9 @@
       .comparison-table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 1rem;
+        font-size: 0.8rem;
         margin: 0;
-        table-layout: auto;
+        table-layout: fixed;
       }
 
       .comparison-table thead {
@@ -292,18 +292,20 @@
       }
 
       .comparison-table th {
-        padding: 1rem 0.75rem;
+        padding: 0.6rem 0.3rem;
         text-align: center;
         font-weight: 700;
         color: var(--color-primary);
-        font-size: 1rem;
+        font-size: 0.8rem;
         border-right: 1px solid #e5e7eb;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
       }
 
       .comparison-table th:first-child {
         text-align: left;
-        padding-left: 1.5rem;
-        min-width: 200px;
+        padding-left: 0.6rem;
+        width: 18%;
       }
 
       .comparison-table th:last-child {
@@ -324,15 +326,19 @@
       }
 
       .comparison-table td {
-        padding: 1rem 0.75rem;
+        padding: 0.5rem 0.3rem;
         text-align: center;
         color: #374151;
         border-right: 1px solid #f3f4f6;
+        font-size: 0.78rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        vertical-align: top;
       }
 
       .comparison-table td:first-child {
         text-align: left;
-        padding-left: 1.5rem;
+        padding-left: 0.6rem;
         font-weight: 600;
         color: #1f2937;
       }
@@ -347,26 +353,28 @@
       }
 
       .comparison-table .price-row td {
-        padding: 1.25rem 0.75rem;
+        padding: 0.6rem 0.3rem;
         color: var(--color-primary);
-        font-size: 1.1rem;
+        font-size: 0.82rem;
       }
 
       .table-check {
         color: #059669;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .table-cross {
         color: #dc2626;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .table-value {
         color: var(--color-primary);
         font-weight: 600;
+        font-size: 0.72rem;
+        line-height: 1.35;
       }
 
       .table-dash {
@@ -377,81 +385,85 @@
       /* Responsive table */
       @media (max-width: 1200px) {
         .sponsorship-table-wrapper {
-          width: 100vw;
-          max-width: 100vw;
-          padding-left: 8px;
-          padding-right: 8px;
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          border-radius: 10px;
         }
         .comparison-table {
-          min-width: 700px;
+          min-width: 750px;
         }
       }
 
       @media (max-width: 768px) {
         .sponsorship-table-wrapper {
           margin: 2rem 0;
-          border-radius: 12px;
+          border-radius: 10px;
         }
 
         .table-header {
-          padding: 1.25rem 1.5rem;
+          padding: 1rem 1rem;
         }
 
         .table-header h2 {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
         }
 
         .comparison-table {
-          font-size: 0.8rem;
+          font-size: 0.7rem;
         }
 
         .comparison-table th,
         .comparison-table td {
-          padding: 0.65rem 0.4rem;
+          padding: 0.4rem 0.25rem;
+          font-size: 0.68rem;
         }
 
         .comparison-table th:first-child,
         .comparison-table td:first-child {
-          padding-left: 0.75rem;
-          min-width: 120px;
-          font-size: 0.75rem;
+          padding-left: 0.4rem;
+          font-size: 0.68rem;
         }
 
         .comparison-table .price-row td {
-          font-size: 0.95rem;
-          padding: 1rem 0.4rem;
+          font-size: 0.72rem;
+          padding: 0.5rem 0.25rem;
         }
       }
 
       @media (max-width: 480px) {
         .table-header h2 {
-          font-size: 1.1rem;
+          font-size: 1rem;
         }
 
         .comparison-table {
-          font-size: 0.7rem;
+          font-size: 0.6rem;
         }
 
         .comparison-table th,
         .comparison-table td {
-          padding: 0.5rem 0.3rem;
+          padding: 0.35rem 0.2rem;
+          font-size: 0.58rem;
         }
 
         .comparison-table th:first-child,
         .comparison-table td:first-child {
-          padding-left: 0.5rem;
-          min-width: 100px;
-          font-size: 0.7rem;
+          padding-left: 0.3rem;
+          font-size: 0.58rem;
         }
 
         .comparison-table .price-row td {
-          font-size: 0.85rem;
-          padding: 0.85rem 0.3rem;
+          font-size: 0.62rem;
+          padding: 0.4rem 0.2rem;
         }
 
         .table-check,
         .table-cross {
-          font-size: 1rem;
+          font-size: 0.85rem;
+        }
+
+        .table-value {
+          font-size: 0.58rem;
         }
       }
     </style>
@@ -1396,7 +1408,9 @@
           <table class="comparison-table">
             <thead>
               <tr>
-                <th>Benefit / Tier</th>
+                <th>Particulars</th>
+                <th>Apex</th>
+                <th>Crown</th>
                 <th>Title</th>
                 <th>Diamond</th>
                 <th>Platinum</th>
@@ -1408,15 +1422,30 @@
             <tbody>
               <tr class="price-row">
                 <td>Investment Amount</td>
+                <td>₹10 Lakh</td>
+                <td>₹5 Lakh</td>
                 <td>₹3 Lakh</td>
                 <td>₹2.5 Lakh</td>
                 <td>₹2 Lakh</td>
                 <td>₹1.5 Lakh</td>
                 <td>₹1 Lakh</td>
-                <td>₹50 K</td>
+                <td>₹50,000</td>
+              </tr>
+              <tr>
+                <td>Free Accommodation</td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-cross">✗</span></td>
+                <td><span class="table-cross">✗</span></td>
+                <td><span class="table-cross">✗</span></td>
+                <td><span class="table-cross">✗</span></td>
+                <td><span class="table-cross">✗</span></td>
+                <td><span class="table-cross">✗</span></td>
               </tr>
               <tr>
                 <td>Free Author Registrations</td>
+                <td><span class="table-value">10</span></td>
+                <td><span class="table-value">5</span></td>
                 <td><span class="table-value">3</span></td>
                 <td><span class="table-value">2</span></td>
                 <td><span class="table-value">1</span></td>
@@ -1426,6 +1455,8 @@
               </tr>
               <tr>
                 <td>Free Attendee Registrations</td>
+                <td><span class="table-value">10</span></td>
+                <td><span class="table-value">8</span></td>
                 <td><span class="table-value">6</span></td>
                 <td><span class="table-value">5</span></td>
                 <td><span class="table-value">4</span></td>
@@ -1435,6 +1466,8 @@
               </tr>
               <tr>
                 <td>Expert Talk Opportunity</td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
                 <td><span class="table-check">✓</span></td>
                 <td><span class="table-check">✓</span></td>
                 <td><span class="table-check">✓</span></td>
@@ -1450,36 +1483,27 @@
                 <td><span class="table-check">✓</span></td>
                 <td><span class="table-check">✓</span></td>
                 <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
               </tr>
               <tr>
-                <td>Exhibition Booth Size</td>
-                <td><span class="table-value">6m×6m</span></td>
-                <td><span class="table-value">6m×3m</span></td>
-                <td><span class="table-value">3m×3m</span></td>
-                <td><span class="table-value">3m×3m</span></td>
-                <td><span class="table-value">2m×3m</span></td>
+                <td>Exhibition Booth</td>
+                <td><span class="table-value">6m×6m<br>2D, 6C<br>2PP 5A<br>Display</span></td>
+                <td><span class="table-value">6m×6m<br>2D, 6C<br>2PP 5A<br>Display</span></td>
+                <td><span class="table-value">6m×6m<br>2D, 4C<br>2PP 5A</span></td>
+                <td><span class="table-value">6m×3m<br>2D, 4C<br>2PP 5A</span></td>
+                <td><span class="table-value">3m×3m<br>1D, 2C<br>1PP 5A</span></td>
+                <td><span class="table-value">3m×3m<br>1D, 2C<br>1PP 5A</span></td>
+                <td><span class="table-value">2m×3m<br>1D, 2C<br>1PP 5A</span></td>
                 <td><span class="table-dash">--</span></td>
               </tr>
-              <tr>
-                <td>Booth Furniture</td>
-                <td><span class="table-value">2 Desks, 4 Chairs</span></td>
-                <td><span class="table-value">2 Desks, 4 Chairs</span></td>
-                <td><span class="table-value">1 Desk, 2 Chairs</span></td>
-                <td><span class="table-value">1 Desk, 2 Chairs</span></td>
-                <td><span class="table-value">1 Desk, 2 Chairs</span></td>
-                <td><span class="table-dash">--</span></td>
-              </tr>
-              <tr>
-                <td>Power Supply (5 Amp)</td>
-                <td><span class="table-value">2 Points</span></td>
-                <td><span class="table-value">2 Points</span></td>
-                <td><span class="table-value">1 Point</span></td>
-                <td><span class="table-value">1 Point</span></td>
-                <td><span class="table-value">1 Point</span></td>
-                <td><span class="table-dash">--</span></td>
+              <tr class="booth-legend">
+                <td colspan="9" style="font-size: 0.68rem; color: #6b7280; font-weight: 400; padding: 0.25rem 0.6rem; font-style: italic;">D = Desks, C = Chairs, PP = Plug Points, A = Amp</td>
               </tr>
               <tr>
                 <td>Brochure in Conference Kit</td>
+                <td><span class="table-check">✓</span></td>
+                <td><span class="table-check">✓</span></td>
                 <td><span class="table-check">✓</span></td>
                 <td><span class="table-check">✓</span></td>
                 <td><span class="table-check">✓</span></td>
@@ -1493,21 +1517,83 @@
 
         <!-- More Details Section Header -->
         <div style="text-align: center; margin: 3rem 0 2rem 0">
-          <h2
-            style="
-              color: var(--color-primary);
-              font-size: 1.75rem;
-              margin-bottom: 1rem;
-              padding-bottom: 0.5rem;
-              border-bottom: 1px solid #e5e7eb;
-              display: inline-block;
-            "
-          >
+          <h2 style="color: var(--color-primary); font-size: 1.75rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; display: inline-block;">
             More Details About Sponsorship
           </h2>
         </div>
 
-        <!-- Sponsorship Tiers - Card View -->
+        <!-- Apex Sponsor Card -->
+        <div class="sponsorship-card-item">
+          <div class="tier-header">
+            <h3>Apex Sponsor</h3>
+            <div class="price">Rs. 10 Lakh</div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Free Accommodation</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free author registrations</span>
+            <span class="benefit-value">10</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free attendee registrations</span>
+            <span class="benefit-value">10</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Opportunities for expert talk</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Space for logos as provided by the sponsor<br />(websites, posters, flyers, banners, all other printed materials etc.)</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Exhibition Booth details</span>
+            <span class="benefit-value">6m×6m<br />(2 desks, 6 chairs, 2 plug points 5 Amp, Display unit)</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+        </div>
+
+        <!-- Crown Sponsor Card -->
+        <div class="sponsorship-card-item">
+          <div class="tier-header">
+            <h3>Crown Sponsor</h3>
+            <div class="price">Rs. 5 Lakh</div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Free Accommodation</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free author registrations</span>
+            <span class="benefit-value">5</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free attendee registrations</span>
+            <span class="benefit-value">8</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Opportunities for expert talk</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Space for logos as provided by the sponsor<br />(websites, posters, flyers, banners, all other printed materials etc.)</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Exhibition Booth details</span>
+            <span class="benefit-value">6m×6m<br />(2 desks, 6 chairs, 2 plug points 5 Amp, Display unit)</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+        </div>
+
         <!-- Title Sponsor Card -->
         <div class="sponsorship-card-item">
           <div class="tier-header">
@@ -1515,40 +1601,31 @@
             <div class="price">Rs. 3 Lakh</div>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free author registration</span
-            >
+            <span class="benefit-label">Free Accommodation</span>
+            <span class="benefit-value"><span class="no">No</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free author registrations</span>
             <span class="benefit-value">3</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free attendee registrations</span
-            >
+            <span class="benefit-label">Number of free attendee registrations</span>
             <span class="benefit-value">6</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label">Invitation to talk expert</span>
+            <span class="benefit-label">Opportunities for expert talk</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Space for logos as provided by the sponsor at appropriate
-              venues<br />(websites, posters, flyers, banners, all other printed
-              materials etc.)</span
-            >
+            <span class="benefit-label">Space for logos as provided by the sponsor<br />(websites, posters, flyers, banners, all other printed materials etc.)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
             <span class="benefit-label">Exhibition Booth details</span>
-            <span class="benefit-value"
-              >6m×6m<br />(2 desks, 4 chairs, 2 plug points 5 Amp)</span
-            >
+            <span class="benefit-value">6m×6m<br />(2 desks, 4 chairs, 2 plug points 5 Amp)</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Sponsor's brochure/flyer in the conference kit<br />(to be
-              provided by sponsor)</span
-            >
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
         </div>
@@ -1560,40 +1637,31 @@
             <div class="price">Rs. 2.5 Lakh</div>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free author registration</span
-            >
+            <span class="benefit-label">Free Accommodation</span>
+            <span class="benefit-value"><span class="no">No</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free author registrations</span>
             <span class="benefit-value">2</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free attendee registrations</span
-            >
+            <span class="benefit-label">Number of free attendee registrations</span>
             <span class="benefit-value">5</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label">Invitation to talk expert</span>
+            <span class="benefit-label">Opportunities for expert talk</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Space for logos as provided by the sponsor at appropriate
-              venues<br />(websites, posters, flyers, banners, all other printed
-              materials etc.)</span
-            >
+            <span class="benefit-label">Space for logos as provided by the sponsor<br />(websites, posters, flyers, banners, all other printed materials etc.)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
             <span class="benefit-label">Exhibition Booth details</span>
-            <span class="benefit-value"
-              >6m×3m<br />(2 desks, 4 chairs, 2 plug points 5Amp)</span
-            >
+            <span class="benefit-value">6m×3m<br />(2 desks, 4 chairs, 2 plug points 5 Amp)</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Sponsor's brochure/flyer in the conference kit<br />(to be
-              provided by sponsor)</span
-            >
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
         </div>
@@ -1605,40 +1673,31 @@
             <div class="price">Rs. 2 Lakh</div>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free author registration</span
-            >
+            <span class="benefit-label">Free Accommodation</span>
+            <span class="benefit-value"><span class="no">No</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free author registrations</span>
             <span class="benefit-value">1</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free attendee registrations</span
-            >
+            <span class="benefit-label">Number of free attendee registrations</span>
             <span class="benefit-value">4</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label">Invitation to talk expert</span>
+            <span class="benefit-label">Opportunities for expert talk</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Space for logos as provided by the sponsor at appropriate
-              venues<br />(websites, posters, flyers, banners, all other printed
-              materials etc.)</span
-            >
+            <span class="benefit-label">Space for logos as provided by the sponsor<br />(websites, posters, flyers, banners, all other printed materials etc.)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
             <span class="benefit-label">Exhibition Booth details</span>
-            <span class="benefit-value"
-              >3m×3m<br />(1 desk, 2 chairs, 1 plug point 5 Amp)</span
-            >
+            <span class="benefit-value">3m×3m<br />(1 desk, 2 chairs, 1 plug point 5 Amp)</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Sponsor's brochure/flyer in the conference kit<br />(to be
-              provided by sponsor)</span
-            >
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
         </div>
@@ -1650,40 +1709,31 @@
             <div class="price">Rs. 1.5 Lakh</div>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free author registration</span
-            >
-            <span class="benefit-value">--</span>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free attendee registrations</span
-            >
-            <span class="benefit-value">3</span>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-label">Invitation to talk expert</span>
+            <span class="benefit-label">Free Accommodation</span>
             <span class="benefit-value"><span class="no">No</span></span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Space for logos as provided by the sponsor at appropriate
-              venues<br />(websites, posters, flyers, banners, all other printed
-              materials etc.)</span
-            >
+            <span class="benefit-label">Number of free author registrations</span>
+            <span class="benefit-value">--</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free attendee registrations</span>
+            <span class="benefit-value">3</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Opportunities for expert talk</span>
+            <span class="benefit-value"><span class="no">No</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Space for logos as provided by the sponsor<br />(websites, posters, flyers, banners, all other printed materials etc.)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
             <span class="benefit-label">Exhibition Booth details</span>
-            <span class="benefit-value"
-              >3m×3m<br />(1 desk, 2 chairs, 1 plug point 5Amp)</span
-            >
+            <span class="benefit-value">3m×3m<br />(1 desk, 2 chairs, 1 plug point 5 Amp)</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Sponsor's brochure/flyer in the conference kit<br />(to be
-              provided by sponsor)</span
-            >
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
         </div>
@@ -1695,40 +1745,31 @@
             <div class="price">Rs. 1 Lakh</div>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free author registration</span
-            >
-            <span class="benefit-value">--</span>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free attendee registrations</span
-            >
-            <span class="benefit-value">2</span>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-label">Invitation to talk expert</span>
+            <span class="benefit-label">Free Accommodation</span>
             <span class="benefit-value"><span class="no">No</span></span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Space for logos as provided by the sponsor at appropriate
-              venues<br />(websites, posters, flyers, banners, all other printed
-              materials etc.)</span
-            >
+            <span class="benefit-label">Number of free author registrations</span>
+            <span class="benefit-value">--</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free attendee registrations</span>
+            <span class="benefit-value">2</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Opportunities for expert talk</span>
+            <span class="benefit-value"><span class="no">No</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Space for logos as provided by the sponsor<br />(websites, posters, flyers, banners, all other printed materials etc.)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
             <span class="benefit-label">Exhibition Booth details</span>
-            <span class="benefit-value"
-              >2m×3m<br />(1 desk, 2 chairs, 1 plug point 5Amp)</span
-            >
+            <span class="benefit-value">2m×3m<br />(1 desk, 2 chairs, 1 plug point 5 Amp)</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Sponsor's brochure/flyer in the conference kit<br />(to be
-              provided by sponsor)</span
-            >
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
             <span class="benefit-value"><span class="no">No</span></span>
           </div>
         </div>
@@ -1737,30 +1778,26 @@
         <div class="sponsorship-card-item">
           <div class="tier-header">
             <h3>Bronze</h3>
-            <div class="price">Rs. 50 K</div>
+            <div class="price">Rs. 50,000</div>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free author registration</span
-            >
-            <span class="benefit-value">--</span>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-label"
-              >Number of free attendee registrations</span
-            >
-            <span class="benefit-value">1</span>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-label">Invitation to talk expert</span>
+            <span class="benefit-label">Free Accommodation</span>
             <span class="benefit-value"><span class="no">No</span></span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Space for logos as provided by the sponsor at appropriate
-              venues<br />(websites, posters, flyers, banners, all other printed
-              materials etc.)</span
-            >
+            <span class="benefit-label">Number of free author registrations</span>
+            <span class="benefit-value">--</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Number of free attendee registrations</span>
+            <span class="benefit-value">1</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Opportunities for expert talk</span>
+            <span class="benefit-value"><span class="no">No</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Space for logos as provided by the sponsor<br />(websites, posters, flyers, banners, all other printed materials etc.)</span>
             <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
           <div class="benefit-item">
@@ -1768,11 +1805,55 @@
             <span class="benefit-value">--</span>
           </div>
           <div class="benefit-item">
-            <span class="benefit-label"
-              >Sponsor's brochure/flyer in the conference kit<br />(to be
-              provided by sponsor)</span
-            >
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
             <span class="benefit-value"><span class="no">No</span></span>
+          </div>
+        </div>
+
+        <!-- Special Partners Section Header -->
+        <div style="text-align: center; margin: 3rem 0 2rem 0">
+          <h2 style="color: var(--color-primary); font-size: 1.75rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; display: inline-block;">
+            Special Partnership Opportunities
+          </h2>
+        </div>
+
+        <!-- Hospitality Partner Card -->
+        <div class="sponsorship-card-item">
+          <div class="tier-header">
+            <h3>Hospitality Partner</h3>
+            <div class="price">Rs. 5 Lakh</div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Space for logos as provided by the sponsor at appropriate venues</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Exhibition Booth details</span>
+            <span class="benefit-value">6m×6m<br />(2 desks, 4 chairs, 2 plug points 5 Amp)</span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+        </div>
+
+        <!-- Gala Dinner Partner Card -->
+        <div class="sponsorship-card-item">
+          <div class="tier-header">
+            <h3>Gala Dinner Partner</h3>
+            <div class="price">Rs. 10 Lakh</div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Space for logos as provided by the sponsor at appropriate venues</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Space to Exhibit the Product/Technology at the Gala Dinner location</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-label">Sponsor's brochure/flyer in the conference kit<br />(to be provided by sponsor)</span>
+            <span class="benefit-value"><span class="yes">Yes</span></span>
           </div>
         </div>
       </div>
