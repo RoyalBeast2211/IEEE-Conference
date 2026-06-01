@@ -327,6 +327,37 @@
       .criteria-list li .icon {
         font-size: 1.25rem;
       }
+      /* Application Button Style */
+      .btn-container {
+        margin-top: 1.5rem;
+        text-align: left;
+      }
+
+      .award-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.75rem;
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+        transition: all 0.3s ease;
+      }
+
+      .award-btn:hover {
+        background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+        box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+        transform: translateY(-2px);
+        color: white;
+      }
+
+      .award-btn:active {
+        transform: translateY(0);
+      }
 
       @media (max-width: 768px) {
         .award-hero {
@@ -1301,10 +1332,15 @@
               2026.
             </li>
           </ol>
-          <p style="margin-top: 1.5rem; color: #64748b">
-            📝 The document should be submitted by filling the Google Form (link
-            will be available soon).
+          <p style="margin-top: 1.5rem; color: #4b5563; margin-bottom: 0.5rem; line-height: 1.8;">
+            📝 Please compile all required files into <strong>ONE single PDF document</strong> and submit it using the official application form: <a href="https://forms.gle/Csec45qYEizafnFHA" target="_blank" rel="noopener noreferrer" style="color: #0284c7; text-decoration: underline; word-break: break-all;">https://forms.gle/Csec45qYEizafnFHA</a> or by clicking the button below:
           </p>
+          <div class="btn-container">
+            <a href="https://forms.gle/Csec45qYEizafnFHA" target="_blank" rel="noopener noreferrer" class="award-btn">
+              <span>Submit Application Form</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 2px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
         </div>
 
         <!-- Important Dates Card -->
