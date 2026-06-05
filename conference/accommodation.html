@@ -1,1034 +1,1350 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
-    <meta name="keywords" content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur">
-    <meta name="author" content="VNIT Nagpur">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation">
-    <meta property="og:description" content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
-    <meta property="og:type" content="website">
-    
-    <title>Accommodation - IEEE SeFet 2026</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/navigation.css">
 
-    <style>
-      .cfp-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 1rem 1rem 2rem;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description"
+    content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
+  <meta name="keywords" content="IEEE, SeFet, Sustainable Energy, Electric Transportation, Conference, VNIT Nagpur">
+  <meta name="author" content="VNIT Nagpur">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="IEEE SeFet 2026 - Sustainable Energy and Future Electric Transportation">
+  <meta property="og:description"
+    content="6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026)">
+  <meta property="og:type" content="website">
+
+  <title>Accommodation - IEEE SeFet 2026</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/navigation.css">
+
+  <style>
+    .cfp-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1rem 2rem;
+    }
+
+    .cfp-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .cfp-header h1 {
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+      margin-top: 0;
+      font-weight: 800;
+    }
+
+    .subtitle-text {
+      font-size: 1.15rem;
+      color: #6b7280;
+      margin: 0.5rem auto 0 auto;
+      max-width: 700px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* Intro Section Card styling */
+    .accommodation-intro {
+      margin-bottom: 3rem;
+    }
+
+    .intro-card-premium {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 2.5rem;
+      border: 1px solid rgba(229, 231, 235, 0.7);
+      display: flex;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-card-premium::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    }
+
+    .intro-icon {
+      font-size: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      background: rgba(129, 60, 84, 0.08);
+      border-radius: 50%;
+      flex-shrink: 0;
+      color: var(--color-primary);
+    }
+
+    .intro-content {
+      flex: 1;
+    }
+
+    .intro-content h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--color-primary);
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.8rem;
+    }
+
+    .intro-content p {
+      margin: 0 0 1.5rem 0;
+      color: #4b5563;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      text-align: left;
+      max-width: none;
+    }
+
+    .info-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .bullet-icon {
+      color: var(--color-primary);
+      font-size: 1.1rem;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .bullet-text {
+      color: #4b5563;
+      font-size: 0.98rem;
+      line-height: 1.4;
+      text-align: left;
+    }
+
+    .action-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn-action {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      min-width: 260px;
+      flex: 1;
+    }
+
+    .btn-primary-gradient {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #a2526c 100%);
+      color: #ffffff;
+      border: none;
+    }
+
+    .btn-primary-gradient:hover {
+      background: linear-gradient(135deg, #954660 0%, #b8627d 100%);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(129, 60, 84, 0.25);
+    }
+
+    .btn-secondary-outline {
+      background: #ffffff;
+      color: var(--color-primary);
+      border: 2px solid var(--color-primary);
+    }
+
+    .btn-secondary-outline:hover {
+      background: rgba(129, 60, 84, 0.04);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      color: var(--color-primary);
+    }
+
+    .btn-subtext {
+      font-size: 0.78rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+    /* Tariff Section styling */
+    .tariff-section {
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+      position: relative;
+      font-size: 1.8rem;
+    }
+
+    .tariff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .tariff-card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(229, 231, 235, 0.7);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .tariff-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--color-secondary);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header-gradient {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #9c4b66 100%);
+      padding: 2rem 1.5rem;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .card-header-gradient.secondary {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, #cca33d 100%);
+    }
+
+    .card-header-gradient h3 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 1.5rem;
+      text-shadow: none;
+    }
+
+    .card-subtitle {
+      margin: 5px 0 0 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .card-body {
+      padding: 2rem 1.5rem;
+      flex: 1;
+    }
+
+    .pricing-option-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-option-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .option-group-title {
+      color: #374151;
+      font-size: 1rem;
+      margin: 0 0 0.75rem 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+
+    .price-row:last-child {
+      border-bottom: none;
+    }
+
+    .price-row.single-price {
+      border-bottom: none;
+      padding: 1.25rem 0;
+    }
+
+    .room-type {
+      color: #4b5563;
+      font-weight: 500;
+    }
+
+    .price-value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+    }
+
+    .student-hostel-card .payment-method-title {
+      color: var(--color-secondary);
+    }
+
+    .payment-instruction {
+      color: #4b5563;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0 0 1.5rem 0;
+      text-align: left;
+      max-width: none;
+    }
+
+    /* QR Code styling */
+    .qr-code-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 1rem auto;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      padding: 10px;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .qr-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 12px;
+    }
+
+    .qr-code-container:hover .qr-image {
+      transform: scale(1.05);
+    }
+
+    .qr-code-container:hover .qr-overlay {
+      opacity: 1;
+    }
+
+    .zoom-icon {
+      font-size: 1.5rem;
+    }
+
+    .qr-caption {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #6b7280;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* Portal steps styling */
+    .portal-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .step-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(184, 134, 11, 0.12);
+      color: var(--color-secondary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-content {
+      color: #4b5563;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .portal-link {
+      color: var(--color-secondary);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .portal-link:hover {
+      color: var(--color-link-hover);
+    }
+
+    /* Off-campus Notice card styling */
+    .offcampus-notice-section {
+      margin-bottom: 2rem;
+    }
+
+    .notice-card-gold {
+      background: #fffdf9;
+      border-left: 5px solid var(--color-secondary);
+      border-radius: 0 16px 16px 0;
+      padding: 1.75rem 2rem;
+      box-shadow: 0 4px 15px rgba(184, 134, 11, 0.05);
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .notice-icon {
+      font-size: 1.75rem;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .notice-content {
+      flex: 1;
+    }
+
+    .notice-content h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--color-secondary);
+      font-size: 1.15rem;
+      font-family: 'Roboto Slab', serif;
+      text-shadow: none;
+    }
+
+    .notice-content p {
+      margin: 0;
+      color: #6b7280;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      text-align: left;
+      max-width: none;
+    }
+
+    /* QR Code Modal styling */
+    .qr-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .qr-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .qr-modal-content {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      max-width: 450px;
+      width: 100%;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      transform: translateY(-20px);
+      transition: transform 0.3s ease;
+    }
+
+    .qr-modal.active .qr-modal-content {
+      transform: translateY(0);
+    }
+
+    .qr-modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      font-weight: 300;
+      color: #9ca3af;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      line-height: 1;
+    }
+
+    .qr-modal-close:hover {
+      color: #111827;
+    }
+
+    .qr-modal-content h3 {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      color: var(--color-primary);
+      font-size: 1.25rem;
+      text-shadow: none;
+    }
+
+    .qr-modal-image {
+      width: 280px;
+      height: 280px;
+      object-fit: contain;
+      margin: 0 auto 1.5rem auto;
+      border: 1px solid #f3f4f6;
+      border-radius: 8px;
+      padding: 5px;
+    }
+
+    .modal-instruction {
+      margin: 0;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .intro-card-premium {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 1.75rem;
       }
 
+      .intro-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 2.2rem;
+      }
+
+      .btn-action {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .notice-card-gold {
+        padding: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
       .cfp-header {
-        text-align: center;
         margin-bottom: 2rem;
         padding-bottom: 1rem;
-        border-bottom: 2px solid #e5e7eb;
       }
 
-      .cfp-header h1 {
-        margin-bottom: 0.5rem;
-        color: var(--color-primary);
-        margin-top: 0;
+      .intro-content h2 {
+        font-size: 1.4rem;
       }
 
-      .info-card {
-        background: #ffffff;
+      .intro-content p,
+      .bullet-text,
+      .step-content {
+        font-size: 0.9rem;
+      }
+
+      .btn-action {
+        padding: 0.75rem 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .tariff-card {
         border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 3rem 2rem;
-        margin: 2rem auto;
-        max-width: 800px;
-        transition: all 0.3s ease;
-        border: 2px solid #e5e7eb;
-        position: relative;
-        overflow: hidden;
-        text-align: center;
       }
 
-      .info-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 6px;
-        background: linear-gradient(135deg, #813c54 0%, #9d4a63 100%);
+      .card-header-gradient {
+        padding: 1.5rem 1rem;
       }
 
-      .info-card:hover {
-        box-shadow: 0 8px 24px rgba(129, 60, 84, 0.2);
-        transform: translateY(-4px);
-        border-color: var(--color-primary);
+      .card-body {
+        padding: 1.5rem 1rem;
       }
 
-      .info-text {
-        font-size: 1.25rem;
-        color: #374151;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
+      .card-payment-details {
+        margin-top: 1.25rem;
       }
 
-      .info-highlight {
-        font-size: 1.25rem;
-        color: var(--color-primary);
-        font-weight: 700;
-        margin-bottom: 0;
+      .qr-modal-content {
+        padding: 2rem 1rem;
       }
-    </style>
+
+      .qr-modal-image {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  </style>
 </head>
-<body>    <!-- Navigation -->
-    <nav
-      class="ieee-professional-nav"
-      role="navigation"
-      aria-label="IEEE SeFet 2026 Main Navigation"
-    >
-      <div class="ieee-nav-container">
-        <!-- Desktop Navigation -->
-        <div class="ieee-nav-desktop">
-          <ul class="ieee-nav-menu" role="menubar">
-            <!-- Home -->
-            <li class="ieee-nav-item" role="none">
-              <a href="../index.html" class="ieee-nav-link" role="menuitem"
-                >Home</a
-              >
-            </li>
 
-            <!-- About Us -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="About Us"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                About Us
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="../about/vnit.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">About VNIT</span>
-                    </div>
-                  </a>
-                  <a
-                    href="../about/eed.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">About EED</span>
-                    </div>
-                  </a>
-                  <a
-                    href="../about/maharashtra.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >About Nagpur</span
-                      >
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
+<body> <!-- Navigation -->
+  <nav class="ieee-professional-nav" role="navigation" aria-label="IEEE SeFet 2026 Main Navigation">
+    <div class="ieee-nav-container">
+      <!-- Desktop Navigation -->
+      <div class="ieee-nav-desktop">
+        <ul class="ieee-nav-menu" role="menubar">
+          <!-- Home -->
+          <li class="ieee-nav-item" role="none">
+            <a href="../index.html" class="ieee-nav-link" role="menuitem">Home</a>
+          </li>
 
-            <!-- Authors -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="Authors"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Authors
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="../conference/authors/call-for-papers.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Call for Papers</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/authors/camera-ready.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Camera Ready Submission</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/authors/publication-templates.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Publication & Templates</span
-                      >
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Special Sessions -->
-
-
-            <li class="ieee-nav-item" role="none">
-
-
-              <a
-
-
-                href="../conference/special-sessions.html"
-
-
-                class="ieee-nav-link"
-
-
-                role="menuitem"
-
-
-                >Special Sessions</a
-
-
-              >
-
-
-            </li>
-
-            <!-- Speakers -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="Speakers"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Speakers
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="../conference/speakers/keynote.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Keynote Speakers</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/speakers/tutorial.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Tutorial Speakers</span
-                      >
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Events -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="Events"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Events
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="../conference/events/program.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Program Schedule</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/events/wie.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">WIE Events</span>
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/events/syp.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">SYP Events</span>
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/events/academic-panel.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Academic Panel</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/events/industry.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Industry Events</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/events/city-tour.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">City Tour</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Registration -->
-            <li class="ieee-nav-item" role="none">
-              <a
-                href="../conference/registration.html"
-                class="ieee-nav-link"
-                role="menuitem"
-                >Registration</a
-              >
-            </li>
-
-            <!-- Awards -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="Awards"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Awards
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-                    href="../conference/awards/doctoral-thesis.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Doctoral Thesis Award</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/awards/student-travel.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Student Travel Awards</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/awards/best-paper.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Best Paper Award</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/awards/best-poster.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Best Poster Award</span
-                      >
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- More -->
-            <li class="ieee-nav-item has-dropdown" role="none">
-              <span
-                class="ieee-nav-link"
-                role="menuitem"
-                tabindex="0"
-                data-dropdown-trigger="More"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                More
-                <svg
-                  class="ieee-dropdown-icon"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <div class="ieee-dropdown-menu" role="menu">
-                <div class="ieee-dropdown-content">
-                  <a
-
-                    href="../conference/committee.html"
-
-                    class="ieee-dropdown-item"
-
-                    role="menuitem"
-
-                  >
-
-                    <div class="ieee-dropdown-item-content">
-
-                      <span class="ieee-dropdown-item-title"
-
-                        >Committee</span
-
-                      >
-
-                    </div>
-
-                  </a>
-                  <a
-                    href="../conference/accommodation.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Accommodation</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/venue-contact.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Venue & Contact</span
-                      >
-                    </div>
-                  </a>
-                  
-                  <!-- Sponsorship submenu -->
-                  <span
-                    class="ieee-dropdown-item has-submenu"
-                    role="menuitem"
-                    data-submenu-trigger="More-Sponsorship"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title">Sponsorship</span>
-                    </div>
-                    <span class="ieee-submenu-icon">•</span>
-                  </span>
-                  <div class="ieee-submenu" role="menu">
-                    <div class="ieee-submenu-content">
-                      <a
-                        href="../conference/sponsorship/sponsors.html"
-                        class="ieee-submenu-item"
-                        role="menuitem"
-                      >
-                        <div class="ieee-submenu-item-content">
-                          <span class="ieee-submenu-item-title"
-                            >Our Sponsors</span
-                          >
-                        </div>
-                      </a>
-                      <a
-                        href="../conference/sponsorship/details.html"
-                        class="ieee-submenu-item"
-                        role="menuitem"
-                      >
-                        <div class="ieee-submenu-item-content">
-                          <span class="ieee-submenu-item-title"
-                            >Sponsorship Details</span
-                          >
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-
-                  <a
-                    href="../conference/gallery.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >Photo Gallery</span
-                      >
-                    </div>
-                  </a>
-                  <a
-                    href="../conference/proceedings.html"
-                    class="ieee-dropdown-item"
-                    role="menuitem"
-                  >
-                    <div class="ieee-dropdown-item-content">
-                      <span class="ieee-dropdown-item-title"
-                        >SEFET Proceedings</span
-                      >
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Mobile Menu Toggle -->
-        <button
-          class="ieee-mobile-toggle"
-          aria-expanded="false"
-          aria-controls="ieee-mobile-navigation"
-          aria-label="Toggle mobile navigation menu"
-        >
-          <span class="ieee-sr-only">Toggle navigation menu</span>
-          <div class="ieee-hamburger">
-            <span class="ieee-hamburger-line"></span>
-            <span class="ieee-hamburger-line"></span>
-            <span class="ieee-hamburger-line"></span>
-          </div>
-        </button>
-      </div>
-
-      <!-- Mobile Navigation -->
-      <div
-        id="ieee-mobile-navigation"
-        class="ieee-mobile-nav"
-        role="navigation"
-        aria-label="Mobile navigation menu"
-      >
-        <div class="ieee-mobile-content">
-          <div class="ieee-mobile-header">
-            <div class="ieee-mobile-brand">
-              <span class="ieee-mobile-logo">IEEE SeFet 2026</span>
-              <span class="ieee-mobile-subtitle"
-                >Sustainable Energy and Future Electric Transportation</span
-              >
-            </div>
-            <button class="ieee-mobile-close" aria-label="Close mobile menu">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M18 6L6 18M6 6l12 12"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
+          <!-- About Us -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="About Us"
+              aria-haspopup="true" aria-expanded="false">
+              About Us
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
               </svg>
-            </button>
-          </div>
-
-          <div class="ieee-mobile-menu">
-            <div class="ieee-mobile-item">
-              <a href="../index.html" class="ieee-mobile-link">Home</a>
-            </div>
-
-            <div class="ieee-mobile-item">
-              <div class="ieee-mobile-dropdown">
-                <button
-                  class="ieee-mobile-link ieee-mobile-toggle-btn"
-                  aria-expanded="false"
-                  role="button"
-                >
-                  <span>About Us</span>
-                  <svg
-                    class="ieee-mobile-dropdown-icon"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <div class="ieee-mobile-submenu">
-                  <a href="../about/vnit.html" class="ieee-mobile-submenu-item"
-                    >About VNIT</a
-                  >
-                  <a href="../about/eed.html" class="ieee-mobile-submenu-item"
-                    >About EED</a
-                  >
-                  <a
-                    href="../about/maharashtra.html"
-                    class="ieee-mobile-submenu-item"
-                    >About Nagpur</a
-                  >
-                </div>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="../about/vnit.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">About VNIT</span>
+                  </div>
+                </a>
+                <a href="../about/eed.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">About EED</span>
+                  </div>
+                </a>
+                <a href="../about/maharashtra.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">About Nagpur</span>
+                  </div>
+                </a>
               </div>
             </div>
+          </li>
 
-            <div class="ieee-mobile-item">
-              <div class="ieee-mobile-dropdown">
-                <button
-                  class="ieee-mobile-link ieee-mobile-toggle-btn"
-                  aria-expanded="false"
-                  role="button"
-                >
-                  <span>Conference</span>
-                  <svg
-                    class="ieee-mobile-dropdown-icon"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
-                <div class="ieee-mobile-submenu">
-                  <!-- Authors nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Authors</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="../conference/authors/call-for-papers.html"
-                        class="ieee-mobile-sublink"
-                        >Call for Papers</a
-                      >
-                      <a
-                        href="../conference/authors/camera-ready.html"
-                        class="ieee-mobile-sublink"
-                        >Camera Ready</a
-                      >
-                      <a
-                        href="../conference/authors/publication-templates.html"
-                        class="ieee-mobile-sublink"
-                        >Templates</a
-                      >
-                    </div>
+          <!-- Authors -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="Authors"
+              aria-haspopup="true" aria-expanded="false">
+              Authors
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="../conference/authors/call-for-papers.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Call for Papers</span>
+                  </div>
+                </a>
+                <a href="../conference/authors/camera-ready.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Camera Ready Submission</span>
+                  </div>
+                </a>
+                <a href="../conference/authors/publication-templates.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Publication & Templates</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Special Sessions -->
+
+
+          <li class="ieee-nav-item" role="none">
+
+
+            <a href="../conference/special-sessions.html" class="ieee-nav-link" role="menuitem">Special Sessions</a>
+
+
+          </li>
+
+          <!-- Speakers -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="Speakers"
+              aria-haspopup="true" aria-expanded="false">
+              Speakers
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="../conference/speakers/keynote.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Keynote Speakers</span>
+                  </div>
+                </a>
+                <a href="../conference/speakers/tutorial.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Tutorial Speakers</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Events -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="Events" aria-haspopup="true"
+              aria-expanded="false">
+              Events
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="../conference/events/program.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Program Schedule</span>
+                  </div>
+                </a>
+                <a href="../conference/events/wie.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">WIE Events</span>
+                  </div>
+                </a>
+                <a href="../conference/events/syp.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">SYP Events</span>
+                  </div>
+                </a>
+                <a href="../conference/events/academic-panel.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Academic Panel</span>
+                  </div>
+                </a>
+                <a href="../conference/events/industry.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Industry Events</span>
+                  </div>
+                </a>
+                <a href="../conference/events/city-tour.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">City Tour</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Registration -->
+          <li class="ieee-nav-item" role="none">
+            <a href="../conference/registration.html" class="ieee-nav-link" role="menuitem">Registration</a>
+          </li>
+
+          <!-- Awards -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="Awards" aria-haspopup="true"
+              aria-expanded="false">
+              Awards
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="../conference/awards/doctoral-thesis.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Doctoral Thesis Award</span>
+                  </div>
+                </a>
+                <a href="../conference/awards/student-travel.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Student Travel Awards</span>
+                  </div>
+                </a>
+                <a href="../conference/awards/best-paper.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Best Paper Award</span>
+                  </div>
+                </a>
+                <a href="../conference/awards/best-poster.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Best Poster Award</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <!-- More -->
+          <li class="ieee-nav-item has-dropdown" role="none">
+            <span class="ieee-nav-link" role="menuitem" tabindex="0" data-dropdown-trigger="More" aria-haspopup="true"
+              aria-expanded="false">
+              More
+              <svg class="ieee-dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+            <div class="ieee-dropdown-menu" role="menu">
+              <div class="ieee-dropdown-content">
+                <a href="../conference/committee.html" class="ieee-dropdown-item" role="menuitem">
+
+                  <div class="ieee-dropdown-item-content">
+
+                    <span class="ieee-dropdown-item-title">Committee</span>
+
                   </div>
 
-                  <a
-                    href="../conference/committee.html"
-                    class="ieee-mobile-submenu-item"
-                    >Committee</a
-                  >
-
-                  <!-- Speakers nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Speakers</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="../conference/speakers/keynote.html"
-                        class="ieee-mobile-sublink"
-                        >Keynote Speakers</a
-                      >
-                      <a
-                        href="../conference/speakers/tutorial.html"
-                        class="ieee-mobile-sublink"
-                        >Tutorial Speakers</a
-                      >
-                    </div>
+                </a>
+                <a href="../conference/accommodation.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Accommodation</span>
                   </div>
-
-                  <!-- Event Details nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Event Details</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="../conference/events/program.html"
-                        class="ieee-mobile-sublink"
-                        >Program Schedule</a
-                      >
-                      <a
-                        href="../conference/events/wie.html"
-                        class="ieee-mobile-sublink"
-                        >WIE Events</a
-                      >
-                      <a
-                        href="../conference/events/syp.html"
-                        class="ieee-mobile-sublink"
-                        >SYP Events</a
-                      >
-                      <a
-                        href="../conference/events/academic-panel.html"
-                        class="ieee-mobile-sublink"
-                        >Academic Panel</a
-                      >
-                      <a
-                        href="../conference/events/industry.html"
-                        class="ieee-mobile-sublink"
-                        >Industry Events</a
-                      >
-                      <a
-                        href="../conference/events/city-tour.html"
-                        class="ieee-mobile-sublink"
-                        >City Tour</a
-                      >
-                    </div>
+                </a>
+                <a href="../conference/venue-contact.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Venue & Contact</span>
                   </div>
+                </a>
 
-                  <a
-                    href="../conference/special-sessions.html"
-                    class="ieee-mobile-submenu-item"
-                    >Special Sessions</a
-                  >
-                  <a
-                    href="../conference/registration.html"
-                    class="ieee-mobile-submenu-item"
-                    >Registration</a
-                  >
-
-                  <!-- Awards nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Awards</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="../conference/awards/doctoral-thesis.html"
-                        class="ieee-mobile-sublink"
-                        >Doctoral Thesis Award</a
-                      >
-                      <a
-                        href="../conference/awards/student-travel.html"
-                        class="ieee-mobile-sublink"
-                        >Student Travel Awards</a
-                      >
-                      <a
-                        href="../conference/awards/best-paper.html"
-                        class="ieee-mobile-sublink"
-                        >Best Paper Award</a
-                      >
-                      <a
-                        href="../conference/awards/best-poster.html"
-                        class="ieee-mobile-sublink"
-                        >Best Poster Award</a
-                      >
-                    </div>
+                <!-- Sponsorship submenu -->
+                <span class="ieee-dropdown-item has-submenu" role="menuitem" data-submenu-trigger="More-Sponsorship">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Sponsorship</span>
                   </div>
-
-                  <a
-                    href="../conference/accommodation.html"
-                    class="ieee-mobile-submenu-item"
-                    >Accommodation</a
-                  >
-                  <a
-                    href="../conference/venue-contact.html"
-                    class="ieee-mobile-submenu-item"
-                    >Venue & Contact</a
-                  >
-
-                  <!-- Sponsorship nested submenu -->
-                  <div class="ieee-mobile-nested-item">
-                    <button
-                      class="ieee-mobile-submenu-item ieee-mobile-nested-toggle"
-                      aria-expanded="false"
-                    >
-                      <span>Sponsorship</span>
-                      <svg
-                        class="ieee-mobile-submenu-icon"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="ieee-mobile-nested-menu">
-                      <a
-                        href="../conference/sponsorship/sponsors.html"
-                        class="ieee-mobile-sublink"
-                        >Our Sponsors</a
-                      >
-                      <a
-                        href="../conference/sponsorship/details.html"
-                        class="ieee-mobile-sublink"
-                        >Sponsorship Details</a
-                      >
-                    </div>
+                  <span class="ieee-submenu-icon">•</span>
+                </span>
+                <div class="ieee-submenu" role="menu">
+                  <div class="ieee-submenu-content">
+                    <a href="../conference/sponsorship/sponsors.html" class="ieee-submenu-item" role="menuitem">
+                      <div class="ieee-submenu-item-content">
+                        <span class="ieee-submenu-item-title">Our Sponsors</span>
+                      </div>
+                    </a>
+                    <a href="../conference/sponsorship/details.html" class="ieee-submenu-item" role="menuitem">
+                      <div class="ieee-submenu-item-content">
+                        <span class="ieee-submenu-item-title">Sponsorship Details</span>
+                      </div>
+                    </a>
                   </div>
-
-                  <a
-                    href="../conference/gallery.html"
-                    class="ieee-mobile-submenu-item"
-                    >Photo Gallery</a
-                  >
-                  <a
-                    href="../conference/proceedings.html"
-                    class="ieee-mobile-submenu-item"
-                    >SEFET Proceeding</a
-                  >
                 </div>
+
+                <a href="../conference/gallery.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">Photo Gallery</span>
+                  </div>
+                </a>
+                <a href="../conference/proceedings.html" class="ieee-dropdown-item" role="menuitem">
+                  <div class="ieee-dropdown-item-content">
+                    <span class="ieee-dropdown-item-title">SEFET Proceedings</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="ieee-mobile-toggle" aria-expanded="false" aria-controls="ieee-mobile-navigation"
+        aria-label="Toggle mobile navigation menu">
+        <span class="ieee-sr-only">Toggle navigation menu</span>
+        <div class="ieee-hamburger">
+          <span class="ieee-hamburger-line"></span>
+          <span class="ieee-hamburger-line"></span>
+          <span class="ieee-hamburger-line"></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="ieee-mobile-navigation" class="ieee-mobile-nav" role="navigation" aria-label="Mobile navigation menu">
+      <div class="ieee-mobile-content">
+        <div class="ieee-mobile-header">
+          <div class="ieee-mobile-brand">
+            <span class="ieee-mobile-logo">IEEE SeFet 2026</span>
+            <span class="ieee-mobile-subtitle">Sustainable Energy and Future Electric Transportation</span>
+          </div>
+          <button class="ieee-mobile-close" aria-label="Close mobile menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="ieee-mobile-menu">
+          <div class="ieee-mobile-item">
+            <a href="../index.html" class="ieee-mobile-link">Home</a>
+          </div>
+
+          <div class="ieee-mobile-item">
+            <div class="ieee-mobile-dropdown">
+              <button class="ieee-mobile-link ieee-mobile-toggle-btn" aria-expanded="false" role="button">
+                <span>About Us</span>
+                <svg class="ieee-mobile-dropdown-icon" width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="ieee-mobile-submenu">
+                <a href="../about/vnit.html" class="ieee-mobile-submenu-item">About VNIT</a>
+                <a href="../about/eed.html" class="ieee-mobile-submenu-item">About EED</a>
+                <a href="../about/maharashtra.html" class="ieee-mobile-submenu-item">About Nagpur</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="ieee-mobile-item">
+            <div class="ieee-mobile-dropdown">
+              <button class="ieee-mobile-link ieee-mobile-toggle-btn" aria-expanded="false" role="button">
+                <span>Conference</span>
+                <svg class="ieee-mobile-dropdown-icon" width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="ieee-mobile-submenu">
+                <!-- Authors nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Authors</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="../conference/authors/call-for-papers.html" class="ieee-mobile-sublink">Call for Papers</a>
+                    <a href="../conference/authors/camera-ready.html" class="ieee-mobile-sublink">Camera Ready</a>
+                    <a href="../conference/authors/publication-templates.html" class="ieee-mobile-sublink">Templates</a>
+                  </div>
+                </div>
+
+                <a href="../conference/committee.html" class="ieee-mobile-submenu-item">Committee</a>
+
+                <!-- Speakers nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Speakers</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="../conference/speakers/keynote.html" class="ieee-mobile-sublink">Keynote Speakers</a>
+                    <a href="../conference/speakers/tutorial.html" class="ieee-mobile-sublink">Tutorial Speakers</a>
+                  </div>
+                </div>
+
+                <!-- Event Details nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Event Details</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="../conference/events/program.html" class="ieee-mobile-sublink">Program Schedule</a>
+                    <a href="../conference/events/wie.html" class="ieee-mobile-sublink">WIE Events</a>
+                    <a href="../conference/events/syp.html" class="ieee-mobile-sublink">SYP Events</a>
+                    <a href="../conference/events/academic-panel.html" class="ieee-mobile-sublink">Academic Panel</a>
+                    <a href="../conference/events/industry.html" class="ieee-mobile-sublink">Industry Events</a>
+                    <a href="../conference/events/city-tour.html" class="ieee-mobile-sublink">City Tour</a>
+                  </div>
+                </div>
+
+                <a href="../conference/special-sessions.html" class="ieee-mobile-submenu-item">Special Sessions</a>
+                <a href="../conference/registration.html" class="ieee-mobile-submenu-item">Registration</a>
+
+                <!-- Awards nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Awards</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="../conference/awards/doctoral-thesis.html" class="ieee-mobile-sublink">Doctoral Thesis
+                      Award</a>
+                    <a href="../conference/awards/student-travel.html" class="ieee-mobile-sublink">Student Travel
+                      Awards</a>
+                    <a href="../conference/awards/best-paper.html" class="ieee-mobile-sublink">Best Paper Award</a>
+                    <a href="../conference/awards/best-poster.html" class="ieee-mobile-sublink">Best Poster Award</a>
+                  </div>
+                </div>
+
+                <a href="../conference/accommodation.html" class="ieee-mobile-submenu-item">Accommodation</a>
+                <a href="../conference/venue-contact.html" class="ieee-mobile-submenu-item">Venue & Contact</a>
+
+                <!-- Sponsorship nested submenu -->
+                <div class="ieee-mobile-nested-item">
+                  <button class="ieee-mobile-submenu-item ieee-mobile-nested-toggle" aria-expanded="false">
+                    <span>Sponsorship</span>
+                    <svg class="ieee-mobile-submenu-icon" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                  <div class="ieee-mobile-nested-menu">
+                    <a href="../conference/sponsorship/sponsors.html" class="ieee-mobile-sublink">Our Sponsors</a>
+                    <a href="../conference/sponsorship/details.html" class="ieee-mobile-sublink">Sponsorship Details</a>
+                  </div>
+                </div>
+
+                <a href="../conference/gallery.html" class="ieee-mobile-submenu-item">Photo Gallery</a>
+                <a href="../conference/proceedings.html" class="ieee-mobile-submenu-item">SEFET Proceeding</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <div class="cfp-container">
-        <!-- Page Header -->
-        <div class="cfp-header">
-          <h1>Accommodation</h1>
-        </div>
-
-        <div class="info-card">
-          <p class="info-text">Campus accommodation will be available at nominal charges.</p>
-          <p class="info-highlight">Details will be updated soon.</p>
-        </div>
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="cfp-container">
+      <!-- Page Header -->
+      <div class="cfp-header">
+        <h1>Accommodation Details</h1>
+        <p class="subtitle-text">Guidelines, Tariff, and Payment Procedures for IEEE SeFet 2026 Participants</p>
       </div>
-    </main>
 
+      <!-- General Info Section -->
+      <section class="accommodation-intro">
+        <div class="intro-card-premium">
+          <div class="intro-icon">🏨</div>
+          <div class="intro-content">
+            <h2>Campus Accommodation</h2>
+            <p>We will make every effort to accommodate outstation participants in the <strong>VNIT Guest House / Hostel
+                Guest Rooms</strong>, subject to availability and payment as per the Institute's rules.</p>
+            <div class="info-bullets">
+              <div class="bullet-item">
+                <!-- <span class="bullet-icon">📌</span> -->
+                <span class="bullet-text">Allotment is strictly on a <strong>first-come, first-served</strong>
+                  basis.</span>
+              </div>
+              <div class="bullet-item">
+                <!-- <span class="bullet-icon">💳</span> -->
+                <span class="bullet-text">Payment must be made at the time of room allotment/check-in.</span>
+              </div>
+              <div class="bullet-item">
+                <!-- <span class="bullet-icon">✓</span> -->
+                <span class="bullet-text">Accommodation will be confirmed only upon receipt of payment.</span>
+              </div>
+            </div>
 
-    <!-- Scripts -->
-    <script src="../js/navigation.js"></script>
+            <div class="action-container">
+              <a href="https://forms.gle/1adFqNbSwY5UZX5F7" target="_blank" rel="noopener noreferrer"
+                class="btn-action btn-primary-gradient">
+                <span>Reserve Accommodation (Google Form)</span>
+                <span class="btn-subtext">Deadline: 20th June 2026</span>
+              </a>
+              <a href="https://drive.google.com/file/d/1qOPNtOPe1umF37denhcf6bSwiclVyb8s/view?usp=drive_link"
+                target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary-outline">
+                <span>Download Booking Guidelines</span>
+                <span class="btn-subtext">Detailed PDF Guide</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accommodation Rates & Payments Section -->
+      <section class="tariff-section">
+        <h2 class="section-title">Accommodation Rates & Payment Procedures</h2>
+        <div class="tariff-grid">
+          <!-- Guest Rooms Card -->
+          <div class="tariff-card guest-house-card">
+            <!-- <div class="card-badge">Most Preferred</div> -->
+            <div class="card-header-gradient">
+              <h3>Hostel's Guest Room</h3>
+              <!-- <p class="card-subtitle">Boy's & Girl's Hostels</p> -->
+            </div>
+            <div class="card-body">
+              <div class="pricing-option-group">
+                <h4 class="option-group-title">Single Room (Per Day)</h4>
+                <div class="price-row">
+                  <span class="room-type">AC Room</span>
+                  <span class="price-value"><span class="currency">INR</span> 1200</span>
+                </div>
+                <div class="price-row">
+                  <span class="room-type">Non-AC Room</span>
+                  <span class="price-value"><span class="currency">INR</span> 800</span>
+                </div>
+              </div>
+              <hr class="card-divider" />
+              <div class="pricing-option-group">
+                <h4 class="option-group-title">Shared Room (Per Day)</h4>
+                <div class="price-row">
+                  <span class="room-type">AC Room (Per Person)</span>
+                  <span class="price-value"><span class="currency">INR</span> 600</span>
+                </div>
+                <div class="price-row">
+                  <span class="room-type">Non-AC Room (Per Person)</span>
+                  <span class="price-value"><span class="currency">INR</span> 400</span>
+                </div>
+              </div>
+
+              <hr class="card-divider" />
+
+              <div class="card-payment-details">
+                <h4 class="payment-method-title">
+                  <span class="payment-icon">💳</span>
+                  Payment Method: QR Code (UPI)
+                </h4>
+                <p class="payment-instruction">Scan the QR code below to complete the payment for Guest Rooms. Save the
+                  transaction receipt to upload and present at check-in.</p>
+                <div class="qr-code-container">
+                  <img src="../assets/Accomodation/QR%20Code.png" alt="VNIT Hostel Guest Room Payment QR Code"
+                    class="qr-image" />
+                  <div class="qr-overlay">
+                    <span class="zoom-icon">🔍</span>
+                    <span>Click to view full size</span>
+                  </div>
+                </div>
+                <p class="qr-caption">QR Code for Hostel's Guest Room Payment</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <p class="allotment-note">*Subject to availability. Standard amenities included.</p>
+            </div>
+          </div>
+
+          <!-- Student Hostel Card -->
+          <div class="tariff-card student-hostel-card">
+            <div class="card-header-gradient secondary">
+              <h3>Boy's and Girl's Hostels</h3>
+              <!-- <p class="card-subtitle">Regular Boy's & Girl's Hostels</p> -->
+            </div>
+            <div class="card-body">
+              <div class="pricing-option-group">
+                <h4 class="option-group-title">Standard Room (Per Day)</h4>
+                <div class="price-row single-price">
+                  <span class="room-type">Shared Hostel Room</span>
+                  <span class="price-value"><span class="currency">INR</span> 300</span>
+                </div>
+              </div>
+              <div class="hostel-amenities">
+                <ul class="amenity-list">
+                  <li>Basic furnished accommodation</li>
+                  <li>Shared common washrooms</li>
+                  <li>Ideal for student delegates</li>
+                </ul>
+              </div>
+
+              <hr class="card-divider" />
+
+              <div class="card-payment-details">
+                <h4 class="payment-method-title">
+                  <span class="payment-icon">🌐</span>
+                  Payment Method: VNIT Online Portal
+                </h4>
+                <p class="payment-instruction">Follow the steps below to pay online through the VNIT online payment
+                  portal:</p>
+
+                <div class="portal-steps">
+                  <div class="step-item">
+                    <div class="step-badge">A</div>
+                    <div class="step-content">
+                      Visit the VNIT online payment portal at <a href="https://pay.vnit.ac.in/home" target="_blank"
+                        rel="noopener noreferrer" class="portal-link">pay.vnit.ac.in/home</a>.
+                    </div>
+                  </div>
+                  <div class="step-item">
+                    <div class="step-badge">B</div>
+                    <div class="step-content">
+                      On the homepage, click on <strong>"Online Payment"</strong>.
+                    </div>
+                  </div>
+                  <div class="step-item">
+                    <div class="step-badge">C</div>
+                    <div class="step-content">
+                      Select the payment category <strong>"Other Misc. Fines and Payment"</strong>.
+                    </div>
+                  </div>
+                  <div class="step-item">
+                    <div class="step-badge">D</div>
+                    <div class="step-content">
+                      Select <strong>"Hostel Room Rent for Students"</strong> as the payment category.
+                    </div>
+                  </div>
+                  <div class="step-item">
+                    <div class="step-badge">E</div>
+                    <div class="step-content">
+                      Enter your <strong>Paper ID</strong> in the <strong>Registration Number</strong> field.
+                    </div>
+                  </div>
+                  <div class="step-item">
+                    <div class="step-badge">F</div>
+                    <div class="step-content">
+                      In the Remarks field, enter <strong>"SEFET 2026 Accommodation Fee"</strong>.
+                    </div>
+                  </div>
+                  <div class="step-item">
+                    <div class="step-badge">G</div>
+                    <div class="step-content">
+                      Complete the payment process and <strong>save the payment receipt</strong> for future reference.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <p class="allotment-note">*Allocated per person per day as per Institute rules.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Off Campus Notice -->
+      <section class="offcampus-notice-section">
+        <div class="notice-card-gold">
+          <div class="notice-icon">⚠️</div>
+          <div class="notice-content">
+            <h3>Important Note</h3>
+            <p>If you wish to stay outside the VNIT campus, please make your own accommodation and conveyance
+              arrangements. The organizing committee is only responsible for facilitating bookings within VNIT
+              hostels/guest rooms based on institutional rules and availability.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Modal for full size QR Code -->
+  <div id="qrModal" class="qr-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="qr-modal-content">
+      <span class="qr-modal-close" aria-label="Close modal">&times;</span>
+      <h3 id="modalTitle">Hostel's Guest Room Payment QR Code</h3>
+      <img src="../assets/Accomodation/QR%20Code.png" alt="VNIT Hostel Guest Room Payment QR Code Large"
+        class="qr-modal-image" />
+      <p class="modal-instruction">Scan with any UPI app to complete your payment.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2026 VNIT Nagpur. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/navigation.js"></script>
+  <script>
+    // Modal Interaction for QR Code
+    const qrContainer = document.querySelector('.qr-code-container');
+    const qrModal = document.getElementById('qrModal');
+    const closeBtn = document.querySelector('.qr-modal-close');
+
+    if (qrContainer && qrModal) {
+      qrContainer.addEventListener('click', () => {
+        qrModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Disable background scrolling
+      });
+
+      const closeModal = () => {
+        qrModal.classList.remove('active');
+        document.body.style.overflow = ''; // Re-enable scrolling
+      };
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      // Close on clicking outside the modal content
+      qrModal.addEventListener('click', (e) => {
+        if (e.target === qrModal) {
+          closeModal();
+        }
+      });
+
+      // Escape key listener to close modal
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && qrModal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    }
+  </script>
 </body>
+
 </html>
