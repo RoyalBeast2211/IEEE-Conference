@@ -645,6 +645,189 @@
         height: 220px;
       }
     }
+
+    /* Off-Campus Hotels Styling */
+    .offcampus-hotels-section {
+      margin-bottom: 4rem;
+    }
+
+    .hotels-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(229, 231, 235, 0.7);
+    }
+
+    .hotels-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      text-align: left;
+    }
+
+    .hotels-table thead {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #9c4b66 100%);
+      color: #ffffff;
+    }
+
+    .hotels-table th {
+      padding: 1.25rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.1);
+    }
+
+    .hotels-table td {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      color: #4b5563;
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+
+    .hotels-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .hotels-table tbody tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .hotels-table tbody tr:hover {
+      background: rgba(129, 60, 84, 0.03);
+    }
+
+    .hotels-table td.sr-no {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .hotels-table td.hotel-name {
+      font-weight: 600;
+      color: #1f2937;
+      font-size: 1rem;
+    }
+
+    /* Links inside table styling */
+    .hotel-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .hotel-btn-primary {
+      background: rgba(129, 60, 84, 0.08);
+      color: var(--color-primary);
+      border: 1px solid rgba(129, 60, 84, 0.2);
+    }
+
+    .hotel-btn-primary:hover {
+      background: var(--color-primary);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(129, 60, 84, 0.15);
+    }
+
+    .hotel-btn-secondary {
+      background: rgba(184, 134, 11, 0.08);
+      color: var(--color-secondary);
+      border: 1px solid rgba(184, 134, 11, 0.2);
+    }
+
+    .hotel-btn-secondary:hover {
+      background: var(--color-secondary);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(184, 134, 11, 0.15);
+    }
+
+    /* Responsive style for mobile screens */
+    @media (max-width: 768px) {
+      .hotels-table-wrapper {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+      }
+
+      .hotels-table,
+      .hotels-table thead,
+      .hotels-table tbody,
+      .hotels-table th,
+      .hotels-table td,
+      .hotels-table tr {
+        display: block;
+      }
+
+      .hotels-table thead {
+        display: none;
+      }
+
+      .hotels-table tr {
+        background: #ffffff;
+        border: 1px solid rgba(229, 231, 235, 0.8);
+        border-radius: 16px;
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      }
+
+      .hotels-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.65rem 0;
+        border-bottom: 1px dashed #f3f4f6;
+        text-align: right;
+      }
+
+      .hotels-table td:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .hotels-table td:first-child {
+        padding-top: 0;
+      }
+
+      .hotels-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #6b7280;
+        text-align: left;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .hotels-table td.hotel-name {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 4px;
+        padding: 0.75rem 0;
+        border-bottom: 1px dashed #f3f4f6;
+      }
+
+      .hotels-table td.hotel-name::before {
+        margin-bottom: 2px;
+      }
+
+      .hotels-table td.hotel-name .name-text {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #111827;
+      }
+    }
   </style>
 </head>
 
@@ -1284,6 +1467,275 @@
               arrangements. The organizing committee is only responsible for facilitating bookings within VNIT
               hostels/guest rooms based on institutional rules and availability.</p>
           </div>
+        </div>
+      </section>
+
+      <!-- Off Campus Accommodation Section -->
+      <section class="offcampus-hotels-section">
+        <h2 class="section-title">Suggested Hotels Near VNIT Nagpur</h2>
+        <p class="subtitle-text">Recommended off-campus accommodation options for IEEE SeFet 2026 delegates and
+          participants</p>
+
+        <div class="hotels-table-wrapper">
+          <table class="hotels-table" role="table" aria-label="Suggested hotels near VNIT Nagpur">
+            <thead>
+              <tr>
+                <th style="width: 8%; text-align: center;">Sr. No.</th>
+                <th style="width: 42%;">Name of Hotel</th>
+                <th style="width: 25%; text-align: center;">Official / Primary Link</th>
+                <th style="width: 25%; text-align: center;">Google Maps Routing Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">1</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Hotel Shree Gayatri Inn</span>
+                </td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.shreegayatriinn.in/" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Shree+Gayatri+Inn+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">2</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Treebo Shembekars Inn</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.treebo.com/hotels-in-nagpur/treebo-shembekars-inn-abhyankar-nagar-4153/"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Treebo+Shembekars+Inn+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">3</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Itsy Hotels Le Clover</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Itsy+Hotels+Le+Clover+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">4</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">OYO Chintamani Inn Service
+                    Apartment</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.oyorooms.com/114135/" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=OYO+Chintamani+Inn+Service+Apartment+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">5</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Hotel O CELEBRITY</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.oyorooms.com/304119/" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+O+CELEBRITY+Nagpur" target="_blank"
+                    rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">6</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Treebo Chandraprasth
+                    Residency</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.treebo.com/hotels-in-nagpur/treebo-chandraprasth-residency-pratap-nagar-ring-road-2990/"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Treebo+Chandraprasth+Residency+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">7</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">OYO Townhouse 161
+                    Maitreyee</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.klook.com/hotels/detail/981613-oyo-townhouse-161-maitreyee/" target="_blank"
+                    rel="noopener noreferrer" class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=OYO+Townhouse+161+Maitreyee+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">8</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">RAMOTI SERVICE APARTMENTS</span>
+                </td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.magicbricks.com/propertyDetail/ramoti-service-apartment-pg-trimurti-nagar-in-nagpur&amp;pgid=4d42343531383039677261646532"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=RAMOTI+SERVICE+APARTMENTS+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">9</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">The Seven Hotel</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://thesevenhotels.com" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Seven+Hotel+Nagpur" target="_blank"
+                    rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">10</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Jindal’s Homestay</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://en.planetofhotels.com/india/nagpur/jindals-homestay" target="_blank"
+                    rel="noopener noreferrer" class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Jindals+Homestay+Nagpur" target="_blank"
+                    rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">11</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Hotel Maitrayee</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://hotelmaitrayee.southendairport.net/" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Maitrayee+Nagpur" target="_blank"
+                    rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">12</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">OYO 890 Seven Suites
+                    Apartment</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://www.agoda.com/en-in/oyo-rooms-vnit-nagpur/hotel/nagpur-in.html" target="_blank"
+                    rel="noopener noreferrer" class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=OYO+890+Seven+Suites+Apartment+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">13</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Hotel Udyam Glory</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://hoteludyamglory.southendairport.net/" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Udyam+Glory+Nagpur" target="_blank"
+                    rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">14</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Treebo Premium The Memoir</span>
+                </td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://thememoir.life" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Treebo+Premium+The+Memoir+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="sr-no" style="text-align: center;" data-label="Sr. No.">15</td>
+                <td class="hotel-name" data-label="Hotel Name"><span class="name-text">Olive Head Office</span></td>
+                <td style="text-align: center;" data-label="Official Link">
+                  <a href="https://oliveliving.com/" target="_blank" rel="noopener noreferrer"
+                    class="hotel-btn hotel-btn-primary">
+                    Website
+                  </a>
+                </td>
+                <td style="text-align: center;" data-label="Google Maps">
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=Olive+Head+Office+Bajaj+Nagar+Nagpur"
+                    target="_blank" rel="noopener noreferrer" class="hotel-btn hotel-btn-secondary">
+                    Get Route
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
     </div>
