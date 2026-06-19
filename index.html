@@ -41,6 +41,51 @@
       }
     }
 
+    /* Premium Download Button Styles */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+    .download-btn svg {
+      flex-shrink: 0;
+    }
+    .download-btn-primary {
+      background-color: var(--color-primary);
+      color: white !important;
+      border: 1px solid var(--color-primary);
+    }
+    .download-btn-primary:hover {
+      background-color: white;
+      color: var(--color-primary) !important;
+      box-shadow: 0 4px 12px rgba(129, 60, 84, 0.2);
+      transform: translateY(-2px);
+    }
+    .download-btn-pptx {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #a25270 100%);
+      color: white !important;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(129, 60, 84, 0.25);
+      letter-spacing: 0.3px;
+    }
+    .download-btn-pptx:hover {
+      background: linear-gradient(135deg, #a25270 0%, var(--color-primary) 100%);
+      color: white !important;
+      box-shadow: 0 6px 20px rgba(129, 60, 84, 0.4);
+      transform: translateY(-2px);
+    }
+
     /* Carousel Styles */
     .carousel-container {
       position: relative;
@@ -430,7 +475,7 @@
               <div class="ieee-dropdown-content">
                 <a href="conference/events/program.html" class="ieee-dropdown-item" role="menuitem">
                   <div class="ieee-dropdown-item-content">
-                    <span class="ieee-dropdown-item-title">Program Schedule</span>
+                    <span class="ieee-dropdown-item-title">Technical Program Schedule</span>
                   </div>
                 </a>
                 <a href="conference/events/wie.html" class="ieee-dropdown-item" role="menuitem">
@@ -672,7 +717,7 @@
                     </svg>
                   </button>
                   <div class="ieee-mobile-nested-menu">
-                    <a href="conference/events/program.html" class="ieee-mobile-sublink">Program Schedule</a>
+                    <a href="conference/events/program.html" class="ieee-mobile-sublink">Technical Program Schedule</a>
                     <a href="conference/events/wie.html" class="ieee-mobile-sublink">WIE Events</a>
                     <a href="conference/events/syp.html" class="ieee-mobile-sublink">SYP Events</a>
                     <a href="conference/events/academic-panel.html" class="ieee-mobile-sublink">Academic Panel</a>
@@ -919,21 +964,93 @@
             </summary>
             <div style="padding: 1rem; border-top: 1px solid #e5e7eb">
               <embed src="assets/conference%20brochure.pdf" type="application/pdf" class="pdf-embed" />
-              <p style="margin-top: 1rem; text-align: center">
-                <a href="assets/conference%20brochure.pdf" download="IEEE_SeFet_2026_Brochure.pdf" class="download-btn"
-                  style="
-                      display: inline-block;
-                      padding: 0.75rem 1.5rem;
-                      background-color: var(--color-primary);
-                      color: white;
-                      text-decoration: none;
-                      border-radius: 6px;
-                      font-weight: 500;
-                      transition: background-color 0.2s;
-                    ">Download Brochure PDF</a>
+              <p style="margin-top: 1.5rem; text-align: center">
+                <a href="assets/conference%20brochure.pdf" download="IEEE_SeFet_2026_Brochure.pdf" class="download-btn download-btn-primary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  Download Brochure PDF
+                </a>
               </p>
             </div>
           </details>
+        </section>
+
+        <hr class="divider" />
+
+        <!-- Templates Section -->
+        <section style="margin: 2rem 0">
+          <h2 style="text-align: center; margin-bottom: 1.5rem;">Templates</h2>
+          
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <!-- Poster Template Details -->
+            <details style="
+                  background: #f9fafb;
+                  border: 1px solid #e5e7eb;
+                  border-radius: 8px;
+                  overflow: hidden;
+                ">
+              <summary style="
+                    padding: 1rem;
+                    cursor: pointer;
+                    font-weight: bold;
+                    color: var(--color-primary);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  ">
+                <span style="font-size: 1.2rem">Poster Template</span>
+                <span style="font-size: 1.5rem">+</span>
+              </summary>
+              <div style="padding: 1rem; border-top: 1px solid #e5e7eb">
+                <embed src="assets/Templates/Poster_Template.pdf" type="application/pdf" class="pdf-embed" />
+                <div style="margin-top: 1.5rem; text-align: center;">
+                  <a href="assets/Templates/SeFet2026_Poster_Template.pptx" download="IEEE_SeFet_2026_Poster_Template.pptx" class="download-btn download-btn-pptx">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                      <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                    Download PPTX (Editable Template)
+                  </a>
+                </div>
+              </div>
+            </details>
+
+            <!-- Presentation Template Details -->
+            <details style="
+                  background: #f9fafb;
+                  border: 1px solid #e5e7eb;
+                  border-radius: 8px;
+                  overflow: hidden;
+                ">
+              <summary style="
+                    padding: 1rem;
+                    cursor: pointer;
+                    font-weight: bold;
+                    color: var(--color-primary);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  ">
+                <span style="font-size: 1.2rem">Presentation Template</span>
+                <span style="font-size: 1.5rem">+</span>
+              </summary>
+              <div style="padding: 1rem; border-top: 1px solid #e5e7eb">
+                <embed src="assets/Templates/presentation_template.pdf" type="application/pdf" class="pdf-embed" />
+                <div style="margin-top: 1.5rem; text-align: center;">
+                  <a href="assets/Templates/presentation_template.pptx" download="IEEE_SeFet_2026_Presentation_Template.pptx" class="download-btn download-btn-pptx">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                      <path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                    Download PPTX (Editable Template)
+                  </a>
+                </div>
+              </div>
+            </details>
+          </div>
         </section>
 
         <hr class="divider" />

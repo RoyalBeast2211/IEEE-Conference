@@ -341,6 +341,83 @@
       transform: translateY(0);
     }
 
+    /* Awardees Table Styling */
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 2rem;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .awardees-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 1rem;
+      white-space: normal;
+    }
+
+    .awardees-table th {
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      color: white;
+      padding: 1.25rem 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .awardees-table td {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #f3f4f6;
+      color: #374151;
+      font-weight: 500;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .awardees-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .awardees-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .awardees-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* Clean Callout Styling (without emojis) */
+    .callout-box {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 4px solid #0284c7;
+      border-radius: 0 12px 12px 0;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #0369a1;
+    }
+
+    .callout-box p {
+      margin: 0 0 0.5rem 0;
+      line-height: 1.6;
+    }
+
+    .callout-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .award-signature {
+      margin-top: 2rem;
+      text-align: right;
+      font-weight: 600;
+      color: #1e293b;
+      font-style: italic;
+    }
+
     @media (max-width: 768px) {
       .award-hero {
         padding: 2rem 1.5rem;
@@ -361,6 +438,67 @@
 
       .numbered-list li {
         padding-left: 3rem;
+      }
+
+      /* Responsive Table to Cards on Mobile */
+      .table-container {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        margin-bottom: 1rem;
+      }
+
+      .awardees-table, 
+      .awardees-table tbody, 
+      .awardees-table tr, 
+      .awardees-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .awardees-table thead {
+        display: none;
+      }
+
+      .awardees-table tr {
+        margin-bottom: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #ffffff;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+      }
+
+      .awardees-table tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+
+      .awardees-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f1f5f9;
+        text-align: right;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .awardees-table td:last-child {
+        border-bottom: none;
+      }
+
+      .awardees-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #64748b;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        text-align: left;
+        flex-shrink: 0;
       }
     }
   </style>
@@ -487,7 +625,7 @@
               <div class="ieee-dropdown-content">
                 <a href="../../conference/events/program.html" class="ieee-dropdown-item" role="menuitem">
                   <div class="ieee-dropdown-item-content">
-                    <span class="ieee-dropdown-item-title">Program Schedule</span>
+                    <span class="ieee-dropdown-item-title">Technical Program Schedule</span>
                   </div>
                 </a>
                 <a href="../../conference/events/wie.html" class="ieee-dropdown-item" role="menuitem">
@@ -731,7 +869,7 @@
                     </svg>
                   </button>
                   <div class="ieee-mobile-nested-menu">
-                    <a href="../../conference/events/program.html" class="ieee-mobile-sublink">Program Schedule</a>
+                    <a href="../../conference/events/program.html" class="ieee-mobile-sublink">Technical Program Schedule</a>
                     <a href="../../conference/events/wie.html" class="ieee-mobile-sublink">WIE Events</a>
                     <a href="../../conference/events/syp.html" class="ieee-mobile-sublink">SYP Events</a>
                     <a href="../../conference/events/academic-panel.html" class="ieee-mobile-sublink">Academic Panel</a>
@@ -796,110 +934,174 @@
       <!-- Hero Section -->
       <div class="award-hero">
         <div class="award-hero-content">
-          <div class="award-icon">✈️</div>
           <h1>IEEE IAS Student Travel Award</h1>
           <p class="subtitle">
-            6th IEEE SEFET 2026 invites application for the Student Travel Award to support attending students for the
-            presentation of accepted papers.
+            We are pleased to announce the selected recipients of the IEEE IAS Student Travel Award for the 6th IEEE SEFET 2026.
           </p>
         </div>
       </div>
 
-      <!-- TBA Banner -->
-      <div class="tba-banner">
-        <div class="icon">📅</div>
-        <div class="text">
-          Submission Deadline &amp; Notification Dates: 15/06/2026, 3:00PM (IST)
-        </div>
+      <!-- Success Announcement Banner -->
+      <div class="callout-box">
+        <p><strong>Award Announcement:</strong> The selection process is complete, and the Award Committee has finalized the list of candidates chosen for the IEEE IAS Student Travel Award. Thank you to all the applicants for their submissions.</p>
       </div>
 
-      <!-- Submission Requirements Card -->
+      <!-- Awardees List Card -->
       <div class="card">
         <div class="card-header">
-          <div class="card-icon">📄</div>
-          <h2>Submission Requirements</h2>
+          <h2>List of Awardees</h2>
         </div>
-        <p>
-          Students are required to submit an application in pdf file format including following documents in order:
-        </p>
-        <ol class="numbered-list">
-          <li>
-            <strong>Cover Letter</strong> mentioning the need for the travel
-            support.
-          </li>
-          <li>
-            <strong>Letter of recommendation on institute/college/university letterhead</strong>
-            endorsed by the Head of the Department/Dean/Supervisor with stamp
-            endorsing your student status.
-          </li>
-          <li><strong>CV</strong> (2-page maximum).</li>
-          <li>
-            <strong>PDF(s) of the final paper(s)</strong> accepted at SEFET
-            2026.
-          </li>
-        </ol>
-        <p style="margin-top: 1.5rem; color: #4b5563; margin-bottom: 0.5rem; line-height: 1.8;">
-          📝 Please compile all required files into a single PDF and submit it using the
-          official application form: <a href="https://forms.gle/Csec45qYEizafnFHA" target="_blank"
-            rel="noopener noreferrer"
-            style="color: #0284c7; text-decoration: underline; word-break: break-all;">https://forms.gle/Csec45qYEizafnFHA</a>
-          or by clicking the button below:
-        </p>
-        <div class="btn-container">
-          <a href="https://forms.gle/Csec45qYEizafnFHA" target="_blank" rel="noopener noreferrer" class="award-btn">
-            <span>Submit Application Form</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" style="margin-left: 2px;">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
+        <div class="table-container">
+          <table class="awardees-table">
+            <thead>
+              <tr>
+                <th style="width: 10%;">SN</th>
+                <th style="width: 45%;">Name of the Candidate</th>
+                <th style="width: 45%;">Institute/University Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="SN">1</td>
+                <td data-label="Candidate Name">Akanksha Dwivedi</td>
+                <td data-label="Institute Name">Indian Institute of Technology, Patna</td>
+              </tr>
+              <tr>
+                <td data-label="SN">2</td>
+                <td data-label="Candidate Name">Akhand Pratap Singh</td>
+                <td data-label="Institute Name">Indian Institute of Technology, Delhi</td>
+              </tr>
+              <tr>
+                <td data-label="SN">3</td>
+                <td data-label="Candidate Name">Amit Uniyal</td>
+                <td data-label="Institute Name">Indian Institute of Technology, Roorkee</td>
+              </tr>
+              <tr>
+                <td data-label="SN">4</td>
+                <td data-label="Candidate Name">Anguru Deepak Datta</td>
+                <td data-label="Institute Name">Indian Institute of Technology Madras</td>
+              </tr>
+              <tr>
+                <td data-label="SN">5</td>
+                <td data-label="Candidate Name">Athira Earath Shivadasan</td>
+                <td data-label="Institute Name">Vellore Institute of Technology</td>
+              </tr>
+              <tr>
+                <td data-label="SN">6</td>
+                <td data-label="Candidate Name">D S R S L Avanthika</td>
+                <td data-label="Institute Name">SRM University, Andhra Pradesh</td>
+              </tr>
+              <tr>
+                <td data-label="SN">7</td>
+                <td data-label="Candidate Name">Diptakantha Gogoi</td>
+                <td data-label="Institute Name">Indian Institute of Technology, Roorkee</td>
+              </tr>
+              <tr>
+                <td data-label="SN">8</td>
+                <td data-label="Candidate Name">Ekarna Chakraborty</td>
+                <td data-label="Institute Name">Guru Nanak Institute of Technology</td>
+              </tr>
+              <tr>
+                <td data-label="SN">9</td>
+                <td data-label="Candidate Name">Jitendra Prajapati</td>
+                <td data-label="Institute Name">IIT Roorkee</td>
+              </tr>
+              <tr>
+                <td data-label="SN">10</td>
+                <td data-label="Candidate Name">Khwrwmdao Basumatary</td>
+                <td data-label="Institute Name">Indian Institute of Technology, Jammu</td>
+              </tr>
+              <tr>
+                <td data-label="SN">11</td>
+                <td data-label="Candidate Name">Kiran Sai Dasari</td>
+                <td data-label="Institute Name">IISC Bangalore</td>
+              </tr>
+              <tr>
+                <td data-label="SN">12</td>
+                <td data-label="Candidate Name">Muzaffar Naveed</td>
+                <td data-label="Institute Name">Bits Pilani, Hyderabad Campus</td>
+              </tr>
+              <tr>
+                <td data-label="SN">13</td>
+                <td data-label="Candidate Name">Naman</td>
+                <td data-label="Institute Name">Indian Institute of Technology Ropar, Punjab</td>
+              </tr>
+              <tr>
+                <td data-label="SN">14</td>
+                <td data-label="Candidate Name">Paheli Talukder</td>
+                <td data-label="Institute Name">Indian Institute of Technology, Jodhpur</td>
+              </tr>
+              <tr>
+                <td data-label="SN">15</td>
+                <td data-label="Candidate Name">Priyanshu Mondal</td>
+                <td data-label="Institute Name">Veer Surendra Sai University of Technology, Burla</td>
+              </tr>
+              <tr>
+                <td data-label="SN">16</td>
+                <td data-label="Candidate Name">Priyvrat</td>
+                <td data-label="Institute Name">IIT BHU</td>
+              </tr>
+              <tr>
+                <td data-label="SN">17</td>
+                <td data-label="Candidate Name">Pushpa Kannojia</td>
+                <td data-label="Institute Name">Indian Institute of Technology Ropar</td>
+              </tr>
+              <tr>
+                <td data-label="SN">18</td>
+                <td data-label="Candidate Name">Rabina Ningombam</td>
+                <td data-label="Institute Name">NIT Silchar</td>
+              </tr>
+              <tr>
+                <td data-label="SN">19</td>
+                <td data-label="Candidate Name">Saswat Ranjan Panda</td>
+                <td data-label="Institute Name">Indian Institute of Technology, Kharagpur</td>
+              </tr>
+              <tr>
+                <td data-label="SN">20</td>
+                <td data-label="Candidate Name">Shubham Kumar</td>
+                <td data-label="Institute Name">Indian Institute of Technology, Ropar</td>
+              </tr>
+              <tr>
+                <td data-label="SN">21</td>
+                <td data-label="Candidate Name">Soham Vadadoriya</td>
+                <td data-label="Institute Name">IITRAM, Ahmedabad</td>
+              </tr>
+              <tr>
+                <td data-label="SN">22</td>
+                <td data-label="Candidate Name">Sudhir Kumar Sahoo</td>
+                <td data-label="Institute Name">National Institute of Technology, Rourkela</td>
+              </tr>
+              <tr>
+                <td data-label="SN">23</td>
+                <td data-label="Candidate Name">Tanu Prasad</td>
+                <td data-label="Institute Name">IIT Bhilai</td>
+              </tr>
+              <tr>
+                <td data-label="SN">24</td>
+                <td data-label="Candidate Name">Uday Pathania</td>
+                <td data-label="Institute Name">National Institute of Technology, Hamirpur</td>
+              </tr>
+              <tr>
+                <td data-label="SN">25</td>
+                <td data-label="Candidate Name">Vyas Dhaval Kumar Mahendrakumar</td>
+                <td data-label="Institute Name">IITRAM, Ahmedabad</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
 
-      <!-- Important Dates Card -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">📆</div>
-          <h2>Important Dates</h2>
+        <div style="margin-top: 1.5rem; padding: 1.25rem; border-left: 4px solid #dc2626; background-color: #fef2f2; border-radius: 0 8px 8px 0; color: #991b1b;">
+          <strong style="display: block; margin-bottom: 0.5rem; font-size: 1.05rem;">Important Instructions for Awardees:</strong>
+          <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.6;">
+            <li>Awardees are required to ensure Full/student registration in their own name.</li>
+            <li>The student must attend in-person and present the paper in-person to qualify for receiving the award.</li>
+            <li>The award ceremony will take place during the Valedictory Session.</li>
+          </ul>
         </div>
-        <div class="dates-grid">
-          <div class="date-item">
-            <div class="label">Submission Deadline</div>
-            <div class="value tba">15/06/2026, 3:00PM</div>
-          </div>
-          <div class="date-item">
-            <div class="label">Notification</div>
-            <div class="value tba">20/06/2026</div>
-          </div>
-          <div class="date-item">
-            <div class="label">Award Ceremony</div>
-            <div class="value">Valedictory Session</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Eligibility & Selection Card -->
-      <div class="card">
-        <div class="card-header">
-          <div class="card-icon">⭐</div>
-          <h2>Selection Criteria</h2>
-        </div>
-        <p>Awards will be granted based on the following criteria:</p>
-        <ul class="criteria-list">
-          <li><span class="icon">📚</span> Quality of the work</li>
-          <li><span class="icon">🏅</span> Merit of the student</li>
-          <li><span class="icon">💡</span> Need for the award</li>
-          <li><span class="icon">🌍</span> Distance travelled</li>
-        </ul>
-
-        <div class="warning-callout">
-          <div class="icon">⚠️</div>
-          <p>
-            <strong>Important:</strong> The student must attend in-person and
-            present the paper in-person to qualify for receiving the award.
-          </p>
+        <div class="award-signature">
+          Award Committee<br>
+          IEEE SEFET 2026
         </div>
       </div>
     </div>
