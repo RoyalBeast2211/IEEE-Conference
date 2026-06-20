@@ -895,6 +895,11 @@
       letter-spacing: 0.5px;
     }
 
+    .room-badge.poster-badge {
+      background: rgba(13, 148, 136, 0.08);
+      color: #0d9488;
+    }
+
     .session-number-label {
       font-size: 0.75rem;
       color: #6b7280;
@@ -1860,6 +1865,16 @@
 
         <!-- Filter Row -->
         <div class="filter-controls-row">
+          <!-- Presentation Type Filters -->
+          <div class="filter-group">
+            <span class="filter-label">Presentation Type</span>
+            <div class="filter-pills" id="type-pills">
+              <button class="filter-pill active" onclick="setSessionType('All')">All</button>
+              <button class="filter-pill" onclick="setSessionType('Oral')">Oral Sessions</button>
+              <button class="filter-pill" onclick="setSessionType('Poster')">Poster Sessions</button>
+            </div>
+          </div>
+
           <!-- Room Filters -->
           <div class="filter-group">
             <span class="filter-label">Venue / Room</span>
@@ -1874,6 +1889,8 @@
                 <button class="filter-pill" onclick="setRoomFilter('CRC 6-2')">CRC 6-2</button>
                 <button class="filter-pill" onclick="setRoomFilter('CRC 6-3')">CRC 6-3</button>
                 <button class="filter-pill" onclick="setRoomFilter('CRC 6-4')">CRC 6-4</button>
+                <button class="filter-pill" onclick="setRoomFilter('Near CRC 6-1')">Near CRC 6-1</button>
+                <button class="filter-pill" onclick="setRoomFilter('Near CRC 6-4')">Near CRC 6-4</button>
               </div>
             </div>
           </div>
@@ -2223,11 +2240,7 @@
       switchActiveDay(activeDayIndex);
 
       // Initialize Technical sessions default active day
-      // If the current day is Day 1 (July 8), default Technical Sessions tab to Day 2 (July 9) since there are no sessions in the CSV on July 8.
       let defaultTechDay = activeDayIndex;
-      if (activeDayIndex === 0) {
-        defaultTechDay = 1; // July 9
-      }
       currentTechDayIndex = defaultTechDay;
       const techTabs = document.querySelectorAll('.tech-day-tab');
       techTabs.forEach((tab, i) => {
@@ -2648,7 +2661,7 @@
       },
       {
         "id": "1047",
-        "title": "A Common-Ground High Step-Up DC\u2013DC Converter Using Switched Inductor\u2013Capacitor Networks",
+        "title": "A Common-Ground High Step-Up DC–DC Converter Using Switched Inductor–Capacitor Networks",
         "authors": "Raj, Abhishek *"
       },
       {
@@ -2767,7 +2780,7 @@
       },
       {
         "id": "1624",
-        "title": "Seamless Wide-Speed Sensorless Control of a PMaSynRM Drive Using Hybrid HFSI\u2013ASTSMO Estimation for SPV\u2013Battery-Fed LEV Application",
+        "title": "Seamless Wide-Speed Sensorless Control of a PMaSynRM Drive Using Hybrid HFSI–ASTSMO Estimation for SPV–Battery-Fed LEV Application",
         "authors": "Kumar, Sushant*; Kumar, Shailendra ; Kurm, Shashank; Sharma, Utkarsh"
       },
       {
@@ -2848,7 +2861,7 @@
       },
       {
         "id": "765",
-        "title": "Optimal Control of a DAB Converter for Hybrid Solar\u2013Grid EV Charging with LKAF-Based DQ Control for Power Quality Enhancement",
+        "title": "Optimal Control of a DAB Converter for Hybrid Solar–Grid EV Charging with LKAF-Based DQ Control for Power Quality Enhancement",
         "authors": "Kumar Bhaskar, Gulshan;  Kumar, Shailendra; Murari, Krishna*; Hasan, Md Shamim; Kamalasadan, Sukumar"
       },
       {
@@ -2858,7 +2871,7 @@
       },
       {
         "id": "963",
-        "title": "A Logit\u2013Inertia Enhanced Dynamic Equilibrium Framework for Power and Transportation Networks",
+        "title": "A Logit–Inertia Enhanced Dynamic Equilibrium Framework for Power and Transportation Networks",
         "authors": "Sharma, Kailash*"
       },
       {
@@ -2886,12 +2899,12 @@
       },
       {
         "id": "1005",
-        "title": "Robust Control Design and Performance Evaluation of a Grid-Connected Bidirectional SPAR\u2013DAB EV Charger for G2V and V2G Applications",
+        "title": "Robust Control Design and Performance Evaluation of a Grid-Connected Bidirectional SPAR–DAB EV Charger for G2V and V2G Applications",
         "authors": "Kumar, Rohit*; Subudhi, Bidyadhar; Naik N, Venkata Ramana"
       },
       {
         "id": "1451",
-        "title": "A Series\u2013Series\u2013Series Compensated Charge-Controlled Integrated Wireless EV Charger with Auxiliary Power Supply",
+        "title": "A Series–Series–Series Compensated Charge-Controlled Integrated Wireless EV Charger with Auxiliary Power Supply",
         "authors": "Naramu, Avinash*; Wandhare, Rupesh"
       },
       {
@@ -3043,7 +3056,7 @@
       },
       {
         "id": "1673",
-        "title": "Uncertainty-Aware Remaining Useful Life Prediction of Lithium-Ion Batteries Using Voltage Curve\u2013Driven Gaussian Process Regression",
+        "title": "Uncertainty-Aware Remaining Useful Life Prediction of Lithium-Ion Batteries Using Voltage Curve–Driven Gaussian Process Regression",
         "authors": "Tripathi, Arbhita*; Choudhary, Vedveer Singh ; Saxena, Saurabh ; Panigrahi, Bijaya Ketan"
       },
       {
@@ -3109,7 +3122,7 @@
       },
       {
         "id": "1084",
-        "title": "Adaptive Q-Learning-Driven PI\u2013PD Control for Unstable Magnetic Levitation Systems Under Stability Region Constraints",
+        "title": "Adaptive Q-Learning-Driven PI–PD Control for Unstable Magnetic Levitation Systems Under Stability Region Constraints",
         "authors": "Dwivedi, Akanksha*; Karan, Aditya; Singh, Lalit Kumar; Ali, Ahmad"
       },
       {
@@ -3167,7 +3180,7 @@
       },
       {
         "id": "942",
-        "title": "Single-Horizon Predictive Control for DC-Link Voltage Regulation in Active Battery\u2013Supercapacitor Hybrid Energy Storage Systems",
+        "title": "Single-Horizon Predictive Control for DC-Link Voltage Regulation in Active Battery–Supercapacitor Hybrid Energy Storage Systems",
         "authors": "Raikar, Sonaxi*; C G, Naveen Ram;  Vittal K, Panduranga"
       }
     ]
@@ -3243,7 +3256,7 @@
       },
       {
         "id": "1009",
-        "title": "An Improved Backward\u2013Forward Load Flow Analysis for Renewable Energy Integration in Distribution Networks",
+        "title": "An Improved Backward–Forward Load Flow Analysis for Renewable Energy Integration in Distribution Networks",
         "authors": "Krishan, Ram*; Singh, Tanya"
       }
     ]
@@ -3266,7 +3279,7 @@
       },
       {
         "id": "1033",
-        "title": "Dynamic Security Assessment of Large Power Systems Under N\u22121 Contingencies",
+        "title": "Dynamic Security Assessment of Large Power Systems Under N−1 Contingencies",
         "authors": "Nandini, Sai*; Krishan, Ram"
       },
       {
@@ -3347,7 +3360,7 @@
       },
       {
         "id": "1472",
-        "title": "Quantum\u2013Deep Hybrid Intelligence for Adaptive Electrochemical Storage Orchestration in EV-Driven Microgrids",
+        "title": "Quantum–Deep Hybrid Intelligence for Adaptive Electrochemical Storage Orchestration in EV-Driven Microgrids",
         "authors": "Ventrapragada , Gowri Sandeep*; A, Narendrababu; Sriramula, Tharun"
       },
       {
@@ -3466,7 +3479,7 @@
       },
       {
         "id": "120",
-        "title": "Design of an Integrated Model for Hybrid AI\u2013Physics Co\u0002Optimization and Validation in Transmission\u2013Distribution Power Networks",
+        "title": "Design of an Integrated Model for Hybrid AI–Physics Co\u0002Optimization and Validation in Transmission–Distribution Power Networks",
         "authors": "Sakhare, minakshi*; Wakte , Ganesh ; Pande, Mukul; Kite, Mrunali"
       },
       {
@@ -3590,7 +3603,7 @@
       },
       {
         "id": "1503",
-        "title": "A Dual-Branch CNN\u2013Transformer Network for Intelligent Fault Detection and Classification in Transmission Lines Using Multi-Signal Time-Series Data",
+        "title": "A Dual-Branch CNN–Transformer Network for Intelligent Fault Detection and Classification in Transmission Lines Using Multi-Signal Time-Series Data",
         "authors": "Koyi, Kotaiah chowdary*; Venkata Rao, Parusubothu ; Sai Kiran,  Lotti ; Sunny, Nuthulapati ; janaki prasanthi, Dasireddy"
       },
       {
@@ -3613,12 +3626,12 @@
     "papers": [
       {
         "id": "155",
-        "title": "Fault Prediction of Safety Critical Systems using Artificial Intelligence \u2013 A Review",
+        "title": "Fault Prediction of Safety Critical Systems using Artificial Intelligence – A Review",
         "authors": "Singh, Dr.Pooja*; Thennarasu, Pooja; Singh, Lalit"
       },
       {
         "id": "1687",
-        "title": "A False Data Injection Attack\u2013Resilient State Estimation Framework",
+        "title": "A False Data Injection Attack–Resilient State Estimation Framework",
         "authors": "Chauhan, Kapil*; Yadav, Priyanka; Arif, Md; Kumar Gaur, Vishal; Veerasamy, Veerapandiyan"
       },
       {
@@ -3841,7 +3854,7 @@
       },
       {
         "id": "1122",
-        "title": "Efficient Variable-Frequency Control of a Half-Bridge LLC Resonant Converter for CC\u2013CV Li-Ion Battery Charging",
+        "title": "Efficient Variable-Frequency Control of a Half-Bridge LLC Resonant Converter for CC–CV Li-Ion Battery Charging",
         "authors": "GUPTA, Shubham Raj*; Swain, Sudarshan; Rao, Ayush Suresh"
       },
       {
@@ -3907,7 +3920,7 @@
       },
       {
         "id": "1211",
-        "title": "TOGAF\u2013OSA Driven Hybrid UEBA\u2013SIEM Architecture for Smart Threat Detection in Critical Infrastructure",
+        "title": "TOGAF–OSA Driven Hybrid UEBA–SIEM Architecture for Smart Threat Detection in Critical Infrastructure",
         "authors": "J, Jarvis*"
       },
       {
@@ -3924,6 +3937,11 @@
         "id": "409",
         "title": "A NOVEL ANR ALGORITHM FOR SPV INTEGRATED GRID SYSTEM",
         "authors": "Anasane, Sarika*"
+      },
+      {
+        "id": "1734",
+        "title": "Current Injection Method for Load-Flow Solution of Distribution Network with Distributed Generations",
+        "authors": "Shah, Tanshi*; Murari, Krishna; Kumar, Shailendra; Kamalasadan, Sukumar"
       }
     ]
   },
@@ -3935,7 +3953,7 @@
     "papers": [
       {
         "id": "1012",
-        "title": "Sustainable Hydrogen Production Using Grid-Connected PV\u2013Battery\u2013Electrolyser Systems for Data Centers using an Advanced Controller",
+        "title": "Sustainable Hydrogen Production Using Grid-Connected PV–Battery–Electrolyser Systems for Data Centers using an Advanced Controller",
         "authors": "Prasad, Tanu*; Kumar, Shailendra; Kurm, Shashank"
       },
       {
@@ -3983,7 +4001,7 @@
       },
       {
         "id": "615",
-        "title": "DETECTION OF FAULT\u2019S IN TRANSMISSION LINES USING NUMERICAL RELAY D60 AND ENERVISTA SOFTWARE",
+        "title": "DETECTION OF FAULT’S IN TRANSMISSION LINES USING NUMERICAL RELAY D60 AND ENERVISTA SOFTWARE",
         "authors": "Sindhuja, M.; VENKATESWARA RAO, Dr B *; Sirisha, K.; Shaini, L.; Amulya, J."
       },
       {
@@ -4073,6 +4091,870 @@
         "authors": "M, Mukesh Charan*; Mugalya, Rohit; M, Chandralekha; Raj, Rahul"
       }
     ]
+  },
+  {
+    "room": "Near CRC 6-1",
+    "session_name": "POSTER SESSION #1A",
+    "time_slot": "July 8, 2026 | 04:30 PM to 05:30 PM",
+    "type": "Poster",
+    "papers": [
+      {
+        "id": "135",
+        "title": "Detection of Anomalous Power Consumption Using Tabnet-Based Approach",
+        "authors": "Bhatra, Jagadish*; C. D., Jaidhar; Jena, Debashisha"
+      },
+      {
+        "id": "194",
+        "title": "A Case Study of Hybrid Floating Photovoltaic System at Koyna Dam, Maharashtra, India",
+        "authors": "Gurao, vedika*; Sai Charan Raj, Gunda ; Kulkarni , P.S. ; Ojha, Shubham"
+      },
+      {
+        "id": "333",
+        "title": "A review of ISO centric multi timescale market– EMS coordination between day ahead, intraday and real time markets: architectures, TSO–DSO interfaces and uncertainty modeling",
+        "authors": "Ansari, Anzum*"
+      },
+      {
+        "id": "412",
+        "title": "Operational Impact of Strategic AC False Data Injection Attacks on Modern Power Grids",
+        "authors": "SIKKEWAL, ARNAV; Badar, Altaf Q.H.*"
+      },
+      {
+        "id": "670",
+        "title": "A DWT–ANN Based Approach for Fault Detection and Classification in an IEEE 9-Bus Power System",
+        "authors": "Kamble, vaibhav*; Patne, Nita"
+      },
+      {
+        "id": "738",
+        "title": "Bidirectional EV Charging in Smart Grids Technologies and AI Applications",
+        "authors": "Kadu, Rudresh *; Chaudhari, Madhuri; Bansod, Sahil; Bhattar, Chandrakant"
+      },
+      {
+        "id": "848",
+        "title": "Integrated Economic Assessment of a Hybrid Wind– Floating Solar PV and Dynamic Analysis of PV System",
+        "authors": "SAI CHARAN RAJ, GUNDA*; Bhise, Digambar; Kulkarni , P S"
+      },
+      {
+        "id": "909",
+        "title": "Control-Oriented Voltage Regulation Strategies of DC-DC Boost Converter Using Simulation",
+        "authors": "Baranawal, Tanya; Khandelwal, Akshat *; Satyanarayana, Neeli"
+      },
+      {
+        "id": "987",
+        "title": "Data-Driven Lifetime Prediction of Power Semiconductor Devices Under EV Mission Profile",
+        "authors": "Kumar, Ankit; Bara, David Mathias*; Sahoo, Manoranjan"
+      },
+      {
+        "id": "996",
+        "title": "An ML-Based Framework for Automatic DC–DC Converter Topology Identification and Schematic Generation",
+        "authors": "SHENOY, AKASH*; SAI SRIKALA, TUMARADA VENKATA; RUPESH SINGH, REETESH; REVANKAR, SHREYA D; A V, SAVINAY KRISHNA; KUMAR, RAJNEESH"
+      },
+      {
+        "id": "1024",
+        "title": "Metaheuristic Driven Power Architecture Optimization for DC Fast Charging Stations Integrated Techno-Economic Framework",
+        "authors": "AKHIL, ALLE*; Satputaley, R.J."
+      },
+      {
+        "id": "1057",
+        "title": "Design of proposed Hybrid Floating Solar Photovoltaic System",
+        "authors": "Arora, Jaskaran; Raj, Prateek; Pal, Sujoy*; Kumar, Prashant; Kulkarni, Prakash"
+      },
+      {
+        "id": "1327",
+        "title": "Analysis of Bifurcation and Chaos in Voltage Controlled Boost Converter",
+        "authors": "MADHUKAR, JAKKE*; Rajpathak, Bhooshan"
+      },
+      {
+        "id": "1376",
+        "title": "Structural Design of 16/18 and 12/18 Outer-Rotor Switched Reluctance Motor with Performance Prediction for In-Wheel Applications",
+        "authors": "S. Dufare, Lata*; S. Dufare , Lata ; M. Lokhande , Makarand ; Umre, B. S."
+      },
+      {
+        "id": "1377",
+        "title": "Modified SINDy and UKF based FDI detection Strategy in AC Power Systems",
+        "authors": "Rishi, Om*; Yadav, Ravi"
+      },
+      {
+        "id": "1384",
+        "title": "Resilient Current Control of Grid-Connected VSI Using Deep Learning-Augmented PI Control",
+        "authors": "Mondal, Priyanshu; Pradhan, Dr. Raseswari *; Mohapatra, Alivarani; Sahoo, Sudhir Kumar"
+      },
+      {
+        "id": "1395",
+        "title": "A Multimodal ML–ViT Approach for Data and Image Driven Sub-Synchronous Oscillations (SSO) Severity Detection in Wind Turbines",
+        "authors": "Bhukya, Jawaharlal*; Bhukya , Venkanna ; Nutula , Kranthi Reddy"
+      },
+      {
+        "id": "1432",
+        "title": "Enhanced Voltage Control of DC-DC Boost Converters Using Deep Q-Network Learning Agent",
+        "authors": "Maloth, Ravi *; Suraparaju, Dr. KrishnamaRaju"
+      },
+      {
+        "id": "1469",
+        "title": "Adaptive Intelligent Predictive Control for Energy Efficient Autonomous Electric Vehicles",
+        "authors": "SRIRAMULA, THARUN*; A, Narendrababu; Ventrapragada, Gowri Sandeep; J, Chandra Reddy"
+      },
+      {
+        "id": "1498",
+        "title": "Nonlinear ADRC: A Comparative Study on DC-DC Boost Converter",
+        "authors": "Haider, Faraz*; Ali, Ahmad"
+      }
+    ]
+  },
+  {
+    "room": "Near CRC 6-4",
+    "session_name": "POSTER SESSION #1B",
+    "time_slot": "July 8, 2026 | 04:30 PM to 05:30 PM",
+    "type": "Poster",
+    "papers": [
+      {
+        "id": "1537",
+        "title": "A Neural-Tree Stacking Ensemble for Short-Term Wind Power Forecasting",
+        "authors": "Barik, Amar Kumar*; Jain, Lakshya; Das , Soumyabrata"
+      },
+      {
+        "id": "1541",
+        "title": "Machine Learning–Based Multi-Class Cyber-Attack Detection for Advanced Metering Infrastructure",
+        "authors": "Bhukya, Jawaharlal*; Rathod, Sandip S. ; Singh, Jay Prakash."
+      },
+      {
+        "id": "1570",
+        "title": "Constrained Multi-Objective Control of a 3-DOF Manipulator: Joint and Task Space Tracking via JAYA Optimization",
+        "authors": "Kardam, Jatin*; Lakshmi, Shubh; Rath, Jagat Jyoti; Purwar, Shubhi"
+      },
+      {
+        "id": "1577",
+        "title": "Critical Assessment of the Challenges in the Design of Group III Nitrides based Green Hydrogen Production through Photoelectrochemical Cells",
+        "authors": "Salame, Mahesh S.; Gupta, Nikhil Deep*"
+      },
+      {
+        "id": "1589",
+        "title": "LSTM Autoencoder based intrusion detection in Industrial Control Networks",
+        "authors": "Gautam, Suryakant*; Yadav, Neha Rani; Kumar, Subodh"
+      },
+      {
+        "id": "1630",
+        "title": "Joint State of Charge and State of Health Estimation of Lithium-Ion Batteries Using a Multi-Task LSTM Framework",
+        "authors": "Tiwari, Nimalika*; Kumar, Arvind"
+      },
+      {
+        "id": "1639",
+        "title": "Physics-Constrained Adaptive Fast Charging Using Real-Time Thermal Feedback and Safety-Bounded C-Rate Modulation for EV Li-Ion Batteries",
+        "authors": "DUTTA, AMITAVA*; BALLAL, MAKARAND"
+      },
+      {
+        "id": "1641",
+        "title": "Pathways to Energy Sector Modernization: A Transition Toward Digital Public Infrastructure",
+        "authors": "Sharan, Raushan*; Khandelwal, Stavya; Barala, Chandra Prakash; Bhakar, Rohit"
+      },
+      {
+        "id": "1643",
+        "title": "A Novel Single-Phase Grid-Tied Transformer-Less Multi-level Solar Inverter",
+        "authors": "VINAY KUMAR REDDY , GURRAM *; M. Lokhande, Makarand"
+      },
+      {
+        "id": "1666",
+        "title": "Modeling and Decoupled Control of a PV-Based DC Microgrid Using Cascaded Dual Active Bridge and Bidirectional Buck-Boost Battery Interface",
+        "authors": "DUKARE, RUSHABH*; A, Narendrababu; Yalla, Naveen; Halder, Sukantha"
+      },
+      {
+        "id": "1678",
+        "title": "Development of an E-Highway Overhead Dynamic Charging System for Continuous Intercity Electric Bus Operation",
+        "authors": "NAKKA, RAVIKUMAR*"
+      },
+      {
+        "id": "1698",
+        "title": "Performance Assessment of Solar PV Models Using Various Estimation Techniques",
+        "authors": "Thakur, Padmanabh *; Rawat, Nikita; Joshi Nautiyal, Ekta; Goyal, Shweta ; Das, S"
+      },
+      {
+        "id": "1725",
+        "title": "Coordinated Placement of Electric Vehicle Charging Stations in Distribution System Using Metaheuristic Algorithm",
+        "authors": "Donikeni, Yashwanth; Das, Soumyabrata*"
+      },
+      {
+        "id": "1739",
+        "title": "Performance Analysis of Fuzzy Controlled D-STATCOM for Power Quality Improvement",
+        "authors": "BHADIKAR, ARINJAY*; Ramteke, Manoj R."
+      },
+      {
+        "id": "1802",
+        "title": "Data Driven SOH Estimation for Embedded Battery Management Systems",
+        "authors": "Dudhe, Sumit*; Kale, Vijay; Bhardwaj, Tikam"
+      },
+      {
+        "id": "1803",
+        "title": "Design and Control of a Solar PV based DC Microgrid with Battery Supercapacitor Hybrid Storage for EV Charging Applications",
+        "authors": "Divya, Badavath ; Dora, Bimal Kumar*; Mitra, Arghya"
+      },
+      {
+        "id": "1809",
+        "title": "Minimize the Renewable Energy Deployment Cost in an Interconnected Grid System",
+        "authors": "Dora, Bimal Kumar*"
+      },
+      {
+        "id": "1876",
+        "title": "Design and simulation of 5kW Stacked Brick Modular Coil System for Charging While in Motion",
+        "authors": "Azmi, Sana; Keshri, Ritesh*; Ramteke, Manoj"
+      },
+      {
+        "id": "1877",
+        "title": "Evaluation of Phase Angle-based Single Phase Shift Control Strategy for Dual Active Bridge Converter in EV Charging Applications",
+        "authors": "B, Megha; Keshri, Ritesh*"
+      }
+    ]
+  },
+  {
+    "room": "Near CRC 6-1",
+    "session_name": "POSTER SESSION #2A",
+    "time_slot": "July 9, 2026 | 04:30 PM to 05:30 PM",
+    "type": "Poster",
+    "papers": [
+      {
+        "id": "169",
+        "title": "A Novel Double-Carrier-Based PWM for MMC With Three-Level Flying-Capacitor Submodules Featuring Enhanced Output Voltage Levels",
+        "authors": "Gogoi, Diptakantha*; Dash, Jyoti Ranjan; Agarwal, Pramod"
+      },
+      {
+        "id": "181",
+        "title": "Modeling Non-Linear Electromechanical Dynamics: A Bayesian Approach to DC Motor Torque and Efficiency Estimation",
+        "authors": "Rakesh Pasi, Deepa; Makker, Myiesha; Kumar, Sairaj; Avinash, Tanisha; S T, Saranya; Bhowmik, Pritam*"
+      },
+      {
+        "id": "201",
+        "title": "Grid Integrated Photovoltaic Hybrid Energy Storage System",
+        "authors": "Chankaya, Mukul*; Panda, Mrutunjaya; Hussain, Ikhlaq"
+      },
+      {
+        "id": "215",
+        "title": "Adaptive Electric Vehicle Charging model with Effective photovoltaic Integration using Energy Management Interface",
+        "authors": "Chougule, Samruddhi*"
+      },
+      {
+        "id": "307",
+        "title": "Effect of Cr₂O₃ HTL on Improving the Efficiency of FACsPb(IBr)₃ Photovoltaic cell for Gree Energy Applications",
+        "authors": "KUMAR, RAUSHAN*; Priyadarshi, Alok ; Priyadarshi, Aditya ; Kumar, Mukesh; Singh, Anjani Kumar ; Prajapati,, Ashish"
+      },
+      {
+        "id": "349",
+        "title": "Analysis of HTL-Free CsSnI3/FASnI3 Heterojunction Perovskite Solar Cells with Various Charge Transport Layers",
+        "authors": "P, Bhuvaneswari; P, Sriramalakshmi*"
+      },
+      {
+        "id": "491",
+        "title": "Power Management Scheme for an Islanded Solar PV system with Battery Storage",
+        "authors": "NSS, Sarath Chandra*; Geddada, Dr. Nagesh"
+      },
+      {
+        "id": "677",
+        "title": "A Novel Dual Gun High Power EV Charging Solution with Modular Dual-Transformer Quad-Active-Bridges",
+        "authors": "SAHU, SILPASHREE ; De, Dipankar*; Patra, Ajit Kumar; Dunna, Vijaya Kumar; Baghasingh, Baibhab; A, HARIKRISHNAN; Goel, Vinay; Narayanan, Ramasamy; Davis, Thomas"
+      },
+      {
+        "id": "739",
+        "title": "Non-Isolated High-Gain Bidirectional DC-DC Converter for DC Microgrid-Based EV Charging",
+        "authors": "Bansod, Sahil*; Chaudhari, Madhuri; Kadu, Rudresh; Bhattar , Chandrakant"
+      },
+      {
+        "id": "857",
+        "title": "An improved P-Type Switched Inductor Boost Converter based High Gain Converter for PV Application",
+        "authors": "DANGETI, LAKSHMAN KUMAR*; Padmaja, S M ; Kumar, Amritesh; Bhavishya, Grandhi S S ; Charishma, Varri; Vyshnavi, Gopireddy"
+      },
+      {
+        "id": "910",
+        "title": "Model Predictive Control of Zeta Converter for Voltage Regulation in Photovoltaic Applications",
+        "authors": "Khandelwal, Akshat *; Barnawal, Tanya; Satyanarayana, Neeli"
+      },
+      {
+        "id": "926",
+        "title": "Analysis on Appropriate Bandwidth Selection of the Outer Voltage Loop for Bimodal Inverter Operation",
+        "authors": "Sena, Sanjay *; Verma, Chandan; Kumar, Ashok"
+      },
+      {
+        "id": "934",
+        "title": "Adaptive Fuzzy Model Predictive Control of a Bidirectional DC–DC Converter for Electric Vehicle Applications",
+        "authors": "KUMAR, M PAVAN*"
+      },
+      {
+        "id": "965",
+        "title": "Grid-Integrated Solar EV Charging: A Sustainable Approach to Urban Mobility",
+        "authors": "Tamhankar, Manjiri*; Hasabe, Ramchandra"
+      },
+      {
+        "id": "970",
+        "title": "Two-Switch Ultra-High Gain DC-DC Converter for Heavy Duty Fuel Cell Electric Vehicle",
+        "authors": "Bashir, Yasir*; Edpuganti, Amarendra"
+      },
+      {
+        "id": "1021",
+        "title": "Performance Evaluation of Multilevel Inverters for Renewable Energy Applications",
+        "authors": "Raju, Konda*"
+      },
+      {
+        "id": "1034",
+        "title": "Harmonic Mitigation in Distribution Transformer Using an Auxiliary Harmonic Suppression Winding",
+        "authors": "Joshi, Nachiket*"
+      },
+      {
+        "id": "1088",
+        "title": "Design of PV Battery-Powered Induction Heating Box Type Solar Cooker",
+        "authors": "Thakur, Achal*; Lokhande, Makarand ; A. Shah, Varsha"
+      },
+      {
+        "id": "1091",
+        "title": "Enhanced Regenerative Braking in BLDC Drives via VOA-Based PI Controller Tuning",
+        "authors": "Penumudi, Manoj Manivannan ; Sagar, G Jawahar ; Mahto, Taghswar*; Nagabushanam, K Mounika ; Kumar, Rakesh; Kar, Manoj Kumar"
+      },
+      {
+        "id": "1126",
+        "title": "Ultrafast Drive-Cycle Optimization of EV SynRMs via Calibrated Hybrid MEC",
+        "authors": "Sharma, Nitish*; Pathak, Mukesh kumar"
+      }
+    ]
+  },
+  {
+    "room": "Near CRC 6-4",
+    "session_name": "POSTER SESSION #2B",
+    "time_slot": "July 9, 2026 | 04:30 PM to 05:30 PM",
+    "type": "Poster",
+    "papers": [
+      {
+        "id": "1130",
+        "title": "Marine Microgrid Frequency Stabilization Using Error-Aware Intelligent PI Controller Design",
+        "authors": "Waghmare, Akanksha*; Singh, V. P.; Mathur, Akhilesh"
+      },
+      {
+        "id": "1187",
+        "title": "Design and Control of a DFIG-Based Light Vehicle EV Charger with Boost PFC and Flyback Converter for Power Quality Improvement",
+        "authors": "Chaubey, Nikhil*"
+      },
+      {
+        "id": "1219",
+        "title": "Torque Quality Enhancement in Flat-Magnet IPMSMs via Quasi‑Sinusoidal Magnet Contouring",
+        "authors": "Gupta, Sagar*; Jain, Amit"
+      },
+      {
+        "id": "1228",
+        "title": "MPPT-Aware Multi-Resolution Wavelet Framework for DC-Side Fault Diagnosis in PV Systems",
+        "authors": "Choumal, Apoorva*; Sharma, Preeti"
+      },
+      {
+        "id": "1241",
+        "title": "Enhanced Hybrid Cross-Tied BIPV Network for Optimized Power and Minimization of Mismatch Loss in Critical Shading Conditions",
+        "authors": "Bodkhe, Nikhil Arunrao; Sarkar, Debayan*; Mal, Risha"
+      },
+      {
+        "id": "1341",
+        "title": "Grid Forming-Direct Torque Control of DFIG Based Wind Turbine Systems With reduced ripples",
+        "authors": "Jaladi, Dr. Kiran Kumar*"
+      },
+      {
+        "id": "1403",
+        "title": "A Novel DV-TPC and DOBC-Based Sensor-less PM-a-SynRM Drive for Solar PV-Battery Powered LEVs with Regenerative Braking Mechanism",
+        "authors": "Ranjita, Basitti; Kumar, Sushant*; Kumar, Shailendra; Mourya , Harsh"
+      },
+      {
+        "id": "1407",
+        "title": "Electromagnetic Performance of a Stator Switched Reluctance Motor with Toroidal Winding",
+        "authors": "Kumar, Deepak *; Misra, Himanshu"
+      },
+      {
+        "id": "1425",
+        "title": "A Power Electronic Transformer With reduced LVIGBTs for Railway Traction Application",
+        "authors": "Gupta, Jeetesh*; Shukla, Kapil"
+      },
+      {
+        "id": "1434",
+        "title": "A Unified Observer-Based Sensor-less Operation of DC-DC Converters and DC Motor",
+        "authors": "Maloth, Ravi *; Suraparaju, Dr. KrishnamaRaju"
+      },
+      {
+        "id": "1459",
+        "title": "Control and Performance of Novel Architecture Based on a Dual-Input DC-DC Converter",
+        "authors": "Saha, Subhodip; Saha, Tapas Kumar; Dey, Jayati; Ahamed, Irfan*"
+      },
+      {
+        "id": "1462",
+        "title": "Efficient Energy Management System Using Demand Response Integrated With Distributed Generation Using Heuristic Approach",
+        "authors": "CHAUDHARY, akshima*"
+      },
+      {
+        "id": "1487",
+        "title": "Electric Vehicle Integrated Optimal DG Placement Solution for Distribution Network to Minimize Real Power Loss and Voltage Deviation Using Jaya Algorithm",
+        "authors": "KUMAR, VINOD*; Mathur, Akhilesh; Singh, V. P.; Neeli, Satyanarayana"
+      },
+      {
+        "id": "1490",
+        "title": "Nonlinear Analysis of Voltage Controlled Mode Buck Converter",
+        "authors": "ROY, KOPPU SIDDHARATHA*; Raj Pathak, Dr. Bhooshan ; Metri, Rajinikanth"
+      },
+      {
+        "id": "1542",
+        "title": "Development of an Adaptive Volterra Second Order Filter for PV-Interfaced EV Microgrid System",
+        "authors": "Badoni, Dr. Manoj*; Gupta , Anant ; Mittal , Sudhanshu ; Singh, Alka; Dalal , Mukesh"
+      },
+      {
+        "id": "1608",
+        "title": "An Normalized FLL Based Control Strategy for Seamless Integration of Multiple Rooftop Solar PV Systems in Remote Zones With Local Grid Support",
+        "authors": "Singh, Akhand Pratap*; Bansal, Yashasvi; Chakraborty, Subhadip; Singh, Bhim"
+      },
+      {
+        "id": "1640",
+        "title": "A Single-Stage Semi-Dual Active Bridge AC–DC Converter for Solid-State Transformer",
+        "authors": "Ahmad Dar, Jahangeer*; Ansari, Mohmmed; Kumar Pathak, Mukesh"
+      },
+      {
+        "id": "1714",
+        "title": "Enhanced Adaptive Distance Protection for Lines Connected to Inverter-Based Renewable Plants",
+        "authors": "Jayaprakash, CH; Gangolu, Suryanarayana*; Panda, Rakesh kumar ; M, Suman"
+      },
+      {
+        "id": "1772",
+        "title": "Control Strategy for Hybrid AC/DC Microgrid with a Distributed Consensus-Based Optimal Dispatch Method",
+        "authors": "Dinesh, M; Divya, G; Trinadh Babu, K; Dongre, Ganesh ; Rama Krishna, P V; Raghavendra Prasad, A; Ravivarman, S; Jain, Sanjiv Kumar ; Kandi, Bhanu Prakash*"
+      },
+      {
+        "id": "1831",
+        "title": "Design and Simulation of a PQ Theory-Based Shunt Active Power Filter with Parameter Selection and Optimized PI Controller for Power Quality Enhancement",
+        "authors": "Kasula, Sabin*; Pindoriya, Rajesh; Chaudhary, Jeetendra"
+      }
+    ]
+  },
+  {
+    "room": "Near CRC 6-1",
+    "session_name": "POSTER SESSION #3A",
+    "time_slot": "July 10, 2026 | 03:30 PM to 04:30 PM",
+    "type": "Poster",
+    "papers": [
+      {
+        "id": "20",
+        "title": "Novel advanced Willie wagtail optimization algorithm for loss diminution and voltage stability enrichment",
+        "authors": "Kanagasabai, Dr Lenin*"
+      },
+      {
+        "id": "84",
+        "title": "Modeling and Analysis of Regenerative Braking Operation on Electric Vehicles using Fuzzy Logic",
+        "authors": "MOHAPATRA, BHABASIS*; Dash, Ritesh ; K, Jyotheeswara Reddy ; P S, Soumya; Tiwari, Sukriti; Debnath, Manoj Kumar"
+      },
+      {
+        "id": "126",
+        "title": "BESS2V and V2BESS Bidirectional Power Transfer Management Through Artificial Neural Network-Based Dual Active Bridge (DAB) Converter",
+        "authors": "SAHU, DEVENDRA *; Kumar, Rajan"
+      },
+      {
+        "id": "265",
+        "title": "Comparative Evaluation of Software Reliability Growth Models Using Real-Time Failure Data",
+        "authors": "Sapkale, Yogendra ; Sarita, Kumari*; Saket, Ram Khelawan"
+      },
+      {
+        "id": "277",
+        "title": "Immersion cooling impact on parameter estimation accuracy using a fading Extended Kalman Filter",
+        "authors": "Dar, Tasadeek *; Singh, Satyavir ; bhimireddy, Lakshminarayana"
+      },
+      {
+        "id": "463",
+        "title": "Novel Reconfigure Multiport Dual Active Bridge Converter for EV Charging Application",
+        "authors": "Prajapati, Ashish*; Bharadwaj, Pallavi"
+      },
+      {
+        "id": "627",
+        "title": "A Hybrid Poisson-ANN Framework for Electric Vehicle Arrival Forecasting",
+        "authors": "Rezin, Mohammed*; T, Rajeev"
+      },
+      {
+        "id": "905",
+        "title": "A New Multilevel and Multiport Topology for Electric Vehicle Fast Charging Applications",
+        "authors": "ANGURU, DEEPAK*; RONANKI, DEEPAK"
+      },
+      {
+        "id": "907",
+        "title": "State-of-Charge and Temperature Dependent Battery Parameter Identification via 3D Polynomial Fitting",
+        "authors": "Kannojia, Pushpa*; Ahmad, Aaqib; Teja, Ravi"
+      },
+      {
+        "id": "935",
+        "title": "Consensus-Based Hierarchical Control of Bidirectional DC-DC Converters for V2G and G2V Integration in DC Microgrids: A Distributed Energy Management Approach",
+        "authors": "KUMAR, M PAVAN*"
+      },
+      {
+        "id": "983",
+        "title": "MILP-Based Solar–Battery Optimisation and Energy Management for Agricultural Greenhouses",
+        "authors": "Nama, Tanishka; Kedia, Pranshu; Maulik, Avirup*; Shastri, Priyvrat; Paul, Subho"
+      },
+      {
+        "id": "995",
+        "title": "Al-Enabled Transient Stability Improvement of STATCOM-Integrated Hybrid Renewable Energy Systems",
+        "authors": "Wadhai, Bhishan*; Dhote, Nitin; Chaudhary, Swapna"
+      },
+      {
+        "id": "1016",
+        "title": "Energy Management in PV-Fuel Cell-Battery based DC Microgrid using Experimental Validation of SoC Estimation",
+        "authors": "DASARI, SAI RAM SURYA LAKSHMI AVANTHIKA*; Udumula, Ramanjaneya Reddy; Bhamidi, Lokeshgupta"
+      },
+      {
+        "id": "1032",
+        "title": "Techno-Economic Optimal Sizing and Per-Phase Control of Rooftop PV–BESS for Phase-Balanced Net-Zero Campus Microgrids",
+        "authors": "Gaidhane, Takshak; Bradiya, Mayank*; Dhara, Pijush Kanti"
+      },
+      {
+        "id": "1043",
+        "title": "A Multilevel Converter based EV Charger with G2V/V2G/V2V Features",
+        "authors": "Pandey, Sanjeev Kumar; Das, Subhojit*; Maiti, Suman"
+      },
+      {
+        "id": "1061",
+        "title": "A Framework for Appliance-Level Energy Analytics Using Smart Meter Signatures and Hidden Markov Models",
+        "authors": "Priolkar, Jayeshkumar*; Hede, Mayur"
+      },
+      {
+        "id": "1095",
+        "title": "Maxwell Analysis of different steady state and transient behavior of a single-axis controlled vertical-shaft magnetic bearing using the Finite Element Method using ANSYS",
+        "authors": "KUMAR, RAJEEV*; Biswas, Pabitra; Gupta, Suraj"
+      },
+      {
+        "id": "1121",
+        "title": "Reliability enhancement with wind and PV using DTBO algorithm based unit commitment",
+        "authors": "Roy, Adhit ; Dutta, Susanta; Bhattacharya, Anagha *; Biswas, Soumen"
+      },
+      {
+        "id": "1245",
+        "title": "Hybrid CNN–BiLSTM Framework for Intelligent Battery Health Prediction in Electric Vehicles",
+        "authors": "SALPE, AJINKYA*"
+      },
+      {
+        "id": "1476",
+        "title": "Improved Dynamic Response Using Cascade Control in a Two-Switch High-Gain DC–DC Converter",
+        "authors": "Surya, Sumukh*; Chhetri, Ahilya; Krishna, Gopal"
+      }
+    ]
+  },
+  {
+    "room": "Near CRC 6-4",
+    "session_name": "POSTER SESSION #3B",
+    "time_slot": "July 10, 2026 | 03:30 PM to 04:30 PM",
+    "type": "Poster",
+    "papers": [
+      {
+        "id": "1485",
+        "title": "Analysis and Compensation for DC Bus Voltage Overshoot Power Electronics Converter for EV charger Application",
+        "authors": "LIKHAR, YOGESH*; Keshri, Ritesh; Ramteke, Manoj"
+      },
+      {
+        "id": "1506",
+        "title": "A Transparent Multi-Snapshot Network-Constrained Planning Framework for the Indian Power System",
+        "authors": "Sawant, Manisha*; Bokde, Neeraj"
+      },
+      {
+        "id": "1526",
+        "title": "Closed-Form Fault Location for Short Untransposed Transmission Lines Using Only Post-Fault Data",
+        "authors": "RAY, ROHIT*; Kalita, Kaustav; Sivasubramani, S.; Prakash, Abhineet; Parida, S.K."
+      },
+      {
+        "id": "1573",
+        "title": "Type-2 fractional fuzzy based (1+PIDN) controller for restructure automatic generation control for improving frequency regulation",
+        "authors": "Abhishek, Abhishek; Kumar, Ashiwani; Vidyarthi, Prabhat*"
+      },
+      {
+        "id": "1602",
+        "title": "Cross-Entropy Levy Flight Optimizer for PEMFC Parameter Estimation: A Hybrid Approach",
+        "authors": "Chauhan, Satishkumar*; Pandya, Kartik"
+      },
+      {
+        "id": "1613",
+        "title": "A Five-Level Integrated On-Board Charger with Reduced Components for Light Electric Vehicles",
+        "authors": "Koli, Ankush*; N, Sandeep; Tiwari, Harpal"
+      },
+      {
+        "id": "1659",
+        "title": "Thermal Stress-Based Degradation Classification of Lithium-Ion Batteries Using Machine Learning",
+        "authors": "Munagala, Shanmukha Krishna Chaitanya*; Vutukuri, Bhagya Satya Sri; Dandamudi, Gowreesh Raja; Chappidi, Edukondalu; Mishra, Pratikanta"
+      },
+      {
+        "id": "1688",
+        "title": "On Board EV Charger with Multifunctional Power Transfer Capability",
+        "authors": "Badoni, Dr. Manoj*; Deep, Norm ; Singh, Ajay; Singh, Mukesh"
+      },
+      {
+        "id": "1747",
+        "title": "Hybrid optimization of wind–solar–based Multi-Area Dynamic Economic load dispatch with MTDC",
+        "authors": "Jeevachetan , G. ; Swaroop, B.; Das, Soumyabrata*"
+      },
+      {
+        "id": "1784",
+        "title": "Optimal Power Allocation for a Multi-Stack PEM Fuel Cell System Using Sequential Quadratic Programming",
+        "authors": "Kumar, Navlesh; Singh, Jay *"
+      },
+      {
+        "id": "1820",
+        "title": "Congestion Management in Electric Vehicle Charging Using a Coordinated Charging Group Algorithm and Physics-Informed Neural Network",
+        "authors": "Tiwari, Rishabh; Pandit, Aditya Rishi; Saw, Sagar; Banchhere, Satish; Jangilwar, Payal*; Das, Soumyabrata"
+      },
+      {
+        "id": "1852",
+        "title": "Reconfigurable Battery Module Integration and Performance Evaluation for Electric Vehicle",
+        "authors": "Kumar, Saket *; Sahu, Lalit Kumar; Patel, Ramnarayan"
+      },
+      {
+        "id": "1859",
+        "title": "Cyber–Physical Hardware-in-the-Loop Testbed for Supervisory MPPT and SOC-Based Droop Control in PV–BESS Islanded Microgrids",
+        "authors": "Baru, Suhani*; Panigrahi, Bijaya Ketan"
+      },
+      {
+        "id": "1869",
+        "title": "A Luenberger Observer Quadrature Signal Generator-based DVR Control with ADRC-based DC-link and Load Voltage Regulation",
+        "authors": "Chilipi, Rajasekharareddy; Deshpande, Chinmay*; Arya, Sabha Raj ; Singh, Bhim"
+      },
+      {
+        "id": "1878",
+        "title": "Cost Evaluation and Performance Analysis of Three Phase Vienna Rectifier with Reduced Capacity at DC-link Capacitor",
+        "authors": "Paul, Arghyadip; Keshri, Ritesh*; Saurav, Suman"
+      },
+      {
+        "id": "1880",
+        "title": "Optimal Reactive Power Compensation Strategy for Voltage Regulation in Unbalanced Distribution Systems with High EV Fast‑Charging and Renewable Energy Penetration",
+        "authors": "Singh, Manjeet*; mishra, praveen kumar; Kaur, Amritjot"
+      },
+      {
+        "id": "1886",
+        "title": "Multi-Objective Performance Indicator Driven Siting of EV Charging Infrastructure with Embedded Distributed Generators",
+        "authors": "Majumdar, Dipto; Modak, Samadrito; Jana, Debashis; Das, Sourav ; Chowdhury, Ranjita*"
+      },
+      {
+        "id": "1889",
+        "title": "Thermal response of a Lithium-ion cell under varying discharge rates: A transient numerical study",
+        "authors": "Nanhet, Akanksha ; Lamba, Ravita*"
+      },
+      {
+        "id": "1890",
+        "title": "Low-Error SoC and SoH Estimation on Batteries Using an Advanced Coulomb Counting Approach with Machine Learning Integration",
+        "authors": "Sarada, S.*; Challa, Ganesh; Debnath, Manoj; Jyoshna, M.; P. , Lavanya; Jayakrishna, J.; Deekshith, S."
+      },
+      {
+        "id": "1897",
+        "title": "Elk Herd Optimization Tuned FOPI(1+PDN) Controller for Enhanced Load Frequency Control in Photovoltaic Two-Area Power Systems",
+        "authors": "Mohapatra, Bhabasis*; Sahu, Jugajyoti; Sahu, Binod Kumar; Debnath, Manoj; Mohanty, Pradeep Kumar"
+      }
+    ]
+  },
+  {
+    "room": "Near CRC 6-1",
+    "session_name": "POSTER SESSION #4A",
+    "time_slot": "July 11, 2026 | 10:30 AM to 11:30 AM",
+    "type": "Poster",
+    "papers": [
+      {
+        "id": "139",
+        "title": "Seasonal-Aware Smart Home Appliance Scheduling Using Golden Jackal Optimization with PV-Battery Integration",
+        "authors": "Earath Shivadasan, Athira ; Shanmugam, Prabhakar Karthikeyan*"
+      },
+      {
+        "id": "152",
+        "title": "Response Time and Steady State Measurement of Instrumentation Systems of NPP",
+        "authors": "Singh, Dr.Pooja*; Singh, Lalit"
+      },
+      {
+        "id": "182",
+        "title": "Hybrid Energy Management System for EV Charging Station with PV and Battery Storage Integration",
+        "authors": "MOHALE, VIJAY*; Magdum , Abhinandan ; Rathod , Surendra ; Swain, Sudarshan"
+      },
+      {
+        "id": "238",
+        "title": "Transformer Networks with Explainable AI for Accurate Battery RUL Prediction in Electric Vehicles",
+        "authors": "Sharma, Riya*; Kamboj, Rahul Kumar; Bhat, Ashiq Nazir; Singh, Sanju ; Alam, Md. Shahrukh"
+      },
+      {
+        "id": "605",
+        "title": "Mitigation of Mismatch Loss in Urban Building Integrated PV Systems Using Hybrid Cross-Tied Array Topologies",
+        "authors": "Bodkhe, Nikhil Arunrao; SARKAR, DEBAYAN*; Mal, Risha"
+      },
+      {
+        "id": "917",
+        "title": "Virtual Replica Framework for Logic Design Layer and Validation in P642 MiCOM Relay",
+        "authors": "Kumari, Neha*; yadav, ravi; yadav, sandeep"
+      },
+      {
+        "id": "958",
+        "title": "Hybrid Cooling Strategies for Enhanced Lithium-Ion Battery Thermal Management",
+        "authors": "Paul, Dipankar ; Biswas, Nirmalendu*; Mondal, Sudipta; Bhattacharyya, Suvanjan"
+      },
+      {
+        "id": "1038",
+        "title": "Design and Development of a Remote-Controlled Electric Vehicle: A Case Study for Engaging Undergraduate Engineering Students in Autonomous E-Vehicle Technology",
+        "authors": "JOSHI, HEM*"
+      },
+      {
+        "id": "1069",
+        "title": "Dual Band Antenna Design for Electric Vehicle Communication",
+        "authors": "SINGH, GURPRINCE*"
+      },
+      {
+        "id": "1098",
+        "title": "Design and Analysis of a General SHM Technique for a 5-Level CHB MLI with Practical DC Sources",
+        "authors": "Dhiman, Arshit; Kalkal, Pratik; Ravi Teja, A. *"
+      },
+      {
+        "id": "1127",
+        "title": "Thermal Runaway Early Warning Champion: Optimal Temperature Sensor Placement for Core–Surface State Estimation",
+        "authors": "Ghosh, Samsaptak*; Patil, Sanjeev; Bharadwaj, Pallavi"
+      },
+      {
+        "id": "1170",
+        "title": "Risk-Averse Information-Gap Decision Theory for Coordinated EVs and Load Shifting in Cost-Effective Microgrid Operation",
+        "authors": "Meena, Shweta; Dey, Bishwajit*; Gupta, Vinay"
+      },
+      {
+        "id": "1172",
+        "title": "Constraint-Aware Temporal Explainable Learning Framework for Robust Battery Health Monitoring and Degradation Diagnosis",
+        "authors": "Sahoo, Subhendu Sekhar*; Bhakuni , Abhijit Singh; Jethi, Priyanka; Lavanya , Karri ; Harika , Dakamari; Vamsi Vardhini, Chebolu"
+      },
+      {
+        "id": "1242",
+        "title": "Performance analysis of Grid-to-Vehicle operation for an Electric Vehicle",
+        "authors": "Paswan, Rahul; Kaushal, Jitender*"
+      },
+      {
+        "id": "1286",
+        "title": "Quantam Inspired Deep Learning based Fault Diagnosis in Lithium-Ion Battery Pack for EV Applications",
+        "authors": "Joga, S Ramana Kumar*; Sahoo, Buddhadeva; Yalla, Naveen; Chidurala, Saiprakash; V, Sudhakar; J, Ganesh Prasad Reddy"
+      },
+      {
+        "id": "1338",
+        "title": "State of Health Estimation of Lithium-Ion Batteries Through Experimental Data-Based Analysis",
+        "authors": "Gadda, Venkata *; M, Pavan Kumar"
+      },
+      {
+        "id": "1394",
+        "title": "Experimental Comparison of Three and Four-Propeller Multi-Rotor Wind Turbine Systems for Low-Wind Applications",
+        "authors": "Bhukya, Jawaharlal*; Alavala, Somasri Yaswanth Reddy; Koyaneni, Yaswanth ; Kodamasimham, Vivek Chandra"
+      },
+      {
+        "id": "1409",
+        "title": "Performance Analysis of Hybrid CNN–LSTM Networks for Short-Term Solar Irradiance Forecasting",
+        "authors": "Kumari, Prema*"
+      },
+      {
+        "id": "1417",
+        "title": "Comparative Analysis of Optimal Distance and User-Defined Directional Overcurrent Relay Coordination for the IEEE 8-Bus System",
+        "authors": "Chitranshi, Roshan; Jaiswal, Devesh; Shabeeh, Mohammad; Dev, Ark*; Mahboob, Mohd. Shariq; Tiwari, Raghvendra"
+      },
+      {
+        "id": "1420",
+        "title": "Application of improved Chimp optimization algorithm in optimal parameter estimation of Solar Photovoltaic cell",
+        "authors": "Nagesh, D; Devarapalli, Ramesh*; Kumar Sinha, Nikhil"
+      }
+    ]
+  },
+  {
+    "room": "Near CRC 6-4",
+    "session_name": "POSTER SESSION #4B",
+    "time_slot": "July 11, 2026 | 10:30 AM to 11:30 AM",
+    "type": "Poster",
+    "papers": [
+      {
+        "id": "1497",
+        "title": "A Standalone Hybrid PV-Battery-Fuel Cell System With MPC-Based DC Bus Control for Induction Motor Drive",
+        "authors": "Purohit, Pranati*; Mishra, Shaswat; Ghosh, Arnab; Ray, Pravat Kumar"
+      },
+      {
+        "id": "1561",
+        "title": "A Probabilistic Agentic AI-Driven Digital Twin Framework for Uncertainty-Aware Optimization of Wind–Solar Hybrid Energy Systems",
+        "authors": "KUMAR, ROCKY*; KHANDELWAL, GITISHA ; GUPTA, SONALI ; KUSHWAHA, SUNIL; KUMAR, ABHIMANYU ; KUMAR , MANISH"
+      },
+      {
+        "id": "1565",
+        "title": "Energy-Consistent Multi-Stage Thermal-Runaway Surrogate and Propagation Phase Maps for a Reduced-Order Li-Ion Pack",
+        "authors": "Ghosh, Samsaptak*; Patil, Sanjeev; Bharadwaj, Pallavi"
+      },
+      {
+        "id": "1580",
+        "title": "Comparative Study of PSO and WOA in Estimation of Health Indices of Buck Converter",
+        "authors": "Vyas, Vedant*; Gautam, Aditya; Thanvi, Somesh"
+      },
+      {
+        "id": "1583",
+        "title": "A Numerical Study on Mini-Channel Heat-Sink for Battery Cooling System",
+        "authors": "Parida, Nilamadhabananda; Behera, Chinmaya ; Ghosh, Suman*"
+      },
+      {
+        "id": "1597",
+        "title": "Hosting capacity maximization for renewable generation in consideration of electricity market",
+        "authors": "Rao, T Koteswara *; Singh, Aditya Bhushan; Rana, Ankur Singh"
+      },
+      {
+        "id": "1635",
+        "title": "Optimal Operation of AC/DC Hybrid Microgrid Under Load and Renewable Generation Uncertainty",
+        "authors": "Malik, Uzair*"
+      },
+      {
+        "id": "1642",
+        "title": "Dynamic Performance Assessment of Converter-Integrated BIPV Systems in Urban Conditions",
+        "authors": "Sarkar, Debayan; Roy, Subhajit*; Bodkhe, Nikhil Arunrao; Sinha, Prabhat Prakash; Das, Dulal Chandra; Sinha, Nidul"
+      },
+      {
+        "id": "1664",
+        "title": "Design and Implementation of PR Controlled 15 kW Totem-Pole PFC Converter",
+        "authors": "Pati, Ashutosh*; singh, Nidhi; Choudhury, Tanmoy Roy"
+      },
+      {
+        "id": "1679",
+        "title": "A high- efficiency non- isolated buck converter for DC power applications",
+        "authors": "priyadarshi, shubham *; sharma, preeti; kumar, rajneesh; pande, surojit"
+      },
+      {
+        "id": "1701",
+        "title": "AI-Powered Model Predictive Voltage Control for Optimum Reactive Power Sharing in Islanded AC Microgrids with Variable PV Generation",
+        "authors": "ROSAIAH, KANAPALA*; KRISHAN, RAM"
+      },
+      {
+        "id": "1716",
+        "title": "Virtual Inertia-Based LFC Strategy using hDE-SA Optimized PID Controller with SMES",
+        "authors": "Simhadri, Kumaraswamy*; Ganga, Ashok; Tamminaina, Lokanadha Rao; Bodda, Ravi Kumar; Chongala, Prasad; Gandupalli, Ruchitha; Madugula, Shanmukhasrinivas; Bingu, Hemeswara Rao; Menda, Chandrasekhara Rao"
+      },
+      {
+        "id": "1732",
+        "title": "Consensus-Based Voltage Control Method for Cyber Attack Resilient DC Microgrids",
+        "authors": "Srivastava, Kriti*; Sarangi, Saumendra ; Guha, Dipayan"
+      },
+      {
+        "id": "1742",
+        "title": "Time-Based Energy Management with Load Shifting for Grid Dependency Reduction in a PV-Wind-Battery-Fuel cell Microgrid",
+        "authors": "Mahadevuni, Sai*; Sen, Sachidananda; Shiva, Chandan Kumar; Basetti, Vedik"
+      },
+      {
+        "id": "1753",
+        "title": "Phase Shift Control of Dual Active Bridge Dc-Dc Converter Under Dynamic Load Condition: Design and Performance Evaluation",
+        "authors": "Banik, Sulabh; Paramasivam, Padmagirisan*; Kiran, Karuna"
+      },
+      {
+        "id": "1808",
+        "title": "Congestion Management in Smart Power System with Minimal Rescheduling of Dispatchable Generator Outputs",
+        "authors": "P, PONRAJ*"
+      },
+      {
+        "id": "1840",
+        "title": "A Reduced Switch Count 31- Level Inverter for Induction Motor Drive",
+        "authors": "Kaur, Jasmeet ; Singh, Prabal; Anand, Unnati ; Kumar, Sanjiv*; Singh, S P"
+      },
+      {
+        "id": "1850",
+        "title": "Rule-Based Energy Management Strategy for a Multi-Port DC–DC Converter in Hybrid Renewable-Powered Telecom Base Transceiver Station Systems",
+        "authors": "Kandel, Niraj ; Pindoriya, Rajesh*; Adhikari, Sujan"
+      },
+      {
+        "id": "1854",
+        "title": "An Improved MPPT Technique Using Transformer Control for a Grid-Connected Solar PV System",
+        "authors": "Singh, Surya*; Iqbal, Arif ; Kumar, Sanjiv"
+      },
+      {
+        "id": "1866",
+        "title": "Performance Analysis of a Three-Phase Shunt Active Power Filter for Harmonic Mitigation in Nonlinear Load Systems",
+        "authors": "Bhavthankar, Harshwardhan; Das, Soumyabrata*; Singh, Manjeet"
+      },
+      {
+        "id": "1883",
+        "title": "Voltage Selection in Electric Vehicle Retrofitting: A Review of System Trade-offs, Policy Drivers, and AI-Enabled Opportunities",
+        "authors": "UNNI, APARNA*; Singh, Mukesh; Jain, Sanjay K; Singh, Manjeet"
+      }
+    ]
   }
 ];
 
@@ -4102,6 +4984,18 @@
       const tabs = document.querySelectorAll('.tech-day-tab');
       tabs.forEach((tab, i) => {
         tab.classList.toggle('active', i === index);
+      });
+      renderTechSessions();
+    }
+
+    // Filter by Session Type (Oral / Poster)
+    function setSessionType(type) {
+      currentSessionType = type;
+      const pills = document.querySelectorAll('#type-pills .filter-pill');
+      pills.forEach(pill => {
+        const onClickAttr = pill.getAttribute('onclick');
+        const isActive = onClickAttr && onClickAttr.includes(`'${type}'`);
+        pill.classList.toggle('active', isActive);
       });
       renderTechSessions();
     }
@@ -4317,7 +5211,7 @@
                 <div class="session-card-info">
                   <div class="session-meta-row">
                     <span class="${badgeClass}">${session.room}</span>
-                    <span class="session-number-label">${session.session_name}</span>
+                    <span class="session-number-label">${session.type} Session &bull; Papers: ${session.papers.map(p => p.id).join(', ')}</span>
                   </div>
                   <h3 class="session-card-title">${generateSessionTopic(session.papers)}</h3>
                 </div>
