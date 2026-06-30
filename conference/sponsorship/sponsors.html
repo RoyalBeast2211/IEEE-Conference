@@ -40,6 +40,305 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../css/styles.css" />
     <link rel="stylesheet" href="../../css/navigation.css" />
+    <style>
+      /* Sponsors Page Custom Styles */
+      .sponsors-hero {
+        background: linear-gradient(135deg, #4d1d2e 0%, #813c54 50%, #9d4a63 100%);
+        color: #ffffff;
+        padding: 4rem 2rem;
+        text-align: center;
+        border-radius: 20px;
+        margin-bottom: 3rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(129, 60, 84, 0.2);
+      }
+
+      .sponsors-hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+        pointer-events: none;
+      }
+
+      .sponsors-hero h1 {
+        color: #ffffff;
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin: 0 0 0.5rem 0;
+        font-weight: 800;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 0.5px;
+      }
+
+      .sponsors-hero p {
+        color: #f3e8eb;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        margin: 0 auto;
+        max-width: 700px;
+        text-align: center;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+
+      /* Sections per Tier */
+      .tier-section {
+        margin-bottom: 4rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .tier-section:nth-child(2) { animation-delay: 0.1s; }
+      .tier-section:nth-child(3) { animation-delay: 0.25s; }
+      .tier-section:nth-child(4) { animation-delay: 0.4s; }
+      .tier-section:nth-child(5) { animation-delay: 0.55s; }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .tier-title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .tier-title-container::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        width: 60px;
+        height: 4px;
+        border-radius: 2px;
+      }
+
+      .tier-title {
+        font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+        margin: 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-family: "Roboto Slab", serif;
+      }
+
+      /* Tier Accents */
+      .tier-crown .tier-title { color: #813c54; }
+      .tier-crown .tier-title-container::after { background: linear-gradient(90deg, #813c54, #b8860b); }
+      
+      .tier-gold .tier-title { color: #b8860b; }
+      .tier-gold .tier-title-container::after { background: #b8860b; }
+
+      .tier-silver .tier-title { color: #5a6e7f; }
+      .tier-silver .tier-title-container::after { background: #9ca3af; }
+
+      .tier-bronze .tier-title { color: #a05a2c; }
+      .tier-bronze .tier-title-container::after { background: #cd7f32; }
+
+      /* Grid Layouts */
+      .sponsors-grid {
+        display: grid;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .grid-1-col {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+      }
+
+      .grid-2-col {
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      }
+
+      @media (max-width: 768px) {
+        .grid-2-col {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Sponsor Card Styling */
+      .sponsor-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border: 1px solid rgba(229, 231, 235, 0.8);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Card hover effects per tier */
+      .sponsor-card::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 4px;
+        transition: all 0.4s ease;
+      }
+
+      .tier-crown .sponsor-card::after { background: linear-gradient(90deg, #813c54, #b8860b); }
+      .tier-gold .sponsor-card::after { background: #b8860b; }
+      .tier-silver .sponsor-card::after { background: #9ca3af; }
+      .tier-bronze .sponsor-card::after { background: #cd7f32; }
+
+      .sponsor-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        border-color: rgba(129, 60, 84, 0.3);
+      }
+
+      .tier-crown .sponsor-card:hover {
+        box-shadow: 0 12px 30px rgba(129, 60, 84, 0.15), 0 0 15px rgba(184, 134, 11, 0.15);
+      }
+      .tier-gold .sponsor-card:hover {
+        box-shadow: 0 12px 30px rgba(184, 134, 11, 0.2);
+      }
+
+      /* Logo Wrapper */
+      .logo-wrapper {
+        width: 100%;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.02);
+        border: 1px solid #f3f4f6;
+        transition: transform 0.4s ease;
+      }
+
+      .tier-crown .logo-wrapper { height: 185px; }
+      .tier-gold .logo-wrapper { height: 165px; }
+      .tier-silver .logo-wrapper { height: 145px; }
+      .tier-bronze .logo-wrapper { height: 135px; }
+
+      .logo-dark-bg {
+        background: #000000 !important;
+        border-color: #1f2937 !important;
+        box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.05) !important;
+      }
+
+      .sponsor-card:hover .logo-wrapper {
+        transform: scale(1.03);
+      }
+
+      .logo-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        transition: transform 0.4s ease;
+      }
+
+      /* Info Styles */
+      .sponsor-badge {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 0.35rem 1rem;
+        border-radius: 50px;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        letter-spacing: 1px;
+        display: inline-block;
+      }
+
+      .tier-crown .sponsor-badge { background: #fef2f2; color: #813c54; border: 1px solid #fee2e2; }
+      .tier-gold .sponsor-badge { background: #fefcbf; color: #b8860b; border: 1px solid #fef08a; }
+      .tier-silver .sponsor-badge { background: #f3f4f6; color: #4b5563; border: 1px solid #e5e7eb; }
+      .tier-bronze .sponsor-badge { background: #ffedd5; color: #a05a2c; border: 1px solid #fed7aa; }
+
+      .sponsor-name {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        color: #1f2937;
+        margin: 0.5rem 0;
+        font-weight: 700;
+        font-family: "Roboto Slab", serif;
+      }
+
+      .sponsor-description {
+        font-size: 0.95rem;
+        color: #4b5563;
+        line-height: 1.6;
+        margin: 0.75rem 0 0 0;
+        max-width: 550px;
+        text-align: center;
+      }
+
+      /* CTA Section Styles */
+      .cta-section {
+        background: #ffffff;
+        border: 2px dashed #e5e7eb;
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+        transition: all 0.3s ease;
+      }
+
+      .cta-section:hover {
+        border-color: #813c54;
+        background-color: #fdfafb;
+      }
+
+      .cta-title {
+        color: #813c54;
+        font-size: 1.75rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+
+      .cta-text {
+        color: #6b7280;
+        font-size: 1rem;
+        margin: 0 auto 1.5rem auto;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #813c54 0%, #9d4a63 100%);
+        color: #ffffff;
+        padding: 0.85rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 12px rgba(129, 60, 84, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(129, 60, 84, 0.4);
+        color: #ffffff;
+      }
+      
+      .cta-btn svg {
+        transition: transform 0.3s ease;
+      }
+      
+      .cta-btn:hover svg {
+        transform: translateX(4px);
+      }
+    </style>
   </head>
   <body>    <!-- Navigation -->
     <nav
@@ -327,6 +626,15 @@
                   >
                     <div class="ieee-dropdown-item-content">
                       <span class="ieee-dropdown-item-title">SYP Events</span>
+                    </div>
+                  </a>
+                  <a
+                    href="../../conference/events/ias.html"
+                    class="ieee-dropdown-item"
+                    role="menuitem"
+                  >
+                    <div class="ieee-dropdown-item-content">
+                      <span class="ieee-dropdown-item-title">IAS Events</span>
                     </div>
                   </a>
                   <a
@@ -826,6 +1134,11 @@
                         >SYP Events</a
                       >
                       <a
+                        href="../../conference/events/ias.html"
+                        class="ieee-mobile-sublink"
+                        >IAS Events</a
+                      >
+                      <a
                         href="../../conference/events/academic-panel.html"
                         class="ieee-mobile-sublink"
                         >Academic Panel</a
@@ -968,13 +1281,106 @@
 
 
     <!-- Main Content -->
-<main class="main-content">
+    <main class="main-content">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;">
+        
+        <!-- Hero Header -->
+        <div class="sponsors-hero">
+          <h1>Our Conference Sponsors</h1>
+          <p>We are proud to present our distinguished sponsors and partners supporting the 6th IEEE International Conference on Sustainable Energy and Future Electric Transportation (IEEE SeFet 2026).</p>
+        </div>
 
-<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; text-align: center;">
+        <!-- Crown Sponsor Section -->
+        <div class="tier-section tier-crown">
+          <div class="tier-title-container">
+            <h2 class="tier-title">Crown Sponsor</h2>
+          </div>
+          <div class="sponsors-grid grid-1-col">
+            <div class="sponsor-card">
+              <div class="logo-wrapper">
+                <img src="../../assets/Sponsers/ANRF-Crown.png" alt="Anusandhan National Research Foundation (ANRF) Logo" loading="lazy" />
+              </div>
+              <span class="sponsor-badge">Crown Sponsor</span>
+              <h3 class="sponsor-name">Anusandhan National Research Foundation (ANRF)</h3>
+              <p class="sponsor-description">India's apex body for fostering, funding, and promoting scientific research and development across academic institutions, research laboratories, and R&D organizations.</p>
+            </div>
+          </div>
+        </div>
 
-<h1>To be Updated Soon</h1>
+        <!-- Gold Sponsor Section -->
+        <div class="tier-section tier-gold">
+          <div class="tier-title-container">
+            <h2 class="tier-title">Gold Sponsor</h2>
+          </div>
+          <div class="sponsors-grid grid-1-col">
+            <div class="sponsor-card">
+              <div class="logo-wrapper logo-dark-bg">
+                <img src="../../assets/Sponsers/GMMCO%20Nagpur-Gold.jpg" alt="GMMCO Nagpur Logo" loading="lazy" />
+              </div>
+              <span class="sponsor-badge">Gold Sponsor</span>
+              <h3 class="sponsor-name">GMMCO Nagpur</h3>
+              <p class="sponsor-description">A leading provider of heavy equipment and power systems, delivering world-class machinery, engines, and comprehensive engineering solutions for infrastructure development.</p>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <!-- Silver Sponsors Section -->
+        <div class="tier-section tier-silver">
+          <div class="tier-title-container">
+            <h2 class="tier-title">Silver Sponsors</h2>
+          </div>
+          <div class="sponsors-grid grid-2-col">
+            <div class="sponsor-card">
+              <div class="logo-wrapper">
+                <img src="../../assets/Sponsers/OPAL-RT%20Technology-%20Silver.png" alt="OPAL-RT Technologies Logo" loading="lazy" />
+              </div>
+              <span class="sponsor-badge">Silver Sponsor</span>
+              <h3 class="sponsor-name">OPAL-RT Technologies</h3>
+              <p class="sponsor-description">A global leader in the development of open Real-Time Digital Simulators and Hardware-in-the-Loop (HIL) testing equipment for electrical, power electronics, and aerospace systems.</p>
+            </div>
+            <div class="sponsor-card">
+              <div class="logo-wrapper">
+                <img src="../../assets/Sponsers/Solar%20D%C3%A9fense%20and%20Aerospace%20Ltd.-%20Silver.png" alt="Solar Defence and Aerospace Ltd. Logo" loading="lazy" />
+              </div>
+              <span class="sponsor-badge">Silver Sponsor</span>
+              <h3 class="sponsor-name">Solar Defence and Aerospace Ltd.</h3>
+              <p class="sponsor-description">Specialists in high-reliability components, solar energy systems, and specialized advanced engineering solutions for defense, military, and aerospace applications.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bronze Sponsor Section -->
+        <div class="tier-section tier-bronze">
+          <div class="tier-title-container">
+            <h2 class="tier-title">Bronze Sponsor</h2>
+          </div>
+          <div class="sponsors-grid grid-1-col">
+            <div class="sponsor-card">
+              <div class="logo-wrapper">
+                <img src="../../assets/Sponsers/Typhoon%20Hill_Bronze.png" alt="Typhoon HIL Logo" loading="lazy" />
+              </div>
+              <span class="sponsor-badge">Bronze Sponsor</span>
+              <h3 class="sponsor-name">Typhoon HIL</h3>
+              <p class="sponsor-description">A technology leader in ultra-high fidelity Hardware-in-the-Loop (HIL) real-time simulators for power electronics, microgrids, and distribution system control testing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="cta-section">
+          <h2 class="cta-title">Interested in Sponsoring IEEE SeFet 2026?</h2>
+          <p class="cta-text">Join hands with us to showcase your technology, engage with global experts, and support sustainable energy and transportation development. Multiple sponsorship packages and benefit levels are available.</p>
+          <a href="details.html" class="cta-btn">
+            View Sponsorship Packages & Benefits
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </main>
     <!-- Scripts -->
     <script src="../../js/navigation.js"></script>
   </body>
