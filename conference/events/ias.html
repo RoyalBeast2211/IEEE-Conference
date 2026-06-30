@@ -170,6 +170,95 @@
         margin: 0;
       }
 
+      /* Highlights List */
+      .highlights-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .highlight-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .highlight-icon-wrapper {
+        background-color: rgba(129, 60, 84, 0.1);
+        color: var(--color-primary);
+        padding: 0.5rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .highlight-content h4 {
+        margin: 0 0 0.25rem 0;
+        color: #1f2937;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .highlight-content p {
+        margin: 0;
+        color: #4b5563;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Chairs Section */
+      .chairs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1rem;
+      }
+
+      .chair-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 1.25rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .chair-card:hover {
+        border-color: var(--color-secondary);
+        background: #ffffff;
+        box-shadow: 0 4px 15px rgba(184, 134, 11, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .chair-name {
+        display: block;
+        font-weight: 700;
+        color: #1f2937;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .chair-role {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--color-secondary);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+      }
+
+      .chair-affiliation {
+        display: block;
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
+
       .flyer-hint {
         text-align: center;
         font-size: 0.85rem;
@@ -1519,12 +1608,12 @@
                   <span class="chair-affiliation">VNIT Nagpur</span>
                 </div>
                 <div class="chair-card">
-                  <span class="chair-name">Dr. Pradyumn Chaturvedi</span>
+                  <span class="chair-name">Dr. Aneesh Prabhakar</span>
                   <span class="chair-role">Sponsorship Chair</span>
-                  <span class="chair-affiliation">VNIT Nagpur</span>
+                  <span class="chair-affiliation">MNIT Jaipur</span>
                 </div>
                 <div class="chair-card">
-                  <span class="chair-name">Dr. Aneesh Prabhakar</span>
+                  <span class="chair-name">Dr. Kapil Pareek</span>
                   <span class="chair-role">Sponsorship Chair</span>
                   <span class="chair-affiliation">MNIT Jaipur</span>
                 </div>
@@ -1532,6 +1621,11 @@
                   <span class="chair-name">Dr. Kalpana Ramesh</span>
                   <span class="chair-role">Sponsorship Chair</span>
                   <span class="chair-affiliation">NIT Surathkal</span>
+                </div>
+                <div class="chair-card">
+                  <span class="chair-name">Dr. Pradyumn Chaturvedi</span>
+                  <span class="chair-role">Sponsorship Chair</span>
+                  <span class="chair-affiliation">VNIT Nagpur</span>
                 </div>
               </div>
             </div>
